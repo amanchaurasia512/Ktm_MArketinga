@@ -1292,6 +1292,7 @@ codeunit 50501 "KtmMarketing.Mgt"
     local procedure OnAfterCheckBeforePost(var TransferHeader: Record "Transfer Header")
     begin
         //modified change of codeunit TransferOrder-Post Receipt
+        //CheckBeforePost
         TransferHeader.TESTFIELD("Shortcut Dimension 1 Code");
     end;
 
