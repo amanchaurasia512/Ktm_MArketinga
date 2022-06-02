@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="en-US" original="Please update this value">
+    <body>
+      <group id="body">
+        <trans-unit id="Codeunit 2630427538 - NamedType 2476940767" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document must be released before invoicing Credit Bill.</source>
+          <target>Document must be released before invoicing Credit Bill.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Credit Limit Engine - NamedType Text000</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2630427538 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document : %1 cannot be posted with credit to customer %2.\--------------------------------------------\Total Amount Incl. VAT = %3\Remaining Amount = %4\Credit Limit Amount = %5\--------------------------------------------\Applied Filters:\Customer No: %6\%7</source>
+          <target>Document : %1 cannot be posted with credit to customer %2.\--------------------------------------------\Total Amount Incl. VAT = %3\Remaining Amount = %4\Credit Limit Amount = %5\--------------------------------------------\Applied Filters:\Customer No: %6\%7</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Credit Limit Engine - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2630427538 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer %1 has Due for %2 %3. Due Amount = %4.</source>
+          <target>Customer %1 has Due for %2 %3. Due Amount = %4.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Credit Limit Engine - NamedType Text003</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2630427538 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Credit Limit already expired on %1.\Applied Filters:\Customer No: %6\%7</source>
+          <target>Credit Limit already expired on %1.\Applied Filters:\Customer No: %6\%7</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Credit Limit Engine - NamedType Text004</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2630427538 - NamedType 1370456556" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Credit Limit is allowed only for Document %1.</source>
+          <target>Credit Limit is allowed only for Document %1.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Credit Limit Engine - NamedType Text005</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2630427538 - NamedType 2008153173" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Credit Limit already expired on %1.\Applied Filters:\Customer No: %2\%3</source>
+          <target>Credit Limit already expired on %1.\Applied Filters:\Customer No: %2\%3</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Credit Limit Engine - NamedType Text006</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2630427538 - NamedType 1168824839" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document : %1 cannot be posted. \ Total Amount Inc. VAT := %2\Remaining Credit Amount := %3  \Credit Limit for Dim. Combination %4,%5 : = %6</source>
+          <target>Document : %1 cannot be posted. \ Total Amount Inc. VAT := %2\Remaining Credit Amount := %3  \Credit Limit for Dim. Combination %4,%5 : = %6</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Credit Limit Engine - NamedType ErrCreditLimit</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2630427538 - NamedType 4237394563" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document : %1 cannot be posted. \ Total Amount Inc. VAT := %2\Max Credit Limit for Single Invoice for Dim. Combination %3,%4 : = %5</source>
+          <target>Document : %1 cannot be posted. \ Total Amount Inc. VAT := %2\Max Credit Limit for Single Invoice for Dim. Combination %3,%4 : = %5</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Credit Limit Engine - NamedType ErrInvoiveCreditLimit</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - NamedType 3216065459" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ZERO</source>
+          <target>ZERO</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - NamedType Text026</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - NamedType 3853762076" size-unit="char" translate="yes" xml:space="preserve">
+          <source>HUNDRED</source>
+          <target>HUNDRED</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - NamedType Text027</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - NamedType 2747277865" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AND</source>
+          <target>AND</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - NamedType Text028</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - NamedType 3384974482" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1 results in a written number that is too long.</source>
+          <target>%1 results in a written number that is too long.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - NamedType Text029</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - NamedType 4168233824" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ONE</source>
+          <target>ONE</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - NamedType Text032</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - NamedType 3530537207" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TWO</source>
+          <target>TWO</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - NamedType Text033</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - NamedType 3699446230" size-unit="char" translate="yes" xml:space="preserve">
+          <source>THREE</source>
+          <target>THREE</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - NamedType Text034</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - NamedType 3061749613" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FOUR</source>
+          <target>FOUR</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - NamedType Text035</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - NamedType 2424052996" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FIVE</source>
+          <target>FIVE</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - NamedType Text036</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - NamedType 1786356379" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SIX</source>
+          <target>SIX</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - NamedType Text037</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - NamedType 342054122" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SEVEN</source>
+          <target>SEVEN</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - NamedType Text038</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - NamedType 3999324801" size-unit="char" translate="yes" xml:space="preserve">
+          <source>EIGHT</source>
+          <target>EIGHT</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - NamedType Text039</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - NamedType 1404403683" size-unit="char" translate="yes" xml:space="preserve">
+          <source>NINE</source>
+          <target>NINE</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - NamedType Text040</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - NamedType 2042100300" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TEN</source>
+          <target>TEN</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - NamedType Text041</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - NamedType 2679796917" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ELEVEN</source>
+          <target>ELEVEN</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - NamedType Text042</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - NamedType 3317493534" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TWELVE</source>
+          <target>TWELVE</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - NamedType Text043</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - NamedType 3148584511" size-unit="char" translate="yes" xml:space="preserve">
+          <source>THIRTEEN</source>
+          <target>THIRTEEN</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - NamedType Text044</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - NamedType 3786281128" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FOURTEEN</source>
+          <target>FOURTEEN</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - NamedType Text045</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - NamedType 129010449" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FIFTEEN</source>
+          <target>FIFTEEN</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - NamedType Text046</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - NamedType 766707066" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SIXTEEN</source>
+          <target>SIXTEEN</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - NamedType Text047</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - NamedType 2211009323" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SEVENTEEN</source>
+          <target>SEVENTEEN</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - NamedType Text048</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - NamedType 2848705940" size-unit="char" translate="yes" xml:space="preserve">
+          <source>EIGHTEEN</source>
+          <target>EIGHTEEN</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - NamedType Text049</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - NamedType 612391220" size-unit="char" translate="yes" xml:space="preserve">
+          <source>NINETEEN</source>
+          <target>NINETEEN</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - NamedType Text050</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - NamedType 4269661899" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TWENTY</source>
+          <target>TWENTY</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - NamedType Text051</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - NamedType 1887784454" size-unit="char" translate="yes" xml:space="preserve">
+          <source>THIRTY</source>
+          <target>THIRTY</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - NamedType Text052</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - NamedType 1250087837" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FORTY</source>
+          <target>FORTY</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - NamedType Text053</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - NamedType 2356572048" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FIFTY</source>
+          <target>FIFTY</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - NamedType Text054</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - NamedType 1718875431" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SIXTY</source>
+          <target>SIXTY</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - NamedType Text055</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - NamedType 3631965282" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SEVENTY</source>
+          <target>SEVENTY</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - NamedType Text056</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - NamedType 2994268665" size-unit="char" translate="yes" xml:space="preserve">
+          <source>EIGHTY</source>
+          <target>EIGHTY</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - NamedType Text057</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - NamedType 4100752876" size-unit="char" translate="yes" xml:space="preserve">
+          <source>NINETY</source>
+          <target>NINETY</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - NamedType Text058</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - NamedType 1723958498" size-unit="char" translate="yes" xml:space="preserve">
+          <source>LAKH</source>
+          <target>LAKH</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - NamedType Text1280000</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - NamedType 1086261881" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CRORE</source>
+          <target>CRORE</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - NamedType Text1280001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - NamedType 3463056259" size-unit="char" translate="yes" xml:space="preserve">
+          <source>THOUSAND</source>
+          <target>THOUSAND</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - NamedType Text059</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - NamedType 888923493" size-unit="char" translate="yes" xml:space="preserve">
+          <source>MILLION</source>
+          <target>MILLION</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - NamedType Text060</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - NamedType 1526620110" size-unit="char" translate="yes" xml:space="preserve">
+          <source>BILLION</source>
+          <target>BILLION</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - NamedType Text061</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - Method 2085923727 - NamedType 105119501" size-unit="char" translate="yes" xml:space="preserve">
+          <source>NP 9.0.45243.5 Agile Solutions Pvt. Ltd. Localization for Nepal</source>
+          <target>NP 9.0.45243.5 Agile Solutions Pvt. Ltd. Localization for Nepal</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - Method BuildAppVersion - NamedType AppVersionTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - Method 1315191579 - NamedType 3031896719" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Purchase Order %1 has been created.</source>
+          <target>Purchase Order %1 has been created.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - Method CreatePurchaseOrder - NamedType Text101</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - Method 1315191579 - NamedType 650019274" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Purchase Orders exist for Purchase Consignment No. %1. Do you to create new Purchase Order?</source>
+          <target>Purchase Orders exist for Purchase Consignment No. %1. Do you to create new Purchase Order?</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - Method CreatePurchaseOrder - NamedType Text102</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - Method 1819011714 - NamedType 3031896719" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Purchase Invoice %1 has been created.</source>
+          <target>Purchase Invoice %1 has been created.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - Method CreatePurchaseInvoice - NamedType Text101</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - Method 2816907948 - NamedType 3031896719" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Purchase Credit Memo %1 has been created.</source>
+          <target>Purchase Credit Memo %1 has been created.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - Method CreatePurchaseCreditMemo - NamedType Text101</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - Method 2816907948 - NamedType 650019274" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Purchase Credit Memo exist for Purchase Consignment No. %1. Do you want to create new Purchase Credit Memo?</source>
+          <target>Purchase Credit Memo exist for Purchase Consignment No. %1. Do you want to create new Purchase Credit Memo?</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - Method CreatePurchaseCreditMemo - NamedType Text102</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - Method 1932434741 - NamedType 3031896719" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Purchase Credit Memo %1 has been created.</source>
+          <target>Purchase Credit Memo %1 has been created.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - Method CreatePurchaseReturnOrder - NamedType Text101</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - Method 1932434741 - NamedType 650019274" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Purchase Credit Memo exist for Purchase Consignment No. %1. Do you want to create new Purchase Credit Memo?</source>
+          <target>Purchase Credit Memo exist for Purchase Consignment No. %1. Do you want to create new Purchase Credit Memo?</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - Method CreatePurchaseReturnOrder - NamedType Text102</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - Method 524003855 - NamedType 1706842703" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cannot find the equivalant Nepali Date! Please contact your system administrator.</source>
+          <target>Cannot find the equivalant Nepali Date! Please contact your system administrator.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - Method getNepaliDate - NamedType Text0000</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - Method 2659192514 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cannot find equivalant English Date! Please contact your system administrator.</source>
+          <target>Cannot find equivalant English Date! Please contact your system administrator.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - Method getEngDate - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - Method 1369011268 - NamedType 3037025129" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1 %2 is not applicable for item charge %3.</source>
+          <target>%1 %2 is not applicable for item charge %3.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - Method PurchPostRestriction - NamedType MistakeTDSGrpErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - Method 1644911544 - NamedType 1849291269" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No Nepali Fiscal Year is provided in %1. Do you want to update it now?</source>
+          <target>No Nepali Fiscal Year is provided in %1. Do you want to update it now?</target>
+          <note from="Developer" annotates="general" priority="2">, Comment='%1 = Company Information'</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - Method VerifyAndSetNepaliFiscalYear - NamedType NoNepaliFiscalYearInfoQst</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - Method 1644911544 - NamedType 2571105680" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No Nepali Fiscal Year information is provided in %1. Review the report.</source>
+          <target>No Nepali Fiscal Year information is provided in %1. Review the report.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - Method VerifyAndSetNepaliFiscalYear - NamedType NoNepaliFiscalYearInfoMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - Method 1644911544 - NamedType 3259815557" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Please update Nepali Fiscal Year in %1. </source>
+          <target>Please update Nepali Fiscal Year in %1. </target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - Method VerifyAndSetNepaliFiscalYear - NamedType UpdateNepaliFiscalYearError</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - Method 317896880 - NamedType 4217854560" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VIN %1 has wrong information. Please contact your Vendor and verify Make, Model and Model Version of VIN %1.</source>
+          <target>VIN %1 has wrong information. Please contact your Vendor and verify Make, Model and Model Version of VIN %1.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - Method CreateVehicle - NamedType VINErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - Method 3575169754 - NamedType 4160988343" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total Salesperson : #1##########\Processing : #2###########\Generating Report #3###########\Mail Sent Count #4##############</source>
+          <target>Total Salesperson : #1##########\Processing : #2###########\Generating Report #3###########\Mail Sent Count #4##############</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - Method SendProductWiseReportMailToSalesperson - NamedType ProgressingTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - Method 1427849658 - NamedType 314869872" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Items have already been shipped from %1 to %2 for credit memo %3.</source>
+          <target>Items have already been shipped from %1 to %2 for credit memo %3.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - Method CreateTransferFromSalesCreditMemo - NamedType Text1000</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - Method 2149531136 - NamedType 2973107032" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transfer Receipt No. %1 have already been selected in Sales Order %2.</source>
+          <target>Transfer Receipt No. %1 have already been selected in Sales Order %2.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - Method CreateSalesLineBasedOnTransferReceiptNo - NamedType ErrMsgTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - Method 1766598096 - NamedType 4160988343" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total Product Segments : #1##########\Product Segment : #2######\Processing Concern Emails : #3###########\Generating Report #4###########\Mail Sent Count #5##############</source>
+          <target>Total Product Segments : #1##########\Product Segment : #2######\Processing Concern Emails : #3###########\Generating Report #4###########\Mail Sent Count #5##############</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - Method SendProductWiseReportMailToConcernedPersons - NamedType ProgressingTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - Method 1766598096 - NamedType 2679221408" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Salesperson Reports for %1 to %2.</source>
+          <target>Salesperson Reports for %1 to %2.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - Method SendProductWiseReportMailToConcernedPersons - NamedType SubjectTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - Method 1766598096 - NamedType 743575579" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dear Sir/Ma'm,</source>
+          <target>Dear Sir/Ma'm,</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - Method SendProductWiseReportMailToConcernedPersons - NamedType DearSir_Madam</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - Method 1766598096 - NamedType 2297243455" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Please find the attached file for reports.</source>
+          <target>Please find the attached file for reports.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - Method SendProductWiseReportMailToConcernedPersons - NamedType BodyText</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - Method 1766598096 - NamedType 3384497821" size-unit="char" translate="yes" xml:space="preserve">
+          <source>&lt;br&gt;</source>
+          <target>&lt;br&gt;</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - Method SendProductWiseReportMailToConcernedPersons - NamedType SingleLineBreak</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - Method 1766598096 - NamedType 2597989936" size-unit="char" translate="yes" xml:space="preserve">
+          <source>&lt;br&gt;&lt;br&gt;</source>
+          <target>&lt;br&gt;&lt;br&gt;</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - Method SendProductWiseReportMailToConcernedPersons - NamedType DoubleLineBreak</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - Method 1766598096 - NamedType 1193571960" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Regards,</source>
+          <target>Regards,</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - Method SendProductWiseReportMailToConcernedPersons - NamedType RegardsTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - Method 123570030 - NamedType 743575579" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dear Sir/Ma'm,</source>
+          <target>Dear Sir/Ma'm,</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - Method SendBillDeliveryMail - NamedType DearSir_Madam</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - Method 123570030 - NamedType 2764875968" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transport Name</source>
+          <target>Transport Name</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - Method SendBillDeliveryMail - NamedType TransportName</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - Method 123570030 - NamedType 3821750686" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bill No</source>
+          <target>Bill No</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - Method SendBillDeliveryMail - NamedType BillNo</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - Method 123570030 - NamedType 4179060837" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bilty No</source>
+          <target>Bilty No</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - Method SendBillDeliveryMail - NamedType BiltyNo</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - Method 123570030 - NamedType 699444263" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Booking Date</source>
+          <target>Booking Date</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - Method SendBillDeliveryMail - NamedType BookingDate</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - Method 123570030 - NamedType 2522461603" size-unit="char" translate="yes" xml:space="preserve">
+          <source>:</source>
+          <target>:</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - Method SendBillDeliveryMail - NamedType COLON</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - Method 123570030 - NamedType 2297243455" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Please find the below delivery details for bill.</source>
+          <target>Please find the below delivery details for bill.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - Method SendBillDeliveryMail - NamedType BodyText</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - Method 123570030 - NamedType 2180015603" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Delivery Details for Bill No. - %1.</source>
+          <target>Delivery Details for Bill No. - %1.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - Method SendBillDeliveryMail - NamedType SubjectText</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - Method 123570030 - NamedType 3384497821" size-unit="char" translate="yes" xml:space="preserve">
+          <source>&lt;br&gt;</source>
+          <target>&lt;br&gt;</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - Method SendBillDeliveryMail - NamedType SingleLineBreak</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - Method 123570030 - NamedType 2597989936" size-unit="char" translate="yes" xml:space="preserve">
+          <source>&lt;br&gt;&lt;br&gt;</source>
+          <target>&lt;br&gt;&lt;br&gt;</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - Method SendBillDeliveryMail - NamedType DoubleLineBreak</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2438769329 - Method 123570030 - NamedType 1193571960" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Regards,</source>
+          <target>Regards,</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Mgt. - Method SendBillDeliveryMail - NamedType RegardsTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 508741590 - NamedType 2476940767" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sending Data...</source>
+          <target>Sending Data...</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Web Service Mgt. - NamedType Text000</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 508741590 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sending Data failed!\Statuscode: %1\Description: %2</source>
+          <target>Sending Data failed!\Statuscode: %1\Description: %2</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Web Service Mgt. - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 508741590 - NamedType 1926368027" size-unit="char" translate="yes" xml:space="preserve">
+          <source>API credential does not match.</source>
+          <target>API credential does not match.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Web Service Mgt. - NamedType Error100</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 508741590 - NamedType 2564064644" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bill Already Exists.</source>
+          <target>Bill Already Exists.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Web Service Mgt. - NamedType Error101</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 508741590 - NamedType 3201761261" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Exception while saving bill details.</source>
+          <target>Exception while saving bill details.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Web Service Mgt. - NamedType Error102</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 508741590 - NamedType 3839457878" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unknown exceptions.</source>
+          <target>Unknown exceptions.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Web Service Mgt. - NamedType Error103</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 508741590 - NamedType 3670548855" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invalid Bill Model.</source>
+          <target>Invalid Bill Model.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Web Service Mgt. - NamedType Error104</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 508741590 - NamedType 13278176" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bill Not Found.</source>
+          <target>Bill Not Found.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Web Service Mgt. - NamedType Error105</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 508741590 - NamedType 865001342" size-unit="char" translate="yes" xml:space="preserve">
+          <source>API credential does not match.</source>
+          <target>API credential does not match.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Web Service Mgt. - NamedType CError100</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 508741590 - NamedType 227304725" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bill does not exists.</source>
+          <target>Bill does not exists.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Web Service Mgt. - NamedType CError101</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 508741590 - NamedType 3884575404" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Exception while saving credit note details.</source>
+          <target>Exception while saving credit note details.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Web Service Mgt. - NamedType CError102</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 508741590 - NamedType 3246878787" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unknown exceptions.</source>
+          <target>Unknown exceptions.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Web Service Mgt. - NamedType CError103</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 508741590 - NamedType 2609182170" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invalid Bill Model.</source>
+          <target>Invalid Bill Model.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Web Service Mgt. - NamedType CError104</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 508741590 - NamedType 1971485553" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bill does not exists (for Sales Return)</source>
+          <target>Bill does not exists (for Sales Return)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit IRD Web Service Mgt. - NamedType CError105</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 596487216 - NamedType 2476940767" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total Count #1########### \Processing #2##########\Modifying #3###########</source>
+          <target>Total Count #1########### \Processing #2##########\Modifying #3###########</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit TempCode SRT - NamedType Text000</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2842567388 - NamedType 2476940767" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sending SMS...</source>
+          <target>Sending SMS...</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SMS Web Service - NamedType Text000</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2842567388 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sending SMS message failed!\Statuscode: %1\Description: %2</source>
+          <target>Sending SMS message failed!\Statuscode: %1\Description: %2</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SMS Web Service - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1157593910 - NamedType 3497771320" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Do you want to reset no. of Print to Zero for invoice %1?</source>
+          <target>Do you want to reset no. of Print to Zero for invoice %1?</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Reset No. of Print - NamedType CfmResetNoOfPrint</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 820563188 - NamedType 687155984" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Your payment due is %1 and your remaining balance is %2</source>
+          <target>Your payment due is %1 and your remaining balance is %2</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit BG Notification Mail Original - NamedType BGmsgBody</note>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

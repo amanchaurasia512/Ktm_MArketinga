@@ -1,0 +1,1119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="en-US" original="Please update this value">
+    <body>
+      <group id="body">
+        <trans-unit id="Table 1518995754 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CAL Test Suite</source>
+          <target>CAL Test Suite</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Suite - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1518995754 - Field 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <target>Name</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Suite - Field Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1518995754 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <target>Description</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Suite - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1518995754 - Field 2885114547 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tests to Execute</source>
+          <target>Tests to Execute</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Suite - Field Tests to Execute - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1518995754 - Field 663496373 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tests not Executed</source>
+          <target>Tests not Executed</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Suite - Field Tests not Executed - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1518995754 - Field 1600162533 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Failures</source>
+          <target>Failures</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Suite - Field Failures - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1518995754 - Field 1011026909 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Last Run</source>
+          <target>Last Run</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Suite - Field Last Run - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1518995754 - Field 36190024 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Export</source>
+          <target>Export</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Suite - Field Export - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1518995754 - Field 1159403147 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Attachment</source>
+          <target>Attachment</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Suite - Field Attachment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1518995754 - Field 997427839 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Update Test Coverage Map</source>
+          <target>Update Test Coverage Map</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Suite - Field Update Test Coverage Map - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1518995754 - NamedType 3621708543" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Could not export Unit Test XML definition.</source>
+          <target>Could not export Unit Test XML definition.</target>
+          <note from="Developer" annotates="general" priority="2">, Locked=true</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Suite - NamedType CouldNotExportErr</note>
+        </trans-unit>
+        <trans-unit id="Table 1518995754 - NamedType 3754395483" size-unit="char" translate="yes" xml:space="preserve">
+          <source>UT</source>
+          <target>UT</target>
+          <note from="Developer" annotates="general" priority="2">, Locked=true</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Suite - NamedType UTTxt</note>
+        </trans-unit>
+        <trans-unit id="Table 1920069370 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CAL Test Line</source>
+          <target>CAL Test Line</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Line - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1920069370 - Field 1008249628 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Test Suite</source>
+          <target>Test Suite</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Line - Field Test Suite - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1920069370 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line No.</source>
+          <target>Line No.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Line - Field Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1920069370 - Field 158172202 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line Type</source>
+          <target>Line Type</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Line - Field Line Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1920069370 - Field 158172202 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Group,Codeunit,Function</source>
+          <target>Group,Codeunit,Function</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Line - Field Line Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 1920069370 - Field 2020439447 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Test Codeunit</source>
+          <target>Test Codeunit</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Line - Field Test Codeunit - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1920069370 - Field 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <target>Name</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Line - Field Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1920069370 - Field 3951948734 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Function</source>
+          <target>Function</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Line - Field Function - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1920069370 - Field 3851712227 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Run</source>
+          <target>Run</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Line - Field Run - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1920069370 - Field 472338107 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Result</source>
+          <target>Result</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Line - Field Result - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1920069370 - Field 472338107 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,Failure,Success,Skipped</source>
+          <target> ,Failure,Success,Skipped</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Line - Field Result - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 1920069370 - Field 3766370918 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>First Error</source>
+          <target>First Error</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Line - Field First Error - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1920069370 - Field 2169532623 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Start Time</source>
+          <target>Start Time</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Line - Field Start Time - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1920069370 - Field 2147485682 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Finish Time</source>
+          <target>Finish Time</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Line - Field Finish Time - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1920069370 - Field 1789400218 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Level</source>
+          <target>Level</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Line - Field Level - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1920069370 - Field 713229269 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Hit Objects</source>
+          <target>Hit Objects</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Line - Field Hit Objects - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1920069370 - NamedType 3408308267" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You cannot change the value of the OnRun.</source>
+          <target>You cannot change the value of the OnRun.</target>
+          <note from="Developer" annotates="general" priority="2">, Locked=true</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Line - NamedType CannotChangeValueErr</note>
+        </trans-unit>
+        <trans-unit id="Table 3864849693 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CAL Test Codeunit</source>
+          <target>CAL Test Codeunit</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Codeunit - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3864849693 - Field 3641927271 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ID</source>
+          <target>ID</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Codeunit - Field ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3864849693 - Field 3374690962 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>File</source>
+          <target>File</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Codeunit - Field File - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1378328642 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CAL Test Enabled Codeunit</source>
+          <target>CAL Test Enabled Codeunit</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Enabled Codeunit - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1378328642 - Field 4200184881 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No.</source>
+          <target>No.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Enabled Codeunit - Field No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1378328642 - Field 3515289124 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Test Codeunit ID</source>
+          <target>Test Codeunit ID</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Enabled Codeunit - Field Test Codeunit ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 517039521 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CAL Test Method</source>
+          <target>CAL Test Method</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Method - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 517039521 - Field 3515289124 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Test Codeunit ID</source>
+          <target>Test Codeunit ID</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Method - Field Test Codeunit ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 517039521 - Field 2631505090 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Test Method Name</source>
+          <target>Test Method Name</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Method - Field Test Method Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1586732667 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CAL Test Result</source>
+          <target>CAL Test Result</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Result - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1586732667 - Field 4200184881 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No.</source>
+          <target>No.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Result - Field No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1586732667 - Field 3340827068 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Test Run No.</source>
+          <target>Test Run No.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Result - Field Test Run No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1586732667 - Field 893385458 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Codeunit ID</source>
+          <target>Codeunit ID</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Result - Field Codeunit ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1586732667 - Field 2967582120 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Codeunit Name</source>
+          <target>Codeunit Name</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Result - Field Codeunit Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1586732667 - Field 971044367 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Function Name</source>
+          <target>Function Name</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Result - Field Function Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1586732667 - Field 844698329 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Platform</source>
+          <target>Platform</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Result - Field Platform - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1586732667 - Field 844698329 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Classic,ServiceTier</source>
+          <target>Classic,ServiceTier</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Result - Field Platform - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 1586732667 - Field 472338107 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Result</source>
+          <target>Result</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Result - Field Result - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1586732667 - Field 472338107 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Passed,Failed,Inconclusive,Incomplete</source>
+          <target>Passed,Failed,Inconclusive,Incomplete</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Result - Field Result - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 1586732667 - Field 2914340940 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Restore</source>
+          <target>Restore</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Result - Field Restore - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1586732667 - Field 3370070017 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Execution Time</source>
+          <target>Execution Time</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Result - Field Execution Time - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1586732667 - Field 3676003639 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Error Code</source>
+          <target>Error Code</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Result - Field Error Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1586732667 - Field 2852966117 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Error Message</source>
+          <target>Error Message</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Result - Field Error Message - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1586732667 - Field 3374690962 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>File</source>
+          <target>File</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Result - Field File - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1586732667 - Field 313599960 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Call Stack</source>
+          <target>Call Stack</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Result - Field Call Stack - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1586732667 - Field 2708250016 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>User ID</source>
+          <target>User ID</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Result - Field User ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1586732667 - Field 2169532623 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Start Time</source>
+          <target>Start Time</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Result - Field Start Time - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1586732667 - Field 2147485682 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Finish Time</source>
+          <target>Finish Time</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Result - Field Finish Time - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1541678158 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CAL Test Coverage Map</source>
+          <target>CAL Test Coverage Map</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Coverage Map - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1541678158 - Field 3515289124 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Test Codeunit ID</source>
+          <target>Test Codeunit ID</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Coverage Map - Field Test Codeunit ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1541678158 - Field 1085746399 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Object Type</source>
+          <target>Object Type</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Coverage Map - Field Object Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1541678158 - Field 1085746399 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>,Table,,Report,,Codeunit,XMLport,MenuSuite,Page,Query</source>
+          <target>,Table,,Report,,Codeunit,XMLport,MenuSuite,Page,Query</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Coverage Map - Field Object Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 1541678158 - Field 3711240756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Object ID</source>
+          <target>Object ID</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Coverage Map - Field Object ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1541678158 - Field 1418569422 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Object Name</source>
+          <target>Object Name</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Coverage Map - Field Object Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1541678158 - Field 2267534132 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Hit by Test Codeunits</source>
+          <target>Hit by Test Codeunits</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Coverage Map - Field Hit by Test Codeunits - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1541678158 - Field 1946847614 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Test Codeunit Name</source>
+          <target>Test Codeunit Name</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CAL Test Coverage Map - Field Test Codeunit Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 66636512 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>English-Nepali Date</source>
+          <target>English-Nepali Date</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table English-Nepali Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 66636512 - Field 1006250286 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,January,February,March,April,May,June,July,August,September,October,November,December</source>
+          <target> ,January,February,March,April,May,June,July,August,September,October,November,December</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table English-Nepali Date - Field English Month - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 66636512 - Field 2906764345 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,Baisakh,Jestha,Asar,Shrawan,Bhadra,Ashoj,Kartik,Mangsir,Poush,Margh,Falgun,Chaitra</source>
+          <target> ,Baisakh,Jestha,Asar,Shrawan,Bhadra,Ashoj,Kartik,Mangsir,Poush,Margh,Falgun,Chaitra</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table English-Nepali Date - Field Nepali Month - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 66636512 - Field 166358986 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,Weekend,Public,Festival</source>
+          <target> ,Weekend,Public,Festival</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table English-Nepali Date - Field Holiday Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 3912891083 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invoice Materialize View</source>
+          <target>Invoice Materialize View</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Invoice Materialize View - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3912891083 - Field 2363328873 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Invoice,Sales Credit Memo</source>
+          <target>Sales Invoice,Sales Credit Memo</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Invoice Materialize View - Field Document Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 3912891083 - Field 1753214751 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer</source>
+          <target>Customer</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Invoice Materialize View - Field Source Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 3912891083 - Field 1577567912 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 1 Code</source>
+          <target>Shortcut Dimension 1 Code</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Invoice Materialize View - Field Shortcut Dimension 1 Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3912891083 - Field 1003760969 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 2 Code</source>
+          <target>Shortcut Dimension 2 Code</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Invoice Materialize View - Field Shortcut Dimension 2 Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3912891083 - Field 1832759837 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Not Valid,Pending,Sync In Progress,Sync Completed</source>
+          <target>Not Valid,Pending,Sync In Progress,Sync Completed</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Invoice Materialize View - Field Sync Status - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 4007219374 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Invoice Print History</source>
+          <target>Sales Invoice Print History</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Sales Invoice Print History - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4007219374 - Field 2363328873 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Invoice,Sales Credit Memo</source>
+          <target>Sales Invoice,Sales Credit Memo</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Sales Invoice Print History - Field Document Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 4007219374 - Field 1878130204 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tax Invoice,Invoice,Copy of Original</source>
+          <target>Tax Invoice,Invoice,Copy of Original</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Sales Invoice Print History - Field Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 3689496077 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TDS Posting Buffer</source>
+          <target>TDS Posting Buffer</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table TDS Posting Buffer - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3689496077 - Field 845484701 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,Purchase TDS,Sales TDS</source>
+          <target> ,Purchase TDS,Sales TDS</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table TDS Posting Buffer - Field TDS Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cust-Vend Ledger</source>
+          <target>Cust-Vend Ledger</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Entry No.</source>
+          <target>Entry No.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Entry No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 3246298494 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,Customer,Vendor</source>
+          <target> ,Customer,Vendor</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Entry From - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 3762261203 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Party No.</source>
+          <target>Party No.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Party No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 3710982960 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting Date</source>
+          <target>Posting Date</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Posting Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 2363328873 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document Type</source>
+          <target>Document Type</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Document Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 2363328873 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,Payment,Invoice,Credit Memo,Finance Charge Memo,Reminder,Refund</source>
+          <target> ,Payment,Invoice,Credit Memo,Finance Charge Memo,Reminder,Refund</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Document Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 486908828 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document No.</source>
+          <target>Document No.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Document No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <target>Description</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 4198939294 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Currency Code</source>
+          <target>Currency Code</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Currency Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 636392376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount</source>
+          <target>Amount</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 2975378708 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Remaining Amount</source>
+          <target>Remaining Amount</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Remaining Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 2617626588 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Original Amt. (LCY)</source>
+          <target>Original Amt. (LCY)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Original Amt. (LCY) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 1850328511 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Remaining Amt. (LCY)</source>
+          <target>Remaining Amt. (LCY)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Remaining Amt. (LCY) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 592951229 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount (LCY)</source>
+          <target>Amount (LCY)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Amount (LCY) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 3393883294 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales (LCY)</source>
+          <target>Sales (LCY)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Sales/Purch. (LCY) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 2618409075 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Profit (LCY)</source>
+          <target>Profit (LCY)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Profit (LCY) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 1478642327 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Inv. Discount (LCY)</source>
+          <target>Inv. Discount (LCY)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Inv. Discount (LCY) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 1225278069 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sell-to Customer No.</source>
+          <target>Sell-to Customer No.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Sell-to Customer No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 1915851633 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer Posting Group</source>
+          <target>Customer Posting Group</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Posting Group - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 1303377601 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Global Dimension 1 Code</source>
+          <target>Global Dimension 1 Code</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Global Dimension 1 Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 1337243520 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Global Dimension 2 Code</source>
+          <target>Global Dimension 2 Code</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Global Dimension 2 Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 553464652 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Salesperson Code</source>
+          <target>Salesperson Code</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Salesperson Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 2708250016 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>User ID</source>
+          <target>User ID</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field User ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 2720485332 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Source Code</source>
+          <target>Source Code</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Source Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 926489874 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>On Hold</source>
+          <target>On Hold</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field On Hold - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 2865137134 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Applies-to Doc. Type</source>
+          <target>Applies-to Doc. Type</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Applies-to Doc. Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 2865137134 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,Payment,Invoice,Credit Memo,Finance Charge Memo,Reminder,Refund</source>
+          <target> ,Payment,Invoice,Credit Memo,Finance Charge Memo,Reminder,Refund</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Applies-to Doc. Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 2899774127 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Applies-to Doc. No.</source>
+          <target>Applies-to Doc. No.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Applies-to Doc. No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 4259830144 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Open</source>
+          <target>Open</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Open - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 4085727052 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Due Date</source>
+          <target>Due Date</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Due Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 1636953138 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pmt. Discount Date</source>
+          <target>Pmt. Discount Date</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Pmt. Discount Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 1205231908 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Original Pmt. Disc. Possible</source>
+          <target>Original Pmt. Disc. Possible</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Original Pmt. Disc. Possible - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 1016272972 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pmt. Disc. Given (LCY)</source>
+          <target>Pmt. Disc. Given (LCY)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Pmt. Disc. Given (LCY) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 629037869 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Positive</source>
+          <target>Positive</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Positive - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 1223873614 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Closed by Entry No.</source>
+          <target>Closed by Entry No.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Closed by Entry No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 1561083893 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Closed at Date</source>
+          <target>Closed at Date</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Closed at Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 4155500631 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Closed by Amount</source>
+          <target>Closed by Amount</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Closed by Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 3093642907 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Applies-to ID</source>
+          <target>Applies-to ID</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Applies-to ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 2704330142 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Journal Batch Name</source>
+          <target>Journal Batch Name</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Journal Batch Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 1908046867 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reason Code</source>
+          <target>Reason Code</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Reason Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 824028820 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bal. Account Type</source>
+          <target>Bal. Account Type</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Bal. Account Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 824028820 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>G/L Account,Customer,Vendor,Bank Account,Fixed Asset</source>
+          <target>G/L Account,Customer,Vendor,Bank Account,Fixed Asset</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Bal. Account Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 1891586249 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bal. Account No.</source>
+          <target>Bal. Account No.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Bal. Account No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 3319631365 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transaction No.</source>
+          <target>Transaction No.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Transaction No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 3310568494 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Closed by Amount (LCY)</source>
+          <target>Closed by Amount (LCY)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Closed by Amount (LCY) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 2796346326 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Debit Amount</source>
+          <target>Debit Amount</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Debit Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 2556136339 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Credit Amount</source>
+          <target>Credit Amount</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Credit Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 322595695 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Debit Amount (LCY)</source>
+          <target>Debit Amount (LCY)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Debit Amount (LCY) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 4058933634 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Credit Amount (LCY)</source>
+          <target>Credit Amount (LCY)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Credit Amount (LCY) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 580412389 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document Date</source>
+          <target>Document Date</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Document Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 1527563463 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>External Document No.</source>
+          <target>External Document No.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field External Document No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 46769078 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Calculate Interest</source>
+          <target>Calculate Interest</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Calculate Interest - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 269047447 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Closing Interest Calculated</source>
+          <target>Closing Interest Calculated</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Closing Interest Calculated - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 1351594800 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No. Series</source>
+          <target>No. Series</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field No. Series - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 2878227749 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Closed by Currency Code</source>
+          <target>Closed by Currency Code</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Closed by Currency Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 2168275062 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Closed by Currency Amount</source>
+          <target>Closed by Currency Amount</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Closed by Currency Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 675239242 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Adjusted Currency Factor</source>
+          <target>Adjusted Currency Factor</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Adjusted Currency Factor - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 3826939645 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Original Currency Factor</source>
+          <target>Original Currency Factor</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Original Currency Factor - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 1077555671 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Original Amount</source>
+          <target>Original Amount</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Original Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 995090288 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Date Filter</source>
+          <target>Date Filter</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Date Filter - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 1639344207 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Remaining Pmt. Disc. Possible</source>
+          <target>Remaining Pmt. Disc. Possible</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Remaining Pmt. Disc. Possible - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 3192789907 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pmt. Disc. Tolerance Date</source>
+          <target>Pmt. Disc. Tolerance Date</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Pmt. Disc. Tolerance Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 1921836875 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Max. Payment Tolerance</source>
+          <target>Max. Payment Tolerance</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Max. Payment Tolerance - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 3149448505 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Last Issued Reminder Level</source>
+          <target>Last Issued Reminder Level</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Last Issued Reminder Level - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 1803429662 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Accepted Payment Tolerance</source>
+          <target>Accepted Payment Tolerance</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Accepted Payment Tolerance - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 3803148736 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Accepted Pmt. Disc. Tolerance</source>
+          <target>Accepted Pmt. Disc. Tolerance</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Accepted Pmt. Disc. Tolerance - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 3332542523 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pmt. Tolerance (LCY)</source>
+          <target>Pmt. Tolerance (LCY)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Pmt. Tolerance (LCY) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 184448389 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount to Apply</source>
+          <target>Amount to Apply</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Amount to Apply - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 1329258699 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>IC Partner Code</source>
+          <target>IC Partner Code</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field IC Partner Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 2686297204 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Applying Entry</source>
+          <target>Applying Entry</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Applying Entry - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 3744289816 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reversed</source>
+          <target>Reversed</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Reversed - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 1027046424 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reversed by Entry No.</source>
+          <target>Reversed by Entry No.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Reversed by Entry No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 230351473 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reversed Entry No.</source>
+          <target>Reversed Entry No.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Reversed Entry No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 1587433127 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepayment</source>
+          <target>Prepayment</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Prepayment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 3855271124 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment Method Code</source>
+          <target>Payment Method Code</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Payment Method Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 2553863078 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Applies-to Ext. Doc. No.</source>
+          <target>Applies-to Ext. Doc. No.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Applies-to Ext. Doc. No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 4068159240 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Recipient Bank Account</source>
+          <target>Recipient Bank Account</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Recipient Bank Account - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 3506248557 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Message to Recipient</source>
+          <target>Message to Recipient</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Message to Recipient - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 2477642958 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Exported to Payment File</source>
+          <target>Exported to Payment File</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Exported to Payment File - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 3322554545 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimension Set ID</source>
+          <target>Dimension Set ID</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Dimension Set ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - Field 4182352612 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Direct Debit Mandate ID</source>
+          <target>Direct Debit Mandate ID</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - Field Direct Debit Mandate ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - NamedType 2476940767" size-unit="char" translate="yes" xml:space="preserve">
+          <source>must have the same sign as %1</source>
+          <target>must have the same sign as %1</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - NamedType Text000</note>
+        </trans-unit>
+        <trans-unit id="Table 227506372 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>must not be larger than %1</source>
+          <target>must not be larger than %1</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cust-Vend Ledger - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Table 633105599 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document Class Master</source>
+          <target>Document Class Master</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Document Class Master - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 633105599 - Field 3314344300 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,Letter of Credit/Telex Transfer,T/R,Margin,PragyapanPatra,Party,IFB/Title,Demand loan</source>
+          <target> ,Letter of Credit/Telex Transfer,T/R,Margin,PragyapanPatra,Party,IFB/Title,Demand loan</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Document Class Master - Field Doc. Class Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 633105599 - Field 3699788827 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,Vendor,Bank</source>
+          <target> ,Vendor,Bank</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Document Class Master - Field Account Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 633105599 - Field 1861213814 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Global Dimension 1 Filter</source>
+          <target>Global Dimension 1 Filter</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Document Class Master - Field Global Dimension 1 Filter - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 633105599 - Field 588326355 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Global Dimension 2 Filter</source>
+          <target>Global Dimension 2 Filter</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Document Class Master - Field Global Dimension 2 Filter - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 633105599 - NamedType 3972140551" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1 should not be blank</source>
+          <target>%1 should not be blank</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Document Class Master - NamedType Text1001</note>
+        </trans-unit>
+        <trans-unit id="Table 633105599 - NamedType 1590263106" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1 cannot be deleted. %1 has General Ledger Entries</source>
+          <target>%1 cannot be deleted. %1 has General Ledger Entries</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Document Class Master - NamedType Text1002</note>
+        </trans-unit>
+        <trans-unit id="Table 633105599 - NamedType 952566489" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1 cannot be deleted. %1 has VAT Ledger Entries</source>
+          <target>%1 cannot be deleted. %1 has VAT Ledger Entries</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Document Class Master - NamedType Text1003</note>
+        </trans-unit>
+        <trans-unit id="Table 127869007 - Field 3246865201 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Credit Limit (LCY)</source>
+          <target>Credit Limit (LCY)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Customer Credit Limit Detail - Field Credit Limit (LCY) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 127869007 - Field 1303377601 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Global Dimension 1 Code</source>
+          <target>Global Dimension 1 Code</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Customer Credit Limit Detail - Field Global Dimension 1 Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 127869007 - Field 966740350 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment Terms Code</source>
+          <target>Payment Terms Code</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Customer Credit Limit Detail - Field Payment Terms Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 127869007 - Method 2451657066 - NamedType 2476940767" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Responsibility Center Cannot be Blank.</source>
+          <target>Responsibility Center Cannot be Blank.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Customer Credit Limit Detail - Method OnInsert - NamedType Text000</note>
+        </trans-unit>
+        <trans-unit id="Table 3365486648 - Field 1878130204 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,Purchase TDS,Sales TDS</source>
+          <target> ,Purchase TDS,Sales TDS</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table TDS Posting Group - Field Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 3365486648 - Field 63418190 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>G/L Account Name</source>
+          <target>G/L Account Name</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table TDS Posting Group - Field G/L Account Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 966094113 - Field 1753214751 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,Customer,Vendor,Employee</source>
+          <target> ,Customer,Vendor,Employee</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table TDS Entry - Field Source Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 966094113 - Field 845484701 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,Purchase TDS,Sales TDS</source>
+          <target> ,Purchase TDS,Sales TDS</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table TDS Entry - Field TDS Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 966094113 - Field 1343707150 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vendor Name</source>
+          <target>Vendor Name</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table TDS Entry - Field Source Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 966094113 - Field 3678262599 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>GL Account Name</source>
+          <target>GL Account Name</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table TDS Entry - Field GL Account Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 966094113 - NamedType 3548966285" size-unit="char" translate="yes" xml:space="preserve">
+          <source>System Created TDS Payment Entry for Doc. No. </source>
+          <target>System Created TDS Payment Entry for Doc. No. </target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table TDS Entry - NamedType TDS_Payment_Narration</note>
+        </trans-unit>
+        <trans-unit id="Table 966094113 - Method 2288571463 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Do you really want to reverse the selected TDS Payment Entries?</source>
+          <target>Do you really want to reverse the selected TDS Payment Entries?</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table TDS Entry - Method ReverseTDSPaymentEntry - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Table 966094113 - Method 2288571463 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The selected tds entries are reversed successfully.</source>
+          <target>The selected tds entries are reversed successfully.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table TDS Entry - Method ReverseTDSPaymentEntry - NamedType Text003</note>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>
