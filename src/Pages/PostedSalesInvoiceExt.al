@@ -6,14 +6,14 @@ pageextension 50510 "Posted Sales Invoice ext" extends "Posted Sales Invoice"
     {
         addafter("Document Date")
         {
-            field("Inventory Posting Group"; "Inventory Posting Group")
+            field("Inventory Posting Group"; Rec."Inventory Posting Group")
             {
                 ApplicationArea = all;
             }
         }
         addafter("No. Printed")
         {
-            field(Note; Note)
+            field(Note; Rec.Note)
             {
                 ApplicationArea = All;
             }
@@ -64,7 +64,7 @@ pageextension 50510 "Posted Sales Invoice ext" extends "Posted Sales Invoice"
                     SalesInvoicehdr: Record "Sales Invoice Header";
                 begin
                     SalesInvoicehdr.RESET;
-                    SalesInvoicehdr.SETRANGE("No.", "No.");
+                    SalesInvoicehdr.SETRANGE("No.", Rec."No.");
                     IF SalesInvoicehdr.FINDFIRST THEN
                         REPORT.RUN(50098, TRUE, TRUE, SalesInvoicehdr);
                 end;
@@ -91,7 +91,7 @@ pageextension 50510 "Posted Sales Invoice ext" extends "Posted Sales Invoice"
         SalesInvoicehdr: Record "Sales Invoice Header";
     BEGIN
         DeliveryDetails.RESET;
-        DeliveryDetails.SETRANGE("Source No.", "No.");
+        DeliveryDetails.SETRANGE("Source No.", Rec."No.");
         IF DeliveryDetails.FINDFIRST THEN
             DeliveryExistVisible := TRUE
         ELSE

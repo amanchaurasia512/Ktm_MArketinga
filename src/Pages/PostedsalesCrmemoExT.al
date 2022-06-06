@@ -11,7 +11,7 @@ pageextension 50512 "Posted Sales Cr Memo Ext " extends "Posted Sales Credit Mem
 
         addafter("Bill-to Contact")
         {
-            field("Inventory Posting Group"; "Inventory Posting Group")
+            field("Inventory Posting Group"; Rec."Inventory Posting Group")
             {
                 ApplicationArea = All;
             }
@@ -35,7 +35,7 @@ pageextension 50512 "Posted Sales Cr Memo Ext " extends "Posted Sales Credit Mem
                 var
                     IRDMgt: Codeunit "IRD Mgt.";
                 BEGIN
-                    IF NOT CONFIRM('Do you want to create transfer order for credit memo %1?', FALSE, "No.") THEN
+                    IF NOT CONFIRM('Do you want to create transfer order for credit memo %1?', FALSE, Rec."No.") THEN
                         EXIT;
                     IRDMgt.CreateTransferFromSalesCreditMemo(Rec);
                 end;
@@ -51,7 +51,7 @@ pageextension 50512 "Posted Sales Cr Memo Ext " extends "Posted Sales Credit Mem
                     SalesCrMemoHeader: Record "Sales Cr.Memo Header";
                 begin
                     SalesCrMemoHeader.RESET;
-                    SalesCrMemoHeader.SETRANGE("No.", "No.");
+                    SalesCrMemoHeader.SETRANGE("No.", Rec."No.");
                     IF SalesCrMemoHeader.FINDFIRST THEN
                         REPORT.RUN(50099, TRUE, TRUE, SalesCrMemoHeader);
                 end;

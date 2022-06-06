@@ -47,5 +47,6 @@ tableextension 50407 "Sales Shipment Header_ktm" extends "Sales Shipment Header"
         {
         }
     }
+
 }
 

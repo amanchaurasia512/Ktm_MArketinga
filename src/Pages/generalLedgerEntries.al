@@ -5,7 +5,7 @@ pageextension 50518 "Gen Ledger Entries Ext" extends "General Ledger Entries"
         // Add changes to page layout here
         addbefore("Posting Date")
         {
-            field("Transaction No."; "Transaction No.")
+            field("Transaction No."; Rec."Transaction No.")
             {
                 ApplicationArea = All;
             }
@@ -41,71 +41,71 @@ pageextension 50518 "Gen Ledger Entries Ext" extends "General Ledger Entries"
         }
         addafter("Entry No.")
         {
-            field(Narration; Narration)
+            field(Narration; Rec.Narration)
             {
                 ApplicationArea = All;
             }
-            field(PragyapanPatra; PragyapanPatra)
+            field(PragyapanPatra; Rec.PragyapanPatra)
             {
                 ApplicationArea = All;
             }
-            field("Localized VAT Identifier"; "Localized VAT Identifier")
+            field("Localized VAT Identifier"; Rec."Localized VAT Identifier")
             {
                 ApplicationArea = All;
             }
-            field("Letter of Credit/Telex Trans."; "Letter of Credit/Telex Trans.")
+            field("Letter of Credit/Telex Trans."; Rec."Letter of Credit/Telex Trans.")
             {
                 ApplicationArea = All;
             }
-            field("Party Type"; "Party Type")
+            field("Party Type"; Rec."Party Type")
             {
                 ApplicationArea = All;
             }
-            field("Party No."; "Party No.")
+            field("Party No."; Rec."Party No.")
             {
                 ApplicationArea = All;
             }
-            field("Party Name"; "Party Name")
+            field("Party Name"; Rec."Party Name")
             {
                 ApplicationArea = All;
             }
-            field(Loan; Loan)
+            field(Loan; Rec.Loan)
             {
                 ApplicationArea = All;
             }
-            field(Margin; Margin)
+            field(Margin; Rec.Margin)
             {
                 ApplicationArea = All;
             }
-            field("RBI Product Code"; "RBI Product Code")
+            field("RBI Product Code"; Rec."RBI Product Code")
             {
                 ApplicationArea = All;
             }
-            field("Employee Code"; "Employee Code")
+            field("Employee Code"; Rec."Employee Code")
             {
                 ApplicationArea = All;
             }
-            field("TDS Group"; "TDS Group")
+            field("TDS Group"; Rec."TDS Group")
             {
                 ApplicationArea = All;
             }
-            field("TDS%"; "TDS%")
+            field("TDS%"; Rec."TDS%")
             {
                 ApplicationArea = All;
             }
-            field("TDS Type"; "TDS Type")
+            field("TDS Type"; Rec."TDS Type")
             {
                 ApplicationArea = All;
             }
-            field("TDS Base Amount"; "TDS Base Amount")
+            field("TDS Base Amount"; Rec."TDS Base Amount")
             {
                 ApplicationArea = All;
             }
-            field("TDS Amount"; "TDS Amount")
+            field("TDS Amount"; Rec."TDS Amount")
             {
                 ApplicationArea = All;
             }
-            field("TDS Entry No."; "TDS Entry No.")
+            field("TDS Entry No."; Rec."TDS Entry No.")
             {
                 ApplicationArea = All;
             }
@@ -128,8 +128,8 @@ pageextension 50518 "Gen Ledger Entries Ext" extends "General Ledger Entries"
                     GLEntry: Record "G/L Entry";
                 begin
                     GLEntry.SETCURRENTKEY("Document No.");
-                    GLEntry.SETRANGE("Document No.", "Document No.");
-                    GLEntry.SETRANGE("Posting Date", "Posting Date");
+                    GLEntry.SETRANGE("Document No.", Rec."Document No.");
+                    GLEntry.SETRANGE("Posting Date", Rec."Posting Date");
                     IF GLEntry.FINDFIRST THEN
                         REPORT.RUN(50024, TRUE, FALSE, GLEntry);
                 end;
@@ -148,8 +148,8 @@ pageextension 50518 "Gen Ledger Entries Ext" extends "General Ledger Entries"
                 begin
                     GLEntry.RESET;
                     GLEntry.SETCURRENTKEY("Document No.");
-                    GLEntry.SETRANGE("Document No.", "Document No.");
-                    GLEntry.SETRANGE("Posting Date", "Posting Date");
+                    GLEntry.SETRANGE("Document No.", Rec."Document No.");
+                    GLEntry.SETRANGE("Posting Date", Rec."Posting Date");
                     IF GLEntry.FINDFIRST THEN
                         REPORT.RUN(50025, TRUE, FALSE, GLEntry);
                 end;
@@ -170,8 +170,8 @@ pageextension 50518 "Gen Ledger Entries Ext" extends "General Ledger Entries"
                 begin
                     GLEntry.RESET;
                     GLEntry.SETCURRENTKEY("Document No.");
-                    GLEntry.SETRANGE("Document No.", "Document No.");
-                    GLEntry.SETRANGE("Posting Date", "Posting Date");
+                    GLEntry.SETRANGE("Document No.", Rec."Document No.");
+                    GLEntry.SETRANGE("Posting Date", Rec."Posting Date");
                     IF GLEntry.FINDFIRST THEN
                         REPORT.RUN(50011, TRUE, FALSE, GLEntry);
                 end;

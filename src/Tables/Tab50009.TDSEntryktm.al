@@ -284,6 +284,7 @@ table 50009 "TDS Entry"
         GenJnlLine."System-Created Entry" := TRUE;
         GenJnlPost.RUN(GenJnlLine);
     end;
+
     procedure CopyFromGenJnlLine(GenJnlLine: Record "Gen. Journal Line")
 
     var

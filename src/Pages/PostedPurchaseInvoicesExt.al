@@ -23,34 +23,34 @@ pageextension 50516 "Posted Purchase Invoices Ext" extends "Posted Purchase Invo
         }
         addafter("Location Code")
         {
-            field("User ID"; "User ID")
+            field("User ID"; Rec."User ID")
             {
                 ApplicationArea = All;
             }
         }
         addafter("Shipment Method Code")
         {
-            field("Purchase Consignment No."; "Purchase Consignment No.")
+            field("Purchase Consignment No."; Rec."Purchase Consignment No.")
             {
                 ApplicationArea = All;
             }
-            field("Letter of Credit/Telex Trans."; "Letter of Credit/Telex Trans.")
+            field("Letter of Credit/Telex Trans."; Rec."Letter of Credit/Telex Trans.")
             {
                 ApplicationArea = All;
             }
-            field(PragyapanPatra; PragyapanPatra)
+            field(PragyapanPatra; Rec.PragyapanPatra)
             {
                 ApplicationArea = All;
             }
-            field("Party Type"; "Party Type")
+            field("Party Type"; Rec."Party Type")
             {
                 ApplicationArea = All;
             }
-            field("Nepali Date"; "Nepali Date")
+            field("Nepali Date"; Rec."Nepali Date")
             {
                 ApplicationArea = All;
             }
-            field(Delete; Delete)
+            field(Delete; Rec.Delete)
             {
                 ApplicationArea = All;
             }

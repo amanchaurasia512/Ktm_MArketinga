@@ -4,17 +4,15 @@ codeunit 50501 "KtmMarketing.Mgt"
     var
         xGenJnlLine: Record "Gen. Journal Line";
     begin
-        WITH GenJnlLine DO BEGIN
-            xGenJnlLine.RESET;
-            xGenJnlLine.SETRANGE("Journal Template Name", GenJnlLine."Journal Template Name");
-            xGenJnlLine.SETRANGE("Journal Batch Name", GenJnlLine."Journal Batch Name");
-            xGenJnlLine.SETRANGE("Document No.", GenJnlLine."Document No.");
-            IF xGenJnlLine.FINDFIRST THEN
-                REPEAT
-                    IF xGenJnlLine."Posting Date" <> GenJnlLine."Posting Date" THEN
-                        ERROR('Multiple Posting Date with same Document No. cannot be posted');
-                UNTIL xGenJnlLine.NEXT = 0;
-        END;
+        xGenJnlLine.RESET;
+        xGenJnlLine.SETRANGE("Journal Template Name", GenJnlLine."Journal Template Name");
+        xGenJnlLine.SETRANGE("Journal Batch Name", GenJnlLine."Journal Batch Name");
+        xGenJnlLine.SETRANGE("Document No.", GenJnlLine."Document No.");
+        IF xGenJnlLine.FINDFIRST THEN
+            REPEAT
+                IF xGenJnlLine."Posting Date" <> GenJnlLine."Posting Date" THEN
+                    ERROR('Multiple Posting Date with same Document No. cannot be posted');
+            UNTIL xGenJnlLine.NEXT = 0;
     end;
 
     procedure GetTDSGLCodeName(var GenJnlLine: Record "Gen. Journal Line")
@@ -25,17 +23,15 @@ codeunit 50501 "KtmMarketing.Mgt"
         //TDS1.00
         CLEAR(GLAccountNo);
         CLEAR(GLAccountName);
-        WITH GenJnlLine DO BEGIN
-            IF "TDS Group" <> '' THEN BEGIN
-                TDSpostingGroup.RESET;
-                TDSpostingGroup.SETRANGE(Code, "TDS Group");
-                IF TDSpostingGroup.FINDFIRST THEN BEGIN
-                    GLAccountNo := TDSpostingGroup."GL Account No.";
-                    GLAccount.RESET;
-                    GLAccount.SETRANGE("No.", GLAccountNo);
-                    IF GLAccount.FINDFIRST THEN
-                        GLAccountName := GLAccount.Name;
-                END;
+        IF GenJnlLine."TDS Group" <> '' THEN BEGIN
+            TDSpostingGroup.RESET;
+            TDSpostingGroup.SETRANGE(Code, GenJnlLine."TDS Group");
+            IF TDSpostingGroup.FINDFIRST THEN BEGIN
+                GLAccountNo := TDSpostingGroup."GL Account No.";
+                GLAccount.RESET;
+                GLAccount.SETRANGE("No.", GLAccountNo);
+                IF GLAccount.FINDFIRST THEN
+                    GLAccountName := GLAccount.Name;
             END;
         END;
         //TDS1.00
@@ -75,45 +71,43 @@ codeunit 50501 "KtmMarketing.Mgt"
         GenLineNo: Integer;
     BEGIN
         //TDS1.00
-        WITH GenJournalLine DO BEGIN
-            Gbl_Doc_No := "Document No.";
-            GenLine.RESET;
-            GenLine.SETRANGE("Journal Template Name", "Journal Template Name");
-            GenLine.SETRANGE("Journal Batch Name", "Journal Batch Name");
-            IF GenLine.FINDLAST THEN
-                GenLineNo := GenLine."Line No." + 10000
-            ELSE
-                GenLineNo := 10000;
+        Gbl_Doc_No := GenJournalLine."Document No.";
+        GenLine.RESET;
+        GenLine.SETRANGE("Journal Template Name", GenJournalLine."Journal Template Name");
+        GenLine.SETRANGE("Journal Batch Name", GenJournalLine."Journal Batch Name");
+        IF GenLine.FINDLAST THEN
+            GenLineNo := GenLine."Line No." + 10000
+        ELSE
+            GenLineNo := 10000;
 
-            TDSPostSetup.RESET;
-            TDSPostSetup.SETRANGE(Code, "TDS Group");
-            TDSPostSetup.FINDFIRST;
+        TDSPostSetup.RESET;
+        TDSPostSetup.SETRANGE(Code, GenJournalLine."TDS Group");
+        TDSPostSetup.FINDFIRST;
 
-            TDSLine.LOCKTABLE;
-            TDSLine.INIT;
-            TDSLine."Journal Template Name" := "Journal Template Name";
-            TDSLine."Journal Batch Name" := "Journal Batch Name";
-            TDSLine."Line No." := GenLineNo;
-            TDSLine."Document Type" := "Document Type";
-            TDSLine."Account Type" := TDSLine."Account Type"::"G/L Account";
-            TDSLine."Account No." := TDSPostSetup."GL Account No.";
-            TDSLine."Posting Date" := "Posting Date";
-            TDSLine."Document Date" := "Document Date";
-            TDSLine."Document No." := "Document No.";
-            TDSLine.Description := Description; //TDSDesc; //pram
-            TDSLine.Narration := Narration;
-            TDSLine.VALIDATE(Amount, -"TDS Amount");
-            TDSLine."Source Code" := "Source Code";
-            TDSLine."Shortcut Dimension 1 Code" := "Shortcut Dimension 1 Code";
-            TDSLine."Shortcut Dimension 2 Code" := "Shortcut Dimension 2 Code";
-            TDSLine."Dimension Set ID" := "Dimension Set ID";
-            TDSLine.Comment := Comment;
-            TDSLine."Party Type" := "Party Type";
-            TDSLine."Party No." := "Party No.";
-            TDSLine."External Document No." := "External Document No.";
-            TDSLine."Posting No. Series" := "Posting No. Series";
-            TDSLine.INSERT;
-        END;
+        TDSLine.LOCKTABLE;
+        TDSLine.INIT;
+        TDSLine."Journal Template Name" := GenJournalLine."Journal Template Name";
+        TDSLine."Journal Batch Name" := GenJournalLine."Journal Batch Name";
+        TDSLine."Line No." := GenLineNo;
+        TDSLine."Document Type" := GenJournalLine."Document Type";
+        TDSLine."Account Type" := TDSLine."Account Type"::"G/L Account";
+        TDSLine."Account No." := TDSPostSetup."GL Account No.";
+        TDSLine."Posting Date" := GenJournalLine."Posting Date";
+        TDSLine."Document Date" := GenJournalLine."Document Date";
+        TDSLine."Document No." := GenJournalLine."Document No.";
+        TDSLine.Description := GenJournalLine.Description; //TDSDesc; //pram
+        TDSLine.Narration := GenJournalLine.Narration;
+        TDSLine.VALIDATE(Amount, -GenJournalLine."TDS Amount");
+        TDSLine."Source Code" := GenJournalLine."Source Code";
+        TDSLine."Shortcut Dimension 1 Code" := GenJournalLine."Shortcut Dimension 1 Code";
+        TDSLine."Shortcut Dimension 2 Code" := GenJournalLine."Shortcut Dimension 2 Code";
+        TDSLine."Dimension Set ID" := GenJournalLine."Dimension Set ID";
+        TDSLine.Comment := GenJournalLine.Comment;
+        TDSLine."Party Type" := GenJournalLine."Party Type";
+        TDSLine."Party No." := GenJournalLine."Party No.";
+        TDSLine."External Document No." := GenJournalLine."External Document No.";
+        TDSLine."Posting No. Series" := GenJournalLine."Posting No. Series";
+        TDSLine.INSERT;
         //TDS1.00
     END;
 
@@ -131,62 +125,60 @@ codeunit 50501 "KtmMarketing.Mgt"
         SourceCodeSetup.GET;
         GetTDSGLCodeName(GenJournalLine);
 
-        WITH GenJournalLine DO BEGIN
-            IF "TDS Group" <> '' THEN BEGIN
-                IF (("Source Code" = SourceCodeSetup."General Journal") OR ("Source Code" = SourceCodeSetup."Payment Journal") OR
-                  ("Source Code" = SourceCodeSetup."Cash Receipt Journal")) THEN BEGIN
-                    GenJnlLineRec.RESET;
-                    GenJnlLineRec.SETRANGE("Document No.", Doc_No);
-                    GenJnlLineRec.SETRANGE("Posting Date", "Posting Date");
-                    GenJnlLineRec.SETFILTER("Line No.", '<>%1', "Line No.");
-                    GenJnlLineRec.SETFILTER("Party Type", '<>%1', GenJnlLineRec."Party Type"::" ");
-                    GenJnlLineRec.SETFILTER("Party No.", '<>%1', ''); //party type and no filter added here //Amsa
-                    GenJnlLineRec.FINDFIRST;
-                END;
-
-                TDSEntry1.INIT;
-                TDSEntry.RESET;
-                IF TDSEntry.FINDLAST THEN
-                    TDSEntry1."Entry No." := TDSEntry."Entry No." + 1
-                ELSE
-                    TDSEntry1."Entry No." := 1;
-                TDSEntry1."Posting Date" := GenJournalLine."Posting Date";
-                TDSEntry1."Document No." := GenJournalLine."Document No.";
-                IF GenJournalLine."Party Type" = GenJournalLine."Party Type"::Vendor THEN
-                    TDSEntry1."Source Type" := TDSEntry1."Source Type"::Vendor
-                ELSE
-                    IF GenJournalLine."Party Type" = GenJournalLine."Party Type"::Customer THEN
-                        TDSEntry1."Source Type" := TDSEntry1."Source Type"::Customer
-                    ELSE
-                        IF GenJournalLine."Party Type" = GenJournalLine."Party Type"::Employee THEN
-                            TDSEntry1."Source Type" := TDSEntry1."Source Type"::Employee;
-
-                IF (("Source Code" = SourceCodeSetup."General Journal") OR ("Source Code" = SourceCodeSetup."Payment Journal") OR
-                 ("Source Code" = SourceCodeSetup."Cash Receipt Journal")) THEN BEGIN
-                    TDSEntry1."Bill-to/Pay-to No." := GenJnlLineRec."Party No.";
-                END ELSE BEGIN
-                    TDSEntry1."Bill-to/Pay-to No." := GenJournalLine."Source No.";
-                END;
-                TDSEntry1."Source Name" := GetTDSSourceName(GenJnlLineRec);
-                TDSEntry1."TDS Posting Group" := GenJournalLine."TDS Group";
-                TDSEntry1."TDS%" := GenJournalLine."TDS%";
-                TDSEntry1.Base := GenJournalLine."TDS Base Amount";
-                TDSEntry1."TDS Amount" := GenJournalLine."TDS Amount";
-                TDSEntry1."User ID" := USERID;
-                TDSEntry1."Transaction No." := NextTransactionNo;
-                TDSEntry1."Source Code" := GenJournalLine."Source Code";
-                TDSEntry1."External Document No." := GenJournalLine."External Document No.";
-                TDSEntry1."Document Date" := GenJournalLine."Document Date";
-                TDSEntry1."Dimension Set ID" := GenJournalLine."Dimension Set ID";
-                TDSEntry1."Shortcut Dimension 1 Code" := GenJournalLine."Shortcut Dimension 1 Code";
-                TDSEntry1."Shortcut Dimension 2 Code" := GenJournalLine."Shortcut Dimension 2 Code";
-                TDSEntry1."TDS Type" := GenJournalLine."TDS Type";
-                TDSEntry1."Source Name" := VendorName;
-                TDSEntry1."GL Account Name" := GLAccountName;
-                TDSEntry1."Main G/L Account" := GenJournalLine."Main G/L Account";
-                TDSEntry1."G/L Entry No." := GLEntryNo; //pram
-                TDSEntry1.INSERT(TRUE);
+        IF GenJournalLine."TDS Group" <> '' THEN BEGIN
+            IF ((GenJournalLine."Source Code" = SourceCodeSetup."General Journal") OR (GenJournalLine."Source Code" = SourceCodeSetup."Payment Journal") OR
+              (GenJournalLine."Source Code" = SourceCodeSetup."Cash Receipt Journal")) THEN BEGIN
+                GenJnlLineRec.RESET;
+                GenJnlLineRec.SETRANGE("Document No.", Doc_No);
+                GenJnlLineRec.SETRANGE("Posting Date", GenJournalLine."Posting Date");
+                GenJnlLineRec.SETFILTER("Line No.", '<>%1', GenJournalLine."Line No.");
+                GenJnlLineRec.SETFILTER("Party Type", '<>%1', GenJnlLineRec."Party Type"::" ");
+                GenJnlLineRec.SETFILTER("Party No.", '<>%1', ''); //party type and no filter added here //Amsa
+                GenJnlLineRec.FINDFIRST;
             END;
+
+            TDSEntry1.INIT;
+            TDSEntry.RESET;
+            IF TDSEntry.FINDLAST THEN
+                TDSEntry1."Entry No." := TDSEntry."Entry No." + 1
+            ELSE
+                TDSEntry1."Entry No." := 1;
+            TDSEntry1."Posting Date" := GenJournalLine."Posting Date";
+            TDSEntry1."Document No." := GenJournalLine."Document No.";
+            IF GenJournalLine."Party Type" = GenJournalLine."Party Type"::Vendor THEN
+                TDSEntry1."Source Type" := TDSEntry1."Source Type"::Vendor
+            ELSE
+                IF GenJournalLine."Party Type" = GenJournalLine."Party Type"::Customer THEN
+                    TDSEntry1."Source Type" := TDSEntry1."Source Type"::Customer
+                ELSE
+                    IF GenJournalLine."Party Type" = GenJournalLine."Party Type"::Employee THEN
+                        TDSEntry1."Source Type" := TDSEntry1."Source Type"::Employee;
+
+            IF ((GenJournalLine."Source Code" = SourceCodeSetup."General Journal") OR (GenJournalLine."Source Code" = SourceCodeSetup."Payment Journal") OR
+             (GenJournalLine."Source Code" = SourceCodeSetup."Cash Receipt Journal")) THEN BEGIN
+                TDSEntry1."Bill-to/Pay-to No." := GenJnlLineRec."Party No.";
+            END ELSE BEGIN
+                TDSEntry1."Bill-to/Pay-to No." := GenJournalLine."Source No.";
+            END;
+            TDSEntry1."Source Name" := GetTDSSourceName(GenJnlLineRec);
+            TDSEntry1."TDS Posting Group" := GenJournalLine."TDS Group";
+            TDSEntry1."TDS%" := GenJournalLine."TDS%";
+            TDSEntry1.Base := GenJournalLine."TDS Base Amount";
+            TDSEntry1."TDS Amount" := GenJournalLine."TDS Amount";
+            TDSEntry1."User ID" := USERID;
+            TDSEntry1."Transaction No." := NextTransactionNo;
+            TDSEntry1."Source Code" := GenJournalLine."Source Code";
+            TDSEntry1."External Document No." := GenJournalLine."External Document No.";
+            TDSEntry1."Document Date" := GenJournalLine."Document Date";
+            TDSEntry1."Dimension Set ID" := GenJournalLine."Dimension Set ID";
+            TDSEntry1."Shortcut Dimension 1 Code" := GenJournalLine."Shortcut Dimension 1 Code";
+            TDSEntry1."Shortcut Dimension 2 Code" := GenJournalLine."Shortcut Dimension 2 Code";
+            TDSEntry1."TDS Type" := GenJournalLine."TDS Type";
+            TDSEntry1."Source Name" := VendorName;
+            TDSEntry1."GL Account Name" := GLAccountName;
+            TDSEntry1."Main G/L Account" := GenJournalLine."Main G/L Account";
+            TDSEntry1."G/L Entry No." := GLEntryNo; //pram
+            TDSEntry1.INSERT(TRUE);
         END;
         //TDS1.00
     END;
@@ -367,17 +359,15 @@ codeunit 50501 "KtmMarketing.Mgt"
 
     LOCAL PROCEDURE AddToApplicationLog(ItemApplnEntry: Record "Item Application Entry"; IsApplication: Boolean);
     BEGIN
-        WITH TempItemApplnEntryHistory DO BEGIN
-            IF FINDLAST THEN;
-            "Primary Entry No." += 1;
+        IF TempItemApplnEntryHistory.FINDLAST THEN;
+        TempItemApplnEntryHistory."Primary Entry No." += 1;
 
-            "Item Ledger Entry No." := ItemApplnEntry."Item Ledger Entry No.";
-            "Inbound Item Entry No." := ItemApplnEntry."Inbound Item Entry No.";
-            "Outbound Item Entry No." := ItemApplnEntry."Outbound Item Entry No.";
+        TempItemApplnEntryHistory."Item Ledger Entry No." := ItemApplnEntry."Item Ledger Entry No.";
+        TempItemApplnEntryHistory."Inbound Item Entry No." := ItemApplnEntry."Inbound Item Entry No.";
+        TempItemApplnEntryHistory."Outbound Item Entry No." := ItemApplnEntry."Outbound Item Entry No.";
 
-            "Cost Application" := IsApplication;
-            INSERT;
-        END;
+        TempItemApplnEntryHistory."Cost Application" := IsApplication;
+        TempItemApplnEntryHistory.INSERT;
     END;
 
     PROCEDURE ClearApplicationLog();
@@ -391,24 +381,22 @@ codeunit 50501 "KtmMarketing.Mgt"
         ItemApplnEntry: Record "Item Application Entry";
         ItemJnlPostLine: Codeunit "Item Jnl.-Post Line";
     BEGIN
-        WITH TempItemApplnEntryHistory DO BEGIN
-            ASCENDING(FALSE);
-            IF FINDSET THEN
-                REPEAT
-                    IF "Cost Application" THEN BEGIN
-                        ItemApplnEntry.SETRANGE("Inbound Item Entry No.", "Inbound Item Entry No.");
-                        ItemApplnEntry.SETRANGE("Outbound Item Entry No.", "Outbound Item Entry No.");
-                        ItemApplnEntry.FINDFIRST;
-                        ItemJnlPostLine.UnApply(ItemApplnEntry);
-                    END ELSE BEGIN
-                        ItemLedgEntry.GET("Item Ledger Entry No.");
-                        SetSkipApplicationCheck(TRUE);
-                        ItemJnlPostLine.ReApply(ItemLedgEntry, "Inbound Item Entry No.");
-                    END;
-                UNTIL NEXT = 0;
-            ClearApplicationLog;
-            ASCENDING(TRUE);
-        END;
+        TempItemApplnEntryHistory.ASCENDING(FALSE);
+        IF TempItemApplnEntryHistory.FINDSET THEN
+            REPEAT
+                IF TempItemApplnEntryHistory."Cost Application" THEN BEGIN
+                    ItemApplnEntry.SETRANGE("Inbound Item Entry No.", TempItemApplnEntryHistory."Inbound Item Entry No.");
+                    ItemApplnEntry.SETRANGE("Outbound Item Entry No.", TempItemApplnEntryHistory."Outbound Item Entry No.");
+                    ItemApplnEntry.FINDFIRST;
+                    ItemJnlPostLine.UnApply(ItemApplnEntry);
+                END ELSE BEGIN
+                    ItemLedgEntry.GET(TempItemApplnEntryHistory."Item Ledger Entry No.");
+                    SetSkipApplicationCheck(TRUE);
+                    ItemJnlPostLine.ReApply(ItemLedgEntry, TempItemApplnEntryHistory."Inbound Item Entry No.");
+                END;
+            UNTIL TempItemApplnEntryHistory.NEXT = 0;
+        ClearApplicationLog;
+        TempItemApplnEntryHistory.ASCENDING(TRUE);
     END;
 
     PROCEDURE ApplicationLogIsEmpty(): Boolean;
@@ -1095,26 +1083,24 @@ codeunit 50501 "KtmMarketing.Mgt"
         PurchLine: Record "Purchase Line";
     begin
         //KMT2016CU5 >>
-        WITH PurchHeader DO BEGIN
-            Vendor.GET(PurchHeader."Pay-to Vendor No.");
-            IF Vendor."Pragyapan Patra Mandatory" THEN
-                PurchHeader.TESTFIELD(PragyapanPatra)
-            ELSE
-                PurchHeader.TESTFIELD(PragyapanPatra, '');
-            PurchLine.RESET;
-            PurchLine.SETRANGE("Document No.", PurchHeader."No.");
-            IF PurchLine.FINDFIRST THEN
-                REPEAT
-                    IF PurchLine.Type = PurchLine.Type::"G/L Account" THEN BEGIN
-                        IF (PurchLine."VAT Base 1" = 0) AND (PurchLine."VAT Base Amount" = 0) THEN
-                            ERROR('Enter the vat base amount for the g/l account selected...');
-                    END;
-                    IF PurchLine.Type = PurchLine.Type::"Charge (Item)" THEN
-                        PurchLine.CheckVendorApplicableItemCharge;
-                //IF PurchLine."Item Category Code" <> '' THEN
-                //PurchLine.TESTFIELD(Quantity,1);
-                UNTIL PurchLine.NEXT = 0;
-        END;
+        Vendor.GET(PurchHeader."Pay-to Vendor No.");
+        IF Vendor."Pragyapan Patra Mandatory" THEN
+            PurchHeader.TESTFIELD(PragyapanPatra)
+        ELSE
+            PurchHeader.TESTFIELD(PragyapanPatra, '');
+        PurchLine.RESET;
+        PurchLine.SETRANGE("Document No.", PurchHeader."No.");
+        IF PurchLine.FINDFIRST THEN
+            REPEAT
+                IF PurchLine.Type = PurchLine.Type::"G/L Account" THEN BEGIN
+                    IF (PurchLine."VAT Base 1" = 0) AND (PurchLine."VAT Base Amount" = 0) THEN
+                        ERROR('Enter the vat base amount for the g/l account selected...');
+                END;
+                IF PurchLine.Type = PurchLine.Type::"Charge (Item)" THEN
+                    PurchLine.CheckVendorApplicableItemCharge;
+            //IF PurchLine."Item Category Code" <> '' THEN
+            //PurchLine.TESTFIELD(Quantity,1);
+            UNTIL PurchLine.NEXT = 0;
         //KMT2016CU5
     end;
 
@@ -1325,6 +1311,24 @@ codeunit 50501 "KtmMarketing.Mgt"
         FALedgerEntry."FA Item Charge" := GenJnlLine."FA Item Charge";
         FALedgerEntry.PragyapanPatra := GenJnlLine.PragyapanPatra;
         //KMT2016CU5 <<
+    end;
+
+    [EventSubscriber(ObjectType::Page, Page::"Payment Journal", 'OnBeforeUpdateBalance', '', true, false)]
+    local procedure OnBeforeUpdateBalance()
+    var
+        [InDataSet]
+        TDSBalanceVisible: Boolean;
+        TotalTDSBalanceVisible: Boolean;
+
+        GenJnlManagement: Codeunit GenJnlManagement;
+        PaymentJnlpage: Page "Payment Journal";
+        ShowTDSBalance: Boolean;
+        ShowTotalTDSBalance: Boolean;
+    begin
+        //GenJnlManagement.CalcTDSBalance(Rec,xRec,TDSBalance,TotalTDSBalance,ShowTDSBalance,ShowTotalTDSBalance); //TDS1.00
+        PaymentJnlpage.SHowDebitCreditTotal; //SRT July 7th 2019
+        TDSBalanceVisible := ShowTDSBalance;  //TDS1.00
+        TotalTDSBalanceVisible := ShowTotalTDSBalance; //TDS1.00
     end;
 
     var

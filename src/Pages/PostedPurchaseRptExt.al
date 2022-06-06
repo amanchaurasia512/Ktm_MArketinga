@@ -6,7 +6,7 @@ pageextension 50513 "Posted Purchase Rpt Ext" extends "Posted Purchase Receipt"
         // Add changes to page layout here
         addafter("Responsibility Center")
         {
-            field("VAT Base 1"; "VAT Base 1")
+            field("VAT Base 1"; Rec."VAT Base 1")
             {
                 Caption = 'Vat Base Amount';
                 Visible = true;

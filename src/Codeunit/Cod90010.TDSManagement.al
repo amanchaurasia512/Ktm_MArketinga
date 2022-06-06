@@ -244,31 +244,29 @@ codeunit 50502 "TDS Management"
             REPEAT
                 IF TDSEntry."Reversed by Entry No." <> 0 THEN
                     ERROR(CannotReverseErr);
-                WITH NewTDSEntry DO BEGIN
-                    NewTDSEntry := TDSEntry;
-                    "Posting Date" := TempReversedGLEntry."Posting Date";
-                    Base := -Base;
-                    "TDS Amount" := -"TDS Amount";
-                    "Transaction No." := GenJnlPostLine.GetNextTransactionNo;
-                    "Source Code" := SourceCode;
-                    "User ID" := USERID;
-                    "Entry No." := NextTdsEntryNo();
-                    "Reversed Entry No." := TDSEntry."Entry No.";
-                    Reversed := TRUE;
-                    // Reversal of Reversal
-                    IF TDSEntry."Reversed Entry No." <> 0 THEN BEGIN
-                        ReversedTDSEntry.GET(TDSEntry."Reversed Entry No.");
-                        ReversedTDSEntry."Reversed by Entry No." := 0;
-                        ReversedTDSEntry.Reversed := FALSE;
-                        ReversedTDSEntry.MODIFY;
-                        TDSEntry."Reversed Entry No." := "Entry No.";
-                        "Reversed by Entry No." := TDSEntry."Entry No.";
-                    END;
-                    TDSEntry."Reversed by Entry No." := "Entry No.";
-                    TDSEntry.Reversed := TRUE;
-                    TDSEntry.MODIFY;
-                    INSERT;
+                NewTDSEntry := TDSEntry;
+                NewTDSEntry."Posting Date" := TempReversedGLEntry."Posting Date";
+                NewTDSEntry.Base := -NewTDSEntry.Base;
+                NewTDSEntry."TDS Amount" := -NewTDSEntry."TDS Amount";
+                NewTDSEntry."Transaction No." := GenJnlPostLine.GetNextTransactionNo;
+                NewTDSEntry."Source Code" := SourceCode;
+                NewTDSEntry."User ID" := USERID;
+                NewTDSEntry."Entry No." := NextTdsEntryNo();
+                NewTDSEntry."Reversed Entry No." := TDSEntry."Entry No.";
+                NewTDSEntry.Reversed := TRUE;
+                // Reversal of Reversal
+                IF TDSEntry."Reversed Entry No." <> 0 THEN BEGIN
+                    ReversedTDSEntry.GET(TDSEntry."Reversed Entry No.");
+                    ReversedTDSEntry."Reversed by Entry No." := 0;
+                    ReversedTDSEntry.Reversed := FALSE;
+                    ReversedTDSEntry.MODIFY;
+                    TDSEntry."Reversed Entry No." := NewTDSEntry."Entry No.";
+                    NewTDSEntry."Reversed by Entry No." := TDSEntry."Entry No.";
                 END;
+                TDSEntry."Reversed by Entry No." := NewTDSEntry."Entry No.";
+                TDSEntry.Reversed := TRUE;
+                TDSEntry.MODIFY;
+                NewTDSEntry.INSERT;
             UNTIL TDSEntry.NEXT = 0;
         //TDS1.00
     END;
@@ -643,6 +641,6 @@ codeunit 50502 "TDS Management"
         TDSEntry: Record "TDS Entry";
         ToGLEntryNo: Integer;
         Text030: Label 'TDS Entry';
-        
+
 
 }

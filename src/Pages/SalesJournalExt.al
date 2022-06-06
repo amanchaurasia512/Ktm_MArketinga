@@ -75,15 +75,15 @@ pageextension 50520 "Sales Journal Ext" extends "Sales Journal"
             // {
             //     ApplicationArea = All;
             // }
-            field("Party Type"; "Party Type")
+            field("Party Type"; Rec."Party Type")
             {
                 ApplicationArea = All;
             }
-            field("Party No."; "Party No.")
+            field("Party No."; Rec."Party No.")
             {
                 ApplicationArea = All;
             }
-            field("Party Name"; "Party Name")
+            field("Party Name"; Rec."Party Name")
             {
                 ApplicationArea = All;
             }
@@ -104,56 +104,40 @@ pageextension 50520 "Sales Journal Ext" extends "Sales Journal"
         }
         addafter("VAT Amount")
         {
-            field("TDS Group"; "TDS Group")
+            field("TDS Group"; Rec."TDS Group")
             {
                 ApplicationArea = All;
             }
-            field("TDS%"; "TDS%")
+            field("TDS%"; Rec."TDS%")
             {
                 ApplicationArea = All;
             }
-            field("TDS Amount"; "TDS Amount")
+            field("TDS Amount"; Rec."TDS Amount")
             {
                 ApplicationArea = All;
             }
         }
         addafter("Bill-to/Pay-to No.")
         {
-            field("VAT Registration No."; "VAT Registration No.")
+            field("VAT Registration No."; Rec."VAT Registration No.")
             {
                 ApplicationArea = All;
             }
         }
         addafter("Direct Debit Mandate ID")
         {
-            field(Narration; Narration)
+            field(Narration; Rec.Narration)
             {
                 ApplicationArea = All;
             }
-            field("Skip Document Type"; "Skip Document Type")
+            field("Skip Document Type"; Rec."Skip Document Type")
             {
                 ApplicationArea = All;
             }
 
         }
-        addafter("Bal. Account Name")
-        { //verify
-            group("Debiit Amount")
-            {
-
-                field("Debit Amount1"; "Debit Amount")
-                {
-                    ApplicationArea = All;
-                    CaptionML = ENU = 'Debit Amount 1';
-                }
-                field("Credit Amount1"; "Credit Amount")
-                {
-                    ApplicationArea = All;
-                }
 
 
-            }
-        }
     }
 
     actions
@@ -164,6 +148,6 @@ pageextension 50520 "Sales Journal Ext" extends "Sales Journal"
     var
         myInt: Integer;
     begin
-        "Document Type" := "Document Type"::"Credit Memo";  //KMT2016CU5
+        Rec."Document Type" := Rec."Document Type"::"Credit Memo";  //KMT2016CU5
     end;
 }

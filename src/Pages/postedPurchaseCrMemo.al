@@ -26,11 +26,11 @@ pageextension 50514 "Posted purch Cr Memo Ext" extends "Posted Purchase Credit M
             // {
             //     ApplicationArea = All;
             // }
-            field("Letter of Credit/Telex Trans."; "Letter of Credit/Telex Trans.")
+            field("Letter of Credit/Telex Trans."; Rec."Letter of Credit/Telex Trans.")
             {
                 ApplicationArea = All;
             }
-            field(PragyapanPatra; PragyapanPatra)
+            field(PragyapanPatra; Rec.PragyapanPatra)
             {
                 ApplicationArea = All;
             }

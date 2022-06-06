@@ -50,7 +50,7 @@ pageextension 50519 "Customer Ledger Entries" extends "Customer Ledger Entries"
         }
         addafter("Remaining Amt. (LCY)")
         {
-            field("Customer Posting Group"; "Customer Posting Group")
+            field("Customer Posting Group"; Rec."Customer Posting Group")
             {
                 ApplicationArea = All;
             }
@@ -74,8 +74,8 @@ pageextension 50519 "Customer Ledger Entries" extends "Customer Ledger Entries"
                 begin
                     GLEntry.RESET;
                     GLEntry.SETCURRENTKEY("Document No.");
-                    GLEntry.SETRANGE("Document No.", "Document No.");
-                    GLEntry.SETRANGE("Posting Date", "Posting Date");
+                    GLEntry.SETRANGE("Document No.", Rec."Document No.");
+                    GLEntry.SETRANGE("Posting Date", Rec."Posting Date");
                     IF GLEntry.FINDFIRST THEN
                         REPORT.RUN(50024, TRUE, FALSE, GLEntry);
                 end;
@@ -94,8 +94,8 @@ pageextension 50519 "Customer Ledger Entries" extends "Customer Ledger Entries"
                 begin
                     GLEntry.RESET;
                     GLEntry.SETCURRENTKEY("Document No.");
-                    GLEntry.SETRANGE("Document No.", "Document No.");
-                    GLEntry.SETRANGE("Posting Date", "Posting Date");
+                    GLEntry.SETRANGE("Document No.", Rec."Document No.");
+                    GLEntry.SETRANGE("Posting Date", Rec."Posting Date");
                     IF GLEntry.FINDFIRST THEN
                         REPORT.RUN(50025, TRUE, FALSE, GLEntry);
                 end;

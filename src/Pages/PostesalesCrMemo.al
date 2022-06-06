@@ -15,7 +15,7 @@ pageextension 50515 "Posted sales Cr Memos Ext" extends "Posted Sales Credit Mem
         }
         addafter("Location Code")
         {
-            field("User ID"; "User ID")
+            field("User ID"; Rec."User ID")
             {
                 ApplicationArea = All;
             }
@@ -36,7 +36,7 @@ pageextension 50515 "Posted sales Cr Memos Ext" extends "Posted Sales Credit Mem
                     SalesCrMemoHeader: Record "Sales Cr.Memo Header";
                 begin
                     SalesCrMemoHeader.RESET;//aakrista 3/23/2022
-                    SalesCrMemoHeader.SETRANGE("No.", "No.");
+                    SalesCrMemoHeader.SETRANGE("No.", Rec."No.");
                     IF SalesCrMemoHeader.FINDFIRST THEN
                         REPORT.RUN(50099, TRUE, TRUE, SalesCrMemoHeader);
                 end;
