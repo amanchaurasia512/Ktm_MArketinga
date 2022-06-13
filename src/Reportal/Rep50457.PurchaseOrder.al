@@ -911,7 +911,7 @@ report 50457 "Purchase Order"
                     PurchPostPrepmt.CalcVATAmountLines("Purchase Header", PrepmtPurchLine, PrepmtVATAmountLine, 0);
                     PrepmtVATAmountLine.DeductVATAmountLine(PrePmtVATAmountLineDeduct);
                     PurchPostPrepmt.UpdateVATOnLines("Purchase Header", PrepmtPurchLine, PrepmtVATAmountLine, 0);
-                    PurchPostPrepmt.BuildInvLineBuffer2("Purchase Header", PrepmtPurchLine, 0, PrepmtInvBuf);
+                    //PurchPostPrepmt.BuildInvLineBuffer2("Purchase Header", PrepmtPurchLine, 0, PrepmtInvBuf);
                     PrepmtVATAmount := PrepmtVATAmountLine.GetTotalVATAmount;
                     PrepmtVATBaseAmount := PrepmtVATAmountLine.GetTotalVATBase;
                     PrepmtTotalAmountInclVAT := PrepmtVATAmountLine.GetTotalAmountInclVAT;
@@ -942,7 +942,7 @@ report 50457 "Purchase Order"
 
             trigger OnAfterGetRecord()
             begin
-                CurrReport.LANGUAGE := Language.GetLanguageID("Language Code");
+                //CurrReport.LANGUAGE := Language.GetLanguageID("Language Code");
 
                 CompanyInfo.GET;
 
@@ -1090,7 +1090,7 @@ report 50457 "Purchase Order"
 
         trigger OnOpenPage()
         begin
-            ArchiveDocument := PurchSetup."Archive Quotes and Orders";
+            //ArchiveDocument := PurchSetup."Archive Quotes and Orders";
             LogInteraction := SegManagement.FindInteractTmplCode(13) <> '';
 
             LogInteractionEnable := LogInteraction;

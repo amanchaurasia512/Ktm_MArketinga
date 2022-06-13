@@ -749,7 +749,7 @@ report 50455 "Purchase Debit Memo"
 
             trigger OnAfterGetRecord()
             begin
-                CurrReport.LANGUAGE := Language.GetLanguageID("Language Code");
+                //CurrReport.LANGUAGE := Language.GetLanguageID("Language Code");
 
                 CompanyInfo.GET;
 

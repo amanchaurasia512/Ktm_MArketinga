@@ -6,7 +6,7 @@ report 50052 "Sales Report from ILE"
 
     dataset
     {
-        dataitem(DataItem6836; Table18)
+        dataitem(Customer;Customer)
         {
             PrintOnlyIfDetail = true;
             RequestFilterFields = "No.", "Global Dimension 1 Filter", "Global Dimension 2 Filter", "Date Filter";
@@ -99,14 +99,14 @@ report 50052 "Sales Report from ILE"
             column(TotalCaption; TotalCaptionLbl)
             {
             }
-            dataitem(DataItem7209; Table32)
+            dataitem("Item Ledger Entry";"Item Ledger Entry")
             {
-                DataItemLink = Source No.=FIELD(No.),
-                               Posting Date=FIELD(Date Filter),
-                               Global Dimension 1 Code=FIELD(Global Dimension 1 Filter),
-                               Global Dimension 2 Code=FIELD(Global Dimension 2 Filter);
-                DataItemTableView = SORTING(Source Type,Source No.,Item No.,Variant Code,Posting Date)
-                                    WHERE(Source Type=CONST(Customer));
+                DataItemLink = "Source No."=FIELD("No."),
+                               "Posting Date"=FIELD("Date Filter"),
+                               "Global Dimension 1 Code"=FIELD("Global Dimension 1 Filter"),
+                               "Global Dimension 2 Code"=FIELD("Global Dimension 2 Filter");
+                DataItemTableView = SORTING("Source Type","Source No.","Item No.","Variant Code","Posting Date")
+                                    WHERE("Source Type"=CONST(Customer));
                 RequestFilterFields = "Item No.","Posting Date";
 
                 trigger OnAfterGetRecord()
@@ -119,7 +119,7 @@ report 50052 "Sales Report from ILE"
                       ValueEntryBuffer."Item No." := "Item No.";
                       IF "Document Type" = "Document Type"::"Sales Shipment" THEN BEGIN
                         ValueEntry1.RESET;
-                        ValueEntry1.SETRANGE("Item Ledger Entry No.","Entry No.");
+                        //ValueEntry1.SETRANGE("Item Ledger Entry No.","Entry No.");
                         IF ValueEntry1.FINDFIRST THEN
                           ValueEntryBuffer."Document No." := ValueEntry1."Document No.";
                       END ELSE
@@ -173,7 +173,7 @@ report 50052 "Sales Report from ILE"
                     //KMT2016CU5 <<
                 end;
             }
-            dataitem(DataItem5444;Table2000000026)
+            dataitem(Integer;Integer)
             {
                 DataItemTableView = SORTING(Number);
                 column(ValueEntryBuffer__Item_No__;ValueEntryBuffer."Item No.")
@@ -303,9 +303,9 @@ report 50052 "Sales Report from ILE"
 
     var
         Text000: Label 'Period: %1';
-        Item: Record "27";
-        ValueEntry: Record "5802";
-        ValueEntryBuffer: Record "5802" temporary;
+        Item: Record item;
+        ValueEntry: Record "Value Entry";
+        ValueEntryBuffer: Record "Value Entry" temporary;
         CustFilter: Text;
         ItemLedgEntryFilter: Text;
         PeriodText: Text[30];
@@ -325,13 +325,13 @@ report 50052 "Sales Report from ILE"
         Profit_Control46CaptionLbl: Label 'Profit';
         ProfitPct_Control47CaptionLbl: Label 'Profit %';
         TotalCaptionLbl: Label 'Total';
-        CompanyInfo: Record "79";
+        CompanyInfo: Record "Company Information";
         AmtInclVAT: Decimal;
-        SalesInvHeader: Record "112";
+        SalesInvHeader: Record "Sales Invoice Header";
         TotalAmt: Decimal;
         AreaCodeFilter: Text;
         ProductCodeFilter: Text;
-        ValueEntry1: Record "5802";
+        ValueEntry1: Record "Value Entry";
 
     [Scope('Internal')]
     procedure InitializeRequest(NewPagePerCustomer: Boolean)

@@ -6,9 +6,9 @@ report 50061 "Trial Balance Plus All"
 
     dataset
     {
-        dataitem(DataItem6710; Table15)
+        dataitem("G/L Account";"G/L Account")
         {
-            DataItemTableView = SORTING (No.);
+            DataItemTableView = SORTING ("No.");
             RequestFilterFields = "No.", "Account Type", "Date Filter", "Global Dimension 1 Filter", "Global Dimension 2 Filter";
             column(STRSUBSTNO_Text000_PeriodText_; STRSUBSTNO(Text000, PeriodText))
             {
@@ -132,9 +132,9 @@ report 50061 "Trial Balance Plus All"
             column(HideGL; HideGL)
             {
             }
-            dataitem(DataItem74; Table349)
+            dataitem("Dimension Value";"Dimension Value")
             {
-                DataItemTableView = SORTING (Dimension Code, Code);
+                DataItemTableView = SORTING ("Dimension Code", Code);
                 column(No_Employee; Code)
                 {
                 }
@@ -205,9 +205,9 @@ report 50061 "Trial Balance Plus All"
                     SETFILTER("Dimension Code", 'EMPLOYEE'); //pram
                 end;
             }
-            dataitem(DataItem41; Table92)
+            dataitem("Customer Posting Group";"Customer Posting Group")
             {
-                DataItemLink = Receivables Account=FIELD(No.);
+                DataItemLink = "Receivables Account"=FIELD("No.");
                 DataItemTableView = SORTING (Code);
                 column(Code_CustomerPostingGroup; "Customer Posting Group".Code)
                 {
@@ -215,11 +215,11 @@ report 50061 "Trial Balance Plus All"
                 column(ReceivablesAccount_CustomerPostingGroup; "Customer Posting Group"."Receivables Account")
                 {
                 }
-                dataitem(DataItem44; Table18)
+                dataitem(Customer;Customer)
                 {
-                    DataItemLink = Customer Posting Group=FIELD(Code);
-                    DataItemTableView = SORTING (No.)
-                                        WHERE (Hide in Trial Balance Report=CONST(No));
+                    DataItemLink = "Customer Posting Group"=FIELD(Code);
+                    DataItemTableView = SORTING ("No.")
+                                        WHERE ("Hide in Trial Balance Report"=CONST(false));
                     column(No_Customer; Customer."No.")
                     {
                     }
@@ -284,9 +284,9 @@ report 50061 "Trial Balance Plus All"
                     end;
                 }
             }
-            dataitem(DataItem47; Table93)
+            dataitem("Vendor Posting Group";"Vendor Posting Group")
             {
-                DataItemLink = Payables Account=FIELD(No.);
+                DataItemLink = "Payables Account"=FIELD("No.");
                 DataItemTableView = SORTING (Code);
                 column(Code_VendorPostingGroup; "Vendor Posting Group".Code)
                 {
@@ -294,11 +294,11 @@ report 50061 "Trial Balance Plus All"
                 column(PayablesAccount_VendorPostingGroup; "Vendor Posting Group"."Payables Account")
                 {
                 }
-                dataitem(DataItem48; Table23)
+                dataitem(Vendor;Vendor)
                 {
-                    DataItemLink = Vendor Posting Group=FIELD(Code);
-                    DataItemTableView = SORTING (No.)
-                                        WHERE (Hide in Trial Balance Report=CONST(No));
+                    DataItemLink = "Vendor Posting Group"=FIELD(Code);
+                    DataItemTableView = SORTING ("No.")
+                                        WHERE ("Hide in Trial Balance Report"=CONST(false));
                     column(No_Vendor; Vendor."No.")
                     {
                     }
@@ -364,9 +364,9 @@ report 50061 "Trial Balance Plus All"
                     end;
                 }
             }
-            dataitem(DataItem1000000000; Table277)
+            dataitem("Bank Account Posting Group";"Bank Account Posting Group")
             {
-                DataItemLink = G/L Bank Account No.=FIELD(No.);
+                DataItemLink ="G/L Bank Account No."=FIELD("No.");
                 DataItemTableView = SORTING (Code);
                 column(Code_BankAccountPostingGroup; "Bank Account Posting Group".Code)
                 {
@@ -374,10 +374,10 @@ report 50061 "Trial Balance Plus All"
                 column(GLBankAccountNo_BankAccountPostingGroup; "Bank Account Posting Group"."G/L Bank Account No.")
                 {
                 }
-                dataitem(DataItem1000000001; Table270)
+                dataitem("Bank Account";"Bank Account")
                 {
-                    DataItemLink = Bank Acc. Posting Group=FIELD(Code);
-                    DataItemTableView = SORTING (No.);
+                    DataItemLink = "Bank Acc. Posting Group"=FIELD(Code);
+                    DataItemTableView = SORTING ("No.");
                     column(No_BankAccount; "Bank Account"."No.")
                     {
                     }
@@ -561,7 +561,7 @@ report 50061 "Trial Balance Plus All"
 
     var
         Text000: Label 'Period: %1';
-        ExcelBuf: Record "370" temporary;
+        ExcelBuf: Record "Excel Buffer" temporary;
         GLFilter: Text;
         PeriodText: Text[30];
         PrintToExcel: Boolean;
@@ -606,8 +606,8 @@ report 50061 "Trial Balance Plus All"
         TotalDebitBalanceatdate: Decimal;
         CreditBalanceatdate: Decimal;
         TotalCreditBalanceatdate: Decimal;
-        CustPostingGr: Record "92";
-        VendorPostingGr: Record "93";
+        CustPostingGr: Record "Customer Posting Group";
+        VendorPostingGr: Record "Vendor Posting Group";
         HideGL: Boolean;
         VendOpening: Decimal;
         VendNetChangeDr: Decimal;
@@ -623,7 +623,7 @@ report 50061 "Trial Balance Plus All"
         BankBalance: Decimal;
         FirstRec: Boolean;
         EmployeeCount: Integer;
-        GLEntry: Record "17";
+        GLEntry: Record "G/L Entry";
         EmpNetChangeDr: Decimal;
         EmpNetChangeCr: Decimal;
         EmpOpening: Decimal;
@@ -635,27 +635,27 @@ report 50061 "Trial Balance Plus All"
     procedure MakeExcelInfo()
     begin
         ExcelBuf.SetUseInfoSheet;
-        ExcelBuf.AddInfoColumn(FORMAT(Text005), FALSE, '', TRUE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
-        ExcelBuf.AddInfoColumn(COMPANYNAME, FALSE, '', FALSE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
+        //ExcelBuf.AddInfoColumn(FORMAT(Text005), FALSE, '', TRUE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
+        //ExcelBuf.AddInfoColumn(COMPANYNAME, FALSE, '', FALSE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
         ExcelBuf.NewRow;
-        ExcelBuf.AddInfoColumn(FORMAT(Text007), FALSE, '', TRUE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
-        ExcelBuf.AddInfoColumn(FORMAT(Text001), FALSE, '', FALSE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
+        //ExcelBuf.AddInfoColumn(FORMAT(Text007), FALSE, '', TRUE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
+        //ExcelBuf.AddInfoColumn(FORMAT(Text001), FALSE, '', FALSE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
         ExcelBuf.NewRow;
-        ExcelBuf.AddInfoColumn(FORMAT(Text006), FALSE, '', TRUE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
-        ExcelBuf.AddInfoColumn(REPORT::"Trial Balance", FALSE, '', FALSE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Number);
+        //ExcelBuf.AddInfoColumn(FORMAT(Text006), FALSE, '', TRUE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
+        //ExcelBuf.AddInfoColumn(REPORT::"Trial Balance", FALSE, '', FALSE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Number);
         ExcelBuf.NewRow;
-        ExcelBuf.AddInfoColumn(FORMAT(Text008), FALSE, '', TRUE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
-        ExcelBuf.AddInfoColumn(USERID, FALSE, '', FALSE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
+        //ExcelBuf.AddInfoColumn(FORMAT(Text008), FALSE, '', TRUE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
+        //ExcelBuf.AddInfoColumn(USERID, FALSE, '', FALSE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
         ExcelBuf.NewRow;
-        ExcelBuf.AddInfoColumn(FORMAT(Text009), FALSE, '', TRUE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
-        ExcelBuf.AddInfoColumn(TODAY, FALSE, '', FALSE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Date);
+        //ExcelBuf.AddInfoColumn(FORMAT(Text009), FALSE, '', TRUE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
+       // ExcelBuf.AddInfoColumn(TODAY, FALSE, '', FALSE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Date);
         ExcelBuf.NewRow;
-        ExcelBuf.AddInfoColumn(FORMAT(Text010), FALSE, '', TRUE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
-        ExcelBuf.AddInfoColumn("G/L Account".GETFILTER("No."), FALSE, '', FALSE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
+        //ExcelBuf.AddInfoColumn(FORMAT(Text010), FALSE, '', TRUE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
+        //ExcelBuf.AddInfoColumn("G/L Account".GETFILTER("No."), FALSE, '', FALSE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
         ExcelBuf.NewRow;
-        ExcelBuf.AddInfoColumn(FORMAT(Text011), FALSE, '', TRUE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
-        ExcelBuf.AddInfoColumn("G/L Account".GETFILTER("Date Filter"), FALSE,
-        '', FALSE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
+        // ExcelBuf.AddInfoColumn(FORMAT(Text011), FALSE, '', TRUE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
+        // ExcelBuf.AddInfoColumn("G/L Account".GETFILTER("Date Filter"), FALSE,
+        //'', FALSE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
         ExcelBuf.ClearNewRow;
         MakeExcelDataHeader;
     end;

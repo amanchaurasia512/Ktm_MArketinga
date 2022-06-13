@@ -192,7 +192,7 @@ report 50422 "Customer Total Sales"
 
             trigger OnAfterGetRecord()
             var
-                FormatAddr: Codeunit "365";
+                FormatAddr: Codeunit "Format Address";
             begin
                 ExemptAmt := 0;
                 VatAmount := 0;

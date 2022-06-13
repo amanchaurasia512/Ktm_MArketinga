@@ -582,16 +582,16 @@ report 50468 "Sales Inv Fin Not in Use"
                             }
                             column(TempPostAsmLineVartCode; BlanksForIndent + TempPostedAsmLine."Variant Code")
                             {
-                                DecimalPlaces = 0 : 5;
+                                //DecimalPlaces = 0 : 5;
                             }
                             column(TempPostedAsmLineUOM; GetUOMText(TempPostedAsmLine."Unit of Measure Code"))
                             {
-                                DecimalPlaces = 0 : 5;
+                                //DecimalPlaces = 0 : 5;
                             }
 
                             trigger OnAfterGetRecord()
                             var
-                                ItemTranslation: Record "30";
+                                ItemTranslation: Record "Item Translation";
                             begin
                                 IF Number = 1 THEN
                                     TempPostedAsmLine.FINDSET
@@ -949,7 +949,7 @@ report 50468 "Sales Inv Fin Not in Use"
 
             trigger OnAfterGetRecord()
             begin
-                CurrReport.LANGUAGE := Language.GetLanguageID("Language Code");
+                //CurrReport.LANGUAGE := Language.GetLanguageID("Language Code");
 
                 IF RespCenter.GET("Responsibility Center") THEN BEGIN
                     FormatAddr.RespCenter(CompanyAddr, RespCenter);
@@ -1013,7 +1013,7 @@ report 50468 "Sales Inv Fin Not in Use"
                     ShipmentMethod.GET("Shipment Method Code");
                     ShipmentMethod.TranslateDescription(ShipmentMethod, "Language Code");
                 END;
-                FormatAddr.SalesInvShipTo(ShipToAddr, "Sales Invoice Header");
+                //FormatAddr.SalesInvShipTo(ShipToAddr, "Sales Invoice Header");
                 ShowShippingAddr := "Sell-to Customer No." <> "Bill-to Customer No.";
                 FOR i := 1 TO ARRAYLEN(ShipToAddr) DO
                     IF ShipToAddr[i] <> CustAddr[i] THEN
@@ -1547,7 +1547,7 @@ report 50468 "Sales Inv Fin Not in Use"
                 TempLineFeeNoteOnReportHist.INSERT;
             UNTIL LineFeeNoteOnReportHist.NEXT = 0;
         END ELSE BEGIN
-            LineFeeNoteOnReportHist.SETRANGE("Language Code", Language.GetUserLanguage);
+            //LineFeeNoteOnReportHist.SETRANGE("Language Code", Language.GetUserLanguage);
             IF LineFeeNoteOnReportHist.FINDSET THEN
                 REPEAT
                     TempLineFeeNoteOnReportHist.INIT;

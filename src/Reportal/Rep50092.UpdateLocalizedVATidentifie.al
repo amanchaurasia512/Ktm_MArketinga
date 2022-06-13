@@ -8,7 +8,7 @@ report 50092 "Update Localized VAT identifie"
 
     dataset
     {
-        dataitem(DataItem1; Table122)
+        dataitem("Purch. Inv. Header";"Purch. Inv. Header")
         {
 
             trigger OnAfterGetRecord()
@@ -52,20 +52,20 @@ report 50092 "Update Localized VAT identifie"
 
     local procedure CorrectLoclizedVATIdentifier(VATidentifier: Option " ","Taxable Import Purchase","Exempt Purchase","Taxable Local Purchase","Taxable Capex Purchase","Taxable Sales","Non Taxable Sales","Exempt Sales"; DocumentNo: Code[20])
     var
-        PurchInvHeader: Record "122";
-        PurchInvLine: Record "123";
-        ItemLedgEntry: Record "32";
-        ValueEntry: Record "5802";
-        CustLedgEntry: Record "21";
-        GLEntry: Record "17";
-        VATEntry: Record "254";
-        VendLedgEntry: Record "25";
-        DetailedVendLedgEntry: Record "380";
-        PurchRcptHdr: Record "120";
-        PurchRcptLine: Record "121";
-        AlLCustVendLedger: Record "50004";
-        Correctvendor: Record "23";
-        ChangeLogSetup: Record "402";
+        PurchInvHeader: Record "Purch. Inv. Header";
+        PurchInvLine: Record "Purch. Inv. Line";
+        ItemLedgEntry: Record "Item Ledger Entry";
+        ValueEntry: Record "Value Entry";
+        CustLedgEntry: Record "Cust. Ledger Entry";
+        GLEntry: Record "G/L Entry";
+        VATEntry: Record  "VAT Entry";
+        VendLedgEntry: Record "Vendor Ledger Entry";
+        DetailedVendLedgEntry: Record "Detailed Vendor Ledg. Entry";
+        PurchRcptHdr: Record "Purch. Rcpt. Header";
+        PurchRcptLine: Record "Purch. Rcpt. Line";
+        AlLCustVendLedger: Record "Cust-Vend Ledger";
+        Correctvendor: Record Vendor;
+        ChangeLogSetup: Record "Change Log Setup";
     begin
         ChangeLogSetup.GET;
         ChangeLogSetup."Change Log Activated" := FALSE;

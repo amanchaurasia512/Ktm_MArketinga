@@ -764,7 +764,7 @@ report 50456 "Purchase Invoice"
 
             trigger OnAfterGetRecord()
             begin
-                CurrReport.LANGUAGE := Language.GetLanguageID("Language Code");
+                //CurrReport.LANGUAGE := Language.GetLanguageID("Language Code");
 
                 CompanyInfo.GET;
 

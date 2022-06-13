@@ -268,7 +268,7 @@ report 50440 "Item Stock Movement"
                             ItemStockMovement."Line No." := LineNo + 10000;
                             ItemStockMovement."Location Code" := Location.Code;
                             ItemStockMovement."Item Category Code" := ItemLedgerEntry."Item Category Code";
-                            ItemStockMovement."Product Group Code" := ItemLedgerEntry."Product Group Code";
+                            //ItemStockMovement."Product Group Code" := ItemLedgerEntry."Product Group Code";
                             ItemStockMovement."No." := Item."No.";
                             ItemStockMovement.Description := Item.Description;
                             ItemStockMovement."Description 2" := NewColumnCaption;

@@ -6,7 +6,7 @@ report 50028 "Vendor Purchase List"
 
     dataset
     {
-        dataitem(DataItem3182; Table23)
+        dataitem(Vendor;Vendor)
         {
             PrintOnlyIfDetail = false;
             RequestFilterFields = "No.", "Date Filter";
@@ -105,7 +105,7 @@ report 50028 "Vendor Purchase List"
 
             trigger OnAfterGetRecord()
             var
-                FormatAddr: Codeunit "365";
+                FormatAddr: Codeunit "Format Address";
             begin
                 TaxableAmt := 0;
                 ExemptAmt := 0;
@@ -228,27 +228,27 @@ report 50028 "Vendor Purchase List"
         MinAmtLCYCaptLbl: Label 'Amounts (LCY) greater than';
         AmtPurchLCYCaptLbl: Label 'Amount of Purchase (LCY)';
         TotRptedAmtofPurchLCYCaptLbl: Label 'Total Reported Amount of Purchase (LCY)';
-        CompanyInfo: Record "79";
+        CompanyInfo: Record "Company Information";
         TradeNameType: Code[10];
         "Purchase/Sale": Code[10];
-        VATEntries: Record "254";
+        VATEntries: Record  "VAT Entry";
         ExemptAmt: Decimal;
         TaxableAmt: Decimal;
         TotalPurchAmt: Decimal;
-        VATEntries1: Record "254";
-        VATEntries2: Record "254";
+        VATEntries1: Record "VAT Entry";
+        VATEntries2: Record "VAT Entry";
         ShowTotalAmt: Boolean;
         ShowCustomVendor: Boolean;
         DateFilter: Text;
         StartDateNep: Code[10];
         EndDateNep: Code[10];
-        NepaliCal: Record "50000";
+        NepaliCal: Record "English-Nepali Date";
         StartEngDate: Date;
         EndEngDate: Date;
 
     local procedure CalculateAmtOfPurchaseLCY(): Decimal
     var
-        VendorLedgEntry: Record "25";
+        VendorLedgEntry: Record "Vendor Ledger Entry";
         Amt: Decimal;
         i: Integer;
     begin

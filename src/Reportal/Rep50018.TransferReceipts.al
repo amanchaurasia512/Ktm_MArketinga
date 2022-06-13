@@ -7,9 +7,9 @@ report 50018 "Transfer Receipts"
 
     dataset
     {
-        dataitem(DataItem4354; Table5746)
+        dataitem("Transfer Receipt Header";"Transfer Receipt Header")
         {
-            DataItemTableView = SORTING (No.);
+            DataItemTableView = SORTING ("No.");
             RequestFilterFields = "No.", "Transfer-from Code";
             RequestFilterHeading = 'Posted Transfer Receipt';
             column(No_TransRcptHdr; "No.")
@@ -36,10 +36,10 @@ report 50018 "Transfer Receipts"
             column(CompanyAddr1; CompanyInfo.Name)
             {
             }
-            dataitem(CopyLoop; Table2000000026)
+            dataitem(CopyLoop; Integer)
             {
                 DataItemTableView = SORTING (Number);
-                dataitem(PageLoop; Table2000000026)
+                dataitem(PageLoop; Integer)
                 {
                     DataItemTableView = SORTING (Number)
                                         WHERE (Number = CONST (1));
@@ -117,7 +117,7 @@ report 50018 "Transfer Receipts"
                     column(TransRcptHdrNo2Caption; TransRcptHdrNo2CaptionLbl)
                     {
                     }
-                    dataitem(DimensionLoop1; Table2000000026)
+                    dataitem(DimensionLoop1; Integer)
                     {
                         DataItemLinkReference = "Transfer Receipt Header";
                         DataItemTableView = SORTING (Number)
@@ -166,11 +166,11 @@ report 50018 "Transfer Receipts"
                                 CurrReport.BREAK;
                         end;
                     }
-                    dataitem(DataItem4146; Table5747)
+                    dataitem("Transfer Receipt Line";"Transfer Receipt Line")
                     {
-                        DataItemLink = Document No.=FIELD(No.);
+                        DataItemLink = "Document No."=FIELD("No.");
                         DataItemLinkReference = "Transfer Receipt Header";
-                        DataItemTableView = SORTING (Document No., Line No.);
+                        DataItemTableView = SORTING ("Document No.", "Line No.");
                         column(ShowInternalInfo; ShowInternalInfo)
                         {
                         }
@@ -202,7 +202,7 @@ report 50018 "Transfer Receipts"
                         column(SN; SN)
                         {
                         }
-                        dataitem(DimensionLoop2; Table2000000026)
+                        dataitem(DimensionLoop2; Integer)
                         {
                             DataItemTableView = SORTING (Number)
                                                 WHERE (Number = FILTER (1 ..));
@@ -253,7 +253,7 @@ report 50018 "Transfer Receipts"
 
                         trigger OnAfterGetRecord()
                         var
-                            ItemLedgerEntry: Record "32";
+                            ItemLedgerEntry: Record "Item Ledger Entry";
                         begin
                             DimSetEntry2.SETRANGE("Dimension Set ID", "Dimension Set ID");
 
@@ -353,9 +353,9 @@ report 50018 "Transfer Receipts"
         Text000: Label 'COPY';
         Text001: Label 'Transfer Receipt %1';
         Text002: Label 'Page %1';
-        DimSetEntry1: Record "480";
-        DimSetEntry2: Record "480";
-        FormatAddr: Codeunit "365";
+        DimSetEntry1: Record "Dimension Set Entry";
+        DimSetEntry2: Record "Dimension Set Entry";
+        FormatAddr: Codeunit "Format Address";
         TransferFromAddr: array[8] of Text[50];
         TransferToAddr: array[8] of Text[50];
         MoreLines: Boolean;
@@ -373,10 +373,10 @@ report 50018 "Transfer Receipts"
         "--NP15.1001": Integer;
         CompanyOneLineAddress: Text;
         CompanyCommunicationAddress: Text;
-        CompanyInfo: Record "79";
+        CompanyInfo: Record "Company Information";
         CompanyAddr: array[8] of Text[50];
-        Currency: Record "4";
-        SystemManagement: Codeunit "50000";
+        Currency: Record Currency;
+        SystemManagement: Codeunit "IRD Mgt.";
         SN: Integer;
         VIN: Code[20];
 

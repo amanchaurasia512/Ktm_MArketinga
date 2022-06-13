@@ -5,10 +5,10 @@ report 50063 "Sales Discount Details"
 
     dataset
     {
-        dataitem(DataItem1; Table5802)
+        dataitem("Value Entry";"Value Entry")
         {
-            DataItemTableView = WHERE (Item Ledger Entry Type=FILTER(Sale),
-                                      Discount Amount=FILTER(<>0));
+            DataItemTableView = WHERE ("Item Ledger Entry Type"=FILTER(Sale),
+                                      "Discount Amount"=FILTER(<>0));
             RequestFilterFields = "Posting Date","Item No.","Gen. Prod. Posting Group";
             column(AllFilters;AllFilters)
             {

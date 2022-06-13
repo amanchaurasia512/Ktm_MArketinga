@@ -818,7 +818,7 @@ report 50451 "Old Sales Cr. Memo KMT"
 
             trigger OnAfterGetRecord()
             begin
-                CurrReport.LANGUAGE := Language.GetLanguageID("Language Code");
+                //CurrReport.LANGUAGE := Language.GetLanguageID("Language Code");
 
                 NepaliCalendar.RESET;
                 NepaliCalendar.SETRANGE("English Date", "Sales Cr.Memo Header"."Posting Date");
@@ -879,7 +879,7 @@ report 50451 "Old Sales Cr. Memo KMT"
                 ELSE
                     AppliedToText := STRSUBSTNO(Text003, "Applies-to Doc. Type", "Applies-to Doc. No.");
 
-                FormatAddr.SalesCrMemoShipTo(ShipToAddr, "Sales Cr.Memo Header");
+                //FormatAddr.SalesCrMemoShipTo(ShipToAddr, "Sales Cr.Memo Header");
                 ShowShippingAddr := "Sell-to Customer No." <> "Bill-to Customer No.";
                 FOR i := 1 TO ARRAYLEN(ShipToAddr) DO
                     IF ShipToAddr[i] <> CustAddr[i] THEN

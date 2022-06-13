@@ -7,9 +7,9 @@ report 50016 "Purchase Receipt"
 
     dataset
     {
-        dataitem(DataItem2822; Table120)
+        dataitem("Purch. Rcpt. Header";"Purch. Rcpt. Header")
         {
-            DataItemTableView = SORTING (No.);
+            DataItemTableView = SORTING ("No.");
             RequestFilterFields = "No.", "Buy-from Vendor No.", "No. Printed";
             RequestFilterHeading = 'Posted Purchase Receipt';
             column(No_PurchRcptHeader; "No.")
@@ -78,10 +78,10 @@ report 50016 "Purchase Receipt"
             column(PurchaseDate; FORMAT("Posting Date") + '  ( ' + SystemManagement.getNepaliDate("Posting Date") + ' )')
             {
             }
-            dataitem(CopyLoop; Table2000000026)
+            dataitem(CopyLoop; Integer)
             {
                 DataItemTableView = SORTING (Number);
-                dataitem(PageLoop; Table2000000026)
+                dataitem(PageLoop; Integer)
                 {
                     DataItemTableView = SORTING (Number)
                                         WHERE (Number = CONST (1));
@@ -181,7 +181,7 @@ report 50016 "Purchase Receipt"
                     column(VATRegistrationNo_PurchRcptHeader; "Purch. Rcpt. Header"."VAT Registration No.")
                     {
                     }
-                    dataitem(DimensionLoop1; Table2000000026)
+                    dataitem(DimensionLoop1; Integer)
                     {
                         DataItemLinkReference = "Purch. Rcpt. Header";
                         DataItemTableView = SORTING (Number)
@@ -227,11 +227,11 @@ report 50016 "Purchase Receipt"
                                 CurrReport.BREAK;
                         end;
                     }
-                    dataitem(DataItem3042; Table121)
+                    dataitem("Purch. Rcpt. Line";"Purch. Rcpt. Line")
                     {
-                        DataItemLink = Document No.=FIELD(No.);
+                        DataItemLink ="Document No."=FIELD("No.");
                         DataItemLinkReference = "Purch. Rcpt. Header";
-                        DataItemTableView = SORTING (Document No., Line No.);
+                        DataItemTableView = SORTING ("Document No.", "Line No.");
                         column(ShowInternalInfo; ShowInternalInfo)
                         {
                         }
@@ -272,7 +272,7 @@ report 50016 "Purchase Receipt"
                         column(PurchaseReceiptLineSN; PurchaseReceiptLineSN)
                         {
                         }
-                        dataitem(DimensionLoop2; Table2000000026)
+                        dataitem(DimensionLoop2; Integer)
                         {
                             DataItemTableView = SORTING (Number)
                                                 WHERE (Number = FILTER (1 ..));
@@ -326,7 +326,7 @@ report 50016 "Purchase Receipt"
                             DimSetEntry2.SETRANGE("Dimension Set ID", "Dimension Set ID");
 
                             //NP15.1001 >>
-                            PurchInvLineOnAfterGetRecord("Purch. Rcpt. Line");
+                            //PurchInvLineOnAfterGetRecord("Purch. Rcpt. Line");
                             //NP15.1001 <<
                         end;
 
@@ -340,7 +340,7 @@ report 50016 "Purchase Receipt"
                             SETRANGE("Line No.", 0, "Line No.");
                         end;
                     }
-                    dataitem(Total; Table2000000026)
+                    dataitem(Total; Integer)
                     {
                         DataItemTableView = SORTING (Number)
                                             WHERE (Number = CONST (1));
@@ -357,7 +357,7 @@ report 50016 "Purchase Receipt"
                                 CurrReport.BREAK;
                         end;
                     }
-                    dataitem(Total2; Table2000000026)
+                    dataitem(Total2; Integer)
                     {
                         DataItemTableView = SORTING (Number)
                                             WHERE (Number = CONST (1));
@@ -424,7 +424,7 @@ report 50016 "Purchase Receipt"
 
             trigger OnAfterGetRecord()
             begin
-                CurrReport.LANGUAGE := Language.GetLanguageID("Language Code");
+                //CurrReport.LANGUAGE := Language.GetLanguageID("Language Code");
 
                 CompanyInfo.GET;
 
@@ -530,14 +530,14 @@ report 50016 "Purchase Receipt"
         Text001: Label 'COPY';
         Text002: Label 'Purchase - Receipt %1';
         Text003: Label 'Page %1';
-        CompanyInfo: Record "79";
-        SalesPurchPerson: Record "13";
-        DimSetEntry1: Record "480";
-        DimSetEntry2: Record "480";
-        Language: Record "8";
-        RespCenter: Record "5714";
-        RcptCountPrinted: Codeunit "318";
-        SegManagement: Codeunit "5051";
+        CompanyInfo: Record "Company Information";
+        SalesPurchPerson: Record "Salesperson/Purchaser";
+        DimSetEntry1: Record "Dimension Set Entry";
+        DimSetEntry2: Record "Dimension Set Entry";
+        Language: Record Language;
+        RespCenter: Record "Responsibility Center";
+        RcptCountPrinted: Codeunit "Purch.Rcpt.-Printed";
+        SegManagement: Codeunit SegManagement;
         VendAddr: array[8] of Text[50];
         ShipToAddr: array[8] of Text[50];
         CompanyAddr: array[8] of Text[50];
@@ -547,7 +547,7 @@ report 50016 "Purchase Receipt"
         NoOfCopies: Integer;
         NoOfLoops: Integer;
         CopyText: Text[30];
-        FormatAddr: Codeunit "365";
+        FormatAddr: Codeunit "Format Address";
         DimText: Text[120];
         OldDimText: Text[75];
         ShowInternalInfo: Boolean;
@@ -578,9 +578,9 @@ report 50016 "Purchase Receipt"
         CompanyOneLineAddress: Text;
         CompanyCommunicationAddress: Text;
         VendorOneLineAddress: Text;
-        SystemManagement: Codeunit "50000";
-        Currency: Record "4";
-        Vendor: Record "23";
+        SystemManagement: Codeunit "IRD Mgt.";
+        Currency: Record Currency;
+        Vendor: Record Vendor;
         PurchaseReceiptLineSN: Integer;
 
     [Scope('Internal')]
@@ -615,7 +615,7 @@ report 50016 "Purchase Receipt"
         VendorOneLineAddress := SystemManagement.OneLineAddress(VendAddr);
     end;
 
-    local procedure PurchInvLineOnAfterGetRecord(PurchInvLine: Record "121")
+    local procedure PurchInvLineOnAfterGetRecord(PurchInvLine: Record "Purch. Inv. Line")
     begin
         WITH PurchInvLine DO BEGIN
             IF "No." <> '' THEN

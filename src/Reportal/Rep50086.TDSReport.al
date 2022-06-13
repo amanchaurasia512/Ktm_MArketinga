@@ -5,7 +5,7 @@ report 50086 "TDS Report"
 
     dataset
     {
-        dataitem(DataItem1; Table50009)
+        dataitem("TDS Entry";"TDS Entry")
         {
             RequestFilterFields = "Source Type", "Bill-to/Pay-to No.", "TDS Posting Group", "Posting Date";
             column(DocumentNo_TDSEntry; "TDS Entry"."Document No.")
@@ -114,10 +114,10 @@ report 50086 "TDS Report"
         Allfilters: Text;
         PANNo: Code[30];
         SourceName: Text;
-        Cust: Record "18";
-        Vend: Record "23";
-        TDSPostingGr: Record "50008";
-        MainGLAccount: Record "15";
+        Cust: Record Customer;
+        Vend: Record Vendor;
+        TDSPostingGr: Record "TDS Posting Group";
+        MainGLAccount: Record "G/L Account";
         AllFilter: Text;
         ShowSummary: Boolean;
 }

@@ -138,7 +138,7 @@ report 50400 "Aged Accounts Receivable KMT"
             column(ProductCode_Filter; ProductCode_FIlter)
             {
             }
-            dataitem(DataItem8503; "Cust. Ledger Entry")
+            dataitem("Cust. Ledger Entry"; "Cust. Ledger Entry")
             {
                 DataItemLink = "Customer No." = FIELD("No.");
                 DataItemTableView = SORTING("Customer No.", "Posting Date", "Currency Code");

@@ -6,7 +6,7 @@ report 50076 "Total Sales By Customer"
 
     dataset
     {
-        dataitem(DataItem6836; Table18)
+        dataitem(Customer;Customer)
         {
             PrintOnlyIfDetail = false;
             RequestFilterFields = "No.", "Global Dimension 1 Filter", "Global Dimension 2 Filter", "Date Filter";
@@ -108,14 +108,14 @@ report 50076 "Total Sales By Customer"
             column(TotalCustomerCollectionAmount; TotalCustomerCollectionAmount)
             {
             }
-            dataitem(DataItem7209; Table32)
+            dataitem("Item Ledger Entry";"Item Ledger Entry")
             {
-                DataItemLink = Source No.=FIELD(No.),
-                               Posting Date=FIELD(Date Filter),
-                               Global Dimension 1 Code=FIELD(Global Dimension 1 Filter),
-                               Global Dimension 2 Code=FIELD(Global Dimension 2 Filter);
-                DataItemTableView = SORTING(Source Type,Source No.,Item No.,Variant Code,Posting Date)
-                                    WHERE(Source Type=CONST(Customer));
+                DataItemLink = "Source No."=FIELD("No."),
+                              "Posting Date"=FIELD("Date Filter"),
+                               "Global Dimension 1 Code"=FIELD("Global Dimension 1 Filter"),
+                               "Global Dimension 2 Code"=FIELD("Global Dimension 2 Filter");
+                DataItemTableView = SORTING("Source Type","Source No.","Item No.","Variant Code","Posting Date")
+                                    WHERE("Source Type"=CONST(Customer));
                 RequestFilterFields = "Item No.","Posting Date","Sub-Category";
 
                 trigger OnAfterGetRecord()
@@ -176,7 +176,7 @@ report 50076 "Total Sales By Customer"
                     //KMT2016CU5 <<
                 end;
             }
-            dataitem(DataItem5444;Table2000000026)
+            dataitem(Integer;Integer)
             {
                 DataItemTableView = SORTING(Number);
                 column(ValueEntryBuffer__Item_No__;ValueEntryBuffer."Item No.")
@@ -327,9 +327,9 @@ report 50076 "Total Sales By Customer"
 
     var
         Text000: Label 'Period: %1';
-        Item: Record "27";
-        ValueEntry: Record "5802";
-        ValueEntryBuffer: Record "5802" temporary;
+        Item: Record Item;
+        ValueEntry: Record "Value Entry";
+        ValueEntryBuffer: Record "Value Entry" temporary;
         CustFilter: Text;
         ItemLedgEntryFilter: Text;
         PeriodText: Text[30];
@@ -349,16 +349,16 @@ report 50076 "Total Sales By Customer"
         Profit_Control46CaptionLbl: Label 'Profit';
         ProfitPct_Control47CaptionLbl: Label 'Profit %';
         TotalCaptionLbl: Label 'Total';
-        CompanyInfo: Record "79";
+        CompanyInfo: Record "Company Information";
         AmtInclVAT: Decimal;
-        SalesInvHeader: Record "112";
+        SalesInvHeader: Record "Sales Invoice Header";
         TotalAmt: Decimal;
         AreaCodeFilter: Text;
         ProductCodeFilter: Text;
         CustomerCollectionAmount: Decimal;
-        CustLedgEntry: Record "21";
+        CustLedgEntry: Record "Cust. Ledger Entry";
         ShowCustomerCollection: Boolean;
-        SourceCodeSetup: Record "242";
+        SourceCodeSetup: Record "Source Code Setup";
         TotalCustomerCollectionAmount: Decimal;
 
     [Scope('Internal')]

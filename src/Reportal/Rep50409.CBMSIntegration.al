@@ -16,7 +16,7 @@ report 50409 "CBMS Integration"
                 InvoiceMaterializeView.RESET;
                 InvoiceMaterializeView.LOCKTABLE;
                 InvoiceMaterializeView.SETFILTER("Sync Status", '%1|%2', InvoiceMaterializeView."Sync Status"::Pending, InvoiceMaterializeView."Sync Status"::"Sync In Progress");
-                InvoiceMaterializeView.SETFILTER("Bill Date", '>%1', 210719D);
+                InvoiceMaterializeView.SETFILTER("Bill Date", '>%1', 20190721D);
                 IF NOT JobQueueActive THEN
                     ProgressWindow.UPDATE(2, InvoiceMaterializeView.COUNT);
                 IF InvoiceMaterializeView.FINDSET THEN

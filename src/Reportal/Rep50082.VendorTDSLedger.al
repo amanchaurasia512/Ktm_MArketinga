@@ -5,7 +5,7 @@ report 50082 "Vendor TDS Ledger"
 
     dataset
     {
-        dataitem(DataItem1; Table23)
+        dataitem(Vendor; Vendor)
         {
             RequestFilterFields = "No.", "Date Filter", "TDS Entry Closed Filter", "Global Dimension 1 Filter", "Global Dimension 2 Filter";
             column(Company_Name; CompInfo.Name)
@@ -41,46 +41,46 @@ report 50082 "Vendor TDS Ledger"
             column(FilterText; FilterText)
             {
             }
-            dataitem(DataItem2; Table50009)
+            dataitem("TDS Entry"; "TDS Entry")
             {
-                DataItemLink = Bill-to/Pay-to No.=FIELD(No.),
-                               Shortcut Dimension 1 Code=FIELD(Global Dimension 1 Filter),
-                               Shortcut Dimension 2 Code=FIELD(Global Dimension 2 Filter);
-                DataItemTableView = WHERE(TDS Type=CONST(Purchase TDS));
-                column(Doc_No;"TDS Entry"."Document No.")
+                DataItemLink = "Bill-to/Pay-to No." = FIELD("No."),
+                               "Shortcut Dimension 1 Code" = FIELD("Global Dimension 1 Filter"),
+                               "Shortcut Dimension 2 Code" = FIELD("Global Dimension 2 Filter");
+                DataItemTableView = WHERE("TDS Type" = CONST("Purchase TDS"));
+                column(Doc_No; "TDS Entry"."Document No.")
                 {
                 }
-                column(Posting_Date;FORMAT("TDS Entry"."Posting Date"))
+                column(Posting_Date; FORMAT("TDS Entry"."Posting Date"))
                 {
                 }
-                column(TDSAmount_TDSEntry;"TDS Entry"."TDS Amount")
+                column(TDSAmount_TDSEntry; "TDS Entry"."TDS Amount")
                 {
                 }
-                column(Base_TDSEntry;"TDS Entry".Base)
+                column(Base_TDSEntry; "TDS Entry".Base)
                 {
                 }
-                column(TDSPostingGroup_TDSEntry;"TDS Entry"."TDS Posting Group")
+                column(TDSPostingGroup_TDSEntry; "TDS Entry"."TDS Posting Group")
                 {
                 }
-                column(Closed;"TDS Entry".Closed)
+                column(Closed; "TDS Entry".Closed)
                 {
                 }
-                column(Description;Description)
+                column(Description; Description)
                 {
                 }
-                column(Running_Amount;RunningAmount)
+                column(Running_Amount; RunningAmount)
                 {
                 }
-                column(BaseAmountDr;BaseAmountDr)
+                column(BaseAmountDr; BaseAmountDr)
                 {
                 }
-                column(BaseAmountCr;BaseAmountCr)
+                column(BaseAmountCr; BaseAmountCr)
                 {
                 }
-                column(TDSAmountDr;TDSAmountDr)
+                column(TDSAmountDr; TDSAmountDr)
                 {
                 }
-                column(TDSAmountCr;TDSAmountCr)
+                column(TDSAmountCr; TDSAmountCr)
                 {
                 }
 
@@ -92,30 +92,30 @@ report 50082 "Vendor TDS Ledger"
                     TDSAmountDr := 0;
 
                     TDSPostingGroup.RESET;
-                    TDSPostingGroup.SETRANGE(Code,"TDS Posting Group");
-                      IF TDSPostingGroup.FINDFIRST THEN
+                    TDSPostingGroup.SETRANGE(Code, "TDS Posting Group");
+                    IF TDSPostingGroup.FINDFIRST THEN
                         Description := TDSPostingGroup.Description;
 
-                    RunningAmount +="TDS Entry"."TDS Amount";
+                    RunningAmount += "TDS Entry"."TDS Amount";
 
                     IF Base > 0 THEN
-                      BaseAmountDr := Base
+                        BaseAmountDr := Base
                     ELSE
-                      BaseAmountCr := Base * -1;
+                        BaseAmountCr := Base * -1;
 
                     IF "TDS Amount" > 0 THEN
-                      TDSAmountCr := "TDS Amount"
+                        TDSAmountCr := "TDS Amount"
                     ELSE
-                      TDSAmountDr := "TDS Amount" * -1;
+                        TDSAmountDr := "TDS Amount" * -1;
                 end;
 
                 trigger OnPreDataItem()
                 begin
-                    FilterText +=', ' + "TDS Entry".GETFILTERS;
-                    RunningAmount :=0;
+                    FilterText += ', ' + "TDS Entry".GETFILTERS;
+                    RunningAmount := 0;
 
                     IF NOT ShowClosedEntries THEN
-                      SETRANGE(Closed,FALSE);
+                        SETRANGE(Closed, FALSE);
                 end;
             }
 
@@ -123,11 +123,11 @@ report 50082 "Vendor TDS Ledger"
             begin
                 OpeningAmount := 0;
                 IF VendDateFilter <> '' THEN BEGIN
-                  IF GETRANGEMIN("Date Filter") <> 0D THEN BEGIN
-                    SETRANGE("Date Filter",0D,GETRANGEMIN("Date Filter") - 1);
-                    CALCFIELDS("TDS Balance");
-                    OpeningAmount := "TDS Balance";
-                  END;
+                    IF GETRANGEMIN("Date Filter") <> 0D THEN BEGIN
+                        SETRANGE("Date Filter", 0D, GETRANGEMIN("Date Filter") - 1);
+                        CALCFIELDS("TDS Balance");
+                        OpeningAmount := "TDS Balance";
+                    END;
                 END;
             end;
 
@@ -147,7 +147,7 @@ report 50082 "Vendor TDS Ledger"
             {
                 group(Options)
                 {
-                    field("Show Closed Entries";ShowClosedEntries)
+                    field("Show Closed Entries"; ShowClosedEntries)
                     {
                     }
                 }
@@ -171,9 +171,9 @@ report 50082 "Vendor TDS Ledger"
     end;
 
     var
-        TDSPostingGroup: Record "50008";
+        TDSPostingGroup: Record "TDS Posting Group";
         Description: Text[100];
-        CompInfo: Record "79";
+        CompInfo: Record "Company Information";
         OpeningAmount: Decimal;
         VendFilter: Text;
         VendDateFilter: Text[30];

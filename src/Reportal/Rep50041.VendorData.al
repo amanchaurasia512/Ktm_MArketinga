@@ -5,7 +5,7 @@ report 50041 "Vendor Data"
 
     dataset
     {
-        dataitem(DataItem1; Table23)
+        dataitem(Vendor;Vendor)
         {
             RequestFilterFields = "No.";
             column(No_Customer; Vendor."No.")

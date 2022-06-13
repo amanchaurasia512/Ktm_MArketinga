@@ -7,9 +7,9 @@ report 50015 "Sales Shipment"
 
     dataset
     {
-        dataitem(DataItem3595; 110)
+        dataitem("Sales Shipment Header";"Sales Shipment Header")
         {
-            DataItemTableView = SORTING (No.);
+            DataItemTableView = SORTING ("No.");
             RequestFilterFields = "No.", "Sell-to Customer No.", "No. Printed";
             RequestFilterHeading = 'Posted Sales Shipment';
             column(No_SalesShptHeader; "No.")
@@ -72,10 +72,10 @@ report 50015 "Sales Shipment"
             column(InvoiceDate; FORMAT("Order Date") + '  ( ' + SystemManagement.getNepaliDate("Posting Date") + ' )')
             {
             }
-            dataitem(CopyLoop; Table2000000026)
+            dataitem(CopyLoop; Integer)
             {
                 DataItemTableView = SORTING (Number);
-                dataitem(PageLoop; Table2000000026)
+                dataitem(PageLoop; Integer)
                 {
                     DataItemTableView = SORTING (Number)
                                         WHERE (Number = CONST (1));
@@ -187,7 +187,7 @@ report 50015 "Sales Shipment"
                     column(SelltoCustNo_SalesShptHeaderCaption; "Sales Shipment Header".FIELDCAPTION("Sell-to Customer No."))
                     {
                     }
-                    dataitem(DimensionLoop1; Table2000000026)
+                    dataitem(DimensionLoop1; Integer)
                     {
                         DataItemLinkReference = "Sales Shipment Header";
                         DataItemTableView = SORTING (Number)
@@ -233,11 +233,11 @@ report 50015 "Sales Shipment"
                                 CurrReport.BREAK;
                         end;
                     }
-                    dataitem(DataItem2502; Table111)
+                    dataitem("Sales Shipment Line";"Sales Shipment Line")
                     {
-                        DataItemLink = Document No.=FIELD(No.);
+                        DataItemLink = "Document No."=FIELD("No.");
                         DataItemLinkReference = "Sales Shipment Header";
-                        DataItemTableView = SORTING (Document No., Line No.);
+                        DataItemTableView = SORTING ("Document No.", "Line No.");
                         column(Description_SalesShptLine; SalesLineDescription)
                         {
                         }
@@ -283,7 +283,7 @@ report 50015 "Sales Shipment"
                         column(No_SalesShptLineCaption; FIELDCAPTION("No."))
                         {
                         }
-                        dataitem(DimensionLoop2; Table2000000026)
+                        dataitem(DimensionLoop2; Integer)
                         {
                             DataItemTableView = SORTING (Number)
                                                 WHERE (Number = FILTER (1 ..));
@@ -328,7 +328,7 @@ report 50015 "Sales Shipment"
                                     CurrReport.BREAK;
                             end;
                         }
-                        dataitem(DisplayAsmInfo; Table2000000026)
+                        dataitem(DisplayAsmInfo; Integer)
                         {
                             DataItemTableView = SORTING (Number);
                             column(PostedAsmLineItemNo; BlanksForIndent + PostedAsmLine."No.")
@@ -343,12 +343,12 @@ report 50015 "Sales Shipment"
                             }
                             column(PostedAsmLineUOMCode; GetUnitOfMeasureDescr(PostedAsmLine."Unit of Measure Code"))
                             {
-                                DecimalPlaces = 0 : 5;
+                                //DecimalPlaces = 0 : 5;
                             }
 
                             trigger OnAfterGetRecord()
                             var
-                                ItemTranslation: Record "30";
+                                ItemTranslation: Record "Item Translation";
                             begin
                                 IF Number = 1 THEN
                                     PostedAsmLine.FINDSET
@@ -410,12 +410,12 @@ report 50015 "Sales Shipment"
                             SETRANGE("Line No.", 0, "Line No.");
                         end;
                     }
-                    dataitem(Total; Table2000000026)
+                    dataitem(Total; Integer)
                     {
                         DataItemTableView = SORTING (Number)
                                             WHERE (Number = CONST (1));
                     }
-                    dataitem(Total2; Table2000000026)
+                    dataitem(Total2; Integer)
                     {
                         DataItemTableView = SORTING (Number)
                                             WHERE (Number = CONST (1));
@@ -459,7 +459,7 @@ report 50015 "Sales Shipment"
                                 CurrReport.BREAK;
                         end;
                     }
-                    dataitem(ItemTrackingLine; Table2000000026)
+                    dataitem(ItemTrackingLine; Integer)
                     {
                         DataItemTableView = SORTING (Number);
                         column(TrackingSpecBufferNo; TrackingSpecBuffer."Item No.")
@@ -498,7 +498,7 @@ report 50015 "Sales Shipment"
                         column(NoCaption; NoCaptionLbl)
                         {
                         }
-                        dataitem(TotalItemTracking; Table2000000026)
+                        dataitem(TotalItemTracking; Integer)
                         {
                             DataItemTableView = SORTING (Number)
                                                 WHERE (Number = CONST (1));
@@ -584,7 +584,7 @@ report 50015 "Sales Shipment"
 
             trigger OnAfterGetRecord()
             begin
-                CurrReport.LANGUAGE := Language.GetLanguageID("Language Code");
+                //CurrReport.LANGUAGE := Language.GetLanguageID("Language Code");
 
                 IF RespCenter.GET("Responsibility Center") THEN BEGIN
                     FormatAddr.RespCenter(CompanyAddr, RespCenter);
@@ -613,7 +613,7 @@ report 50015 "Sales Shipment"
                     ReferenceText := FIELDCAPTION("Your Reference");
                 FormatAddr.SalesShptShipTo(ShipToAddr, "Sales Shipment Header");
 
-                FormatAddr.SalesShptBillTo(CustAddr, "Sales Shipment Header");
+                //FormatAddr.SalesShptBillTo(CustAddr, "Sales Shipment Header");
 
                 //NP15.1001 >>
                 GetCustomerOneLineAddress;
@@ -730,24 +730,24 @@ report 50015 "Sales Shipment"
         Text000: Label 'Salesperson';
         Text001: Label 'COPY';
         Text002: Label 'Sales - Shipment%1';
-        SalesPurchPerson: Record "13";
-        CompanyInfo: Record "79";
-        CompanyInfo1: Record "79";
-        CompanyInfo2: Record "79";
-        CompanyInfo3: Record "79";
-        SalesSetup: Record "311";
-        DimSetEntry1: Record "480";
-        DimSetEntry2: Record "480";
-        Language: Record "8";
-        TrackingSpecBuffer: Record "336" temporary;
-        PostedAsmHeader: Record "910";
-        PostedAsmLine: Record "911";
-        ShptCountPrinted: Codeunit "314";
-        SegManagement: Codeunit "5051";
-        ItemTrackingMgt: Codeunit "6500";
-        ItemTrackingDocMgt: Codeunit "6503";
-        RespCenter: Record "5714";
-        ItemTrackingAppendix: Report "6521";
+        SalesPurchPerson: Record "Salesperson/Purchaser";
+        CompanyInfo: Record "Company Information";
+        CompanyInfo1: Record "Company Information";
+        CompanyInfo2: Record "Company Information";
+        CompanyInfo3: Record "Company Information";
+        SalesSetup: Record "Sales & Receivables Setup";
+        DimSetEntry1: Record "Dimension Set Entry";
+        DimSetEntry2: Record "Dimension Set Entry";
+        Language: Record Language;
+        TrackingSpecBuffer: Record "Tracking Specification" temporary;
+        PostedAsmHeader: Record "Posted Assembly Header";
+        PostedAsmLine: Record "Posted Assembly Line";
+        ShptCountPrinted: Codeunit "Sales Shpt.-Printed";
+        SegManagement: Codeunit SegManagement;
+        ItemTrackingMgt: Codeunit "Item Tracking Management";
+        ItemTrackingDocMgt: Codeunit "Item Tracking Doc. Management";
+        RespCenter: Record "Responsibility Center";
+        ItemTrackingAppendix: Report "Item Tracking Appendix";
         CustAddr: array[8] of Text[50];
         ShipToAddr: array[8] of Text[50];
         CompanyAddr: array[8] of Text[50];
@@ -763,7 +763,7 @@ report 50015 "Sales Shipment"
         CopyText: Text[30];
         ShowCustAddr: Boolean;
         i: Integer;
-        FormatAddr: Codeunit "365";
+        FormatAddr: Codeunit "Format Address";
         DimText: Text[120];
         OldDimText: Text[75];
         ShowInternalInfo: Boolean;
@@ -800,12 +800,12 @@ report 50015 "Sales Shipment"
         NoCaptionLbl: Label 'No.';
         PageCaptionCap: Label 'Page %1 of %2';
         "--NP15.1001": Integer;
-        Cust: Record "18";
+        Cust: Record Customer;
         CompanyOneLineAddress: Text;
         CompanyCommunicationAddress: Text;
         CustomerOneLineAddress: Text;
-        Currency: Record "4";
-        SystemManagement: Codeunit "50000";
+        Currency: Record Currency;
+        SystemManagement: Codeunit "IRD Mgt.";
         SalesLineDescription: Text;
 
     [Scope('Internal')]
@@ -828,7 +828,7 @@ report 50015 "Sales Shipment"
     [Scope('Internal')]
     procedure GetUnitOfMeasureDescr(UOMCode: Code[10]): Text[10]
     var
-        UnitOfMeasure: Record "204";
+        UnitOfMeasure: Record "Unit of Measure";
     begin
         IF NOT UnitOfMeasure.GET(UOMCode) THEN
             EXIT(UOMCode);

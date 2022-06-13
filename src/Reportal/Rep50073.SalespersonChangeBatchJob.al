@@ -15,33 +15,33 @@ report 50073 "Salesperson Change Batch Job"
     requestpage
     {
 
-        layout
-        {
-            area(content)
-            {
-                group()
-                {
-                    Visible = false;
-                    field("Product Segment Code"; ProductSegment)
-                    {
-                        TableRelation = "Dimension Value".Code WHERE (Global Dimension No.=CONST(1));
-                    }
-                    field("Customer No."; CustNo)
-                    {
-                        TableRelation = Customer;
-                    }
-                    field("Area Person"; AreaCode)
-                    {
-                        TableRelation = "Dimension Value".Code WHERE (Global Dimension No.=CONST(2));
-                    }
-                    field("New Area Person"; SalesPerson)
-                    {
-                        Caption = 'New Area Person';
-                        TableRelation = Salesperson/Purchaser;
-                    }
-                }
-            }
-        }
+        // layout
+        // {
+        //     area(content)
+        //     {
+        //         group(general)
+        //         {
+        //             Visible = false;
+        //             field("Product Segment Code"; ProductSegment)
+        //             {
+        //                 TableRelation = "Dimension Value".Code WHERE("Global Dimension No."=CONST(1));
+        //             }
+        //             field("Customer No."; CustNo)
+        //             {
+        //                 TableRelation = Customer;
+        //             }
+        //             field("Area Person"; AreaCode)
+        //             {
+        //                 TableRelation = "Dimension Value".Code WHERE("Global Dimension No".=CONST(2));
+        //             }
+        //             field("New Area Person"; SalesPerson)
+        //             {
+        //                 Caption = 'New Area Person';
+        //                 TableRelation = Salesperson/Purchaser;
+        //             }
+        //         }
+        //     }
+        // }
 
         actions
         {
@@ -90,7 +90,7 @@ report 50073 "Salesperson Change Batch Job"
         SalesPerson: Code[20];
         ProductSegment: Code[20];
         AreaCode: Code[20];
-        ProductSalesperson: Record "50006";
+        ProductSalesperson: Record "Product&Salesperson Posting Gr";
         Text000: Label 'Total Count #1##########\Processing #2############';
         ProgressWindow: Dialog;
         ProcessingCount: Integer;
@@ -100,16 +100,16 @@ report 50073 "Salesperson Change Batch Job"
     [Scope('Internal')]
     procedure AssignSalesPersonFromGlobalDim2()
     var
-        CustLedgEntry: Record "21";
-        ProductwiseSalesPerson: Record "50006";
-        ItemLedgEntries: Record "32";
-        ValueEntries: Record "5802";
-        GLEntry: Record "17";
-        SalesInvHdr: Record "112";
-        SalesInvLine: Record "113";
-        Customer: Record "18";
-        SalesCrMemoHdr: Record "114";
-        DetailedCustLedgEntry: Record "379";
+        CustLedgEntry: Record "Cust. Ledger Entry";
+        ProductwiseSalesPerson: Record "Product&Salesperson Posting Gr";
+        ItemLedgEntries: Record "Item Ledger Entry";
+        ValueEntries: Record "Value Entry";
+        GLEntry: Record "G/L Entry";
+        SalesInvHdr: Record "Sales Invoice Header";
+        SalesInvLine: Record "Sales Invoice Line";
+        Customer: Record Customer;
+        SalesCrMemoHdr: Record "Sales Cr.Memo Header";
+        DetailedCustLedgEntry: Record "Detailed Cust. Ledg. Entry";
     begin
         Customer.RESET;
         IF Customer.FINDFIRST THEN REPEAT
@@ -156,15 +156,15 @@ report 50073 "Salesperson Change Batch Job"
     [Scope('Internal')]
     procedure SalesPersonUpdate(ProductSegmentCode: Code[20];CustomerNo: Code[20];CurrentAreaCode: Code[20];NewAreaCode: Code[20];var Updated: Boolean)
     var
-        CustLedgEntry: Record "21";
-        ProductwiseSalesPerson: Record "50006";
-        ItemLedgEntries: Record "32";
-        ValueEntries: Record "5802";
-        GLEntry: Record "17";
-        SalesInvHdr: Record "112";
-        SalesInvLine: Record "113";
-        Customer: Record "18";
-        SalesCrMemoHdr: Record "114";
+        CustLedgEntry: Record "Cust. Ledger Entry";
+        ProductwiseSalesPerson: Record "Product&Salesperson Posting Gr";
+        ItemLedgEntries: Record "Item Ledger Entry";
+        ValueEntries: Record "Value Entry";
+        GLEntry: Record "G/L Entry";
+        SalesInvHdr: Record "Sales Invoice Header";
+        SalesInvLine: Record "Sales Invoice Line";
+        Customer: Record Customer;
+        SalesCrMemoHdr: Record "Sales Cr.Memo Header";
     begin
         SalesInvHdr.RESET;
         SalesInvHdr.SETRANGE("Sell-to Customer No.",CustomerNo);

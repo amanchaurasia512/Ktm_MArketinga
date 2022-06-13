@@ -5,7 +5,7 @@ report 50401 "Area-Item Wise Sales KMT"
 
     dataset
     {
-        dataitem(DataItem1; "Sales Invoice Line")
+        dataitem("Sales Invoice Line"; "Sales Invoice Line")
         {
             RequestFilterFields = "Posting Date", "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code";
             column(CompanyName; CompanyInfo.Name)

@@ -5,9 +5,9 @@ report 50051 "TR Detail Trial Bal."
 
     dataset
     {
-        dataitem(DataItem1; Table50005)
+        dataitem("Document Class Master";"Document Class Master")
         {
-            DataItemTableView = SORTING (Doc. Class Type, Doc. Class No.);
+            DataItemTableView = SORTING ("Doc. Class Type", "Doc. Class No.");
             PrintOnlyIfDetail = true;
             column(CurrReport_PAGENOCaption; CurrReport_PAGENOCaption)
             {
@@ -60,11 +60,11 @@ report 50051 "TR Detail Trial Bal."
             column(Summary; Summary)
             {
             }
-            dataitem(DataItem2; Table17)
+            dataitem("G/L Entry";"G/L Entry")
             {
-                DataItemLink = Loan = FIELD (Doc. Class No.),
-                               Global Dimension 1 Code=FIELD(Global Dimension 1 Filter),
-                               G/L Account No.=FIELD(G/L Account Filter);
+                DataItemLink = Loan = FIELD ("Doc. Class No."),
+                               "Global Dimension 1 Code"=FIELD("Global Dimension 1 Filter"),
+                               "G/L Account No."=FIELD("G/L Account Filter");
                 DataItemTableView = WHERE(Loan=FILTER(<>''));
                 RequestFilterFields = "G/L Account No.","Posting Date",Loan,"Source Type","Source No.";
                 column(Loan_GLEntry;"G/L Entry".Loan)
@@ -212,23 +212,23 @@ report 50051 "TR Detail Trial Bal."
     var
         LCBoolean: Boolean;
         TRBoolean: Boolean;
-        GLEntry: Record "17";
+        GLEntry: Record "G/L Entry";
         OpeningBalance: Decimal;
         StartDateNep: Code[20];
         EndDateNep: Code[20];
-        NepaliCal: Record "50000";
+        NepaliCal: Record "English-Nepali Date";
         StartEngDate: Date;
         EndEngDate: Date;
-        CompanyInfo: Record "79";
+        CompanyInfo: Record "Company Information";
         DateFilter: Text;
         DocClassFilter: Text;
         StartBalance: Decimal;
         ReportTitle: Text;
         CurrReport_PAGENOCaption: Label 'Page';
         SourceName: Text;
-        Vendor: Record "23";
+        Vendor: Record Vendor;
         RunningBalance: Decimal;
-        BankAcc: Record "270";
+        BankAcc: Record "Bank Account";
         ReportHeading: Label 'TR Detail Trial Bal.';
         ShowSummary: Boolean;
         DrCrIndication: Text;

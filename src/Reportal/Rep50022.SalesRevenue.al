@@ -5,10 +5,10 @@ report 50022 "Sales Revenue"
 
     dataset
     {
-        dataitem(DataItem7069; Table17)
+        dataitem("G/L Entry"; "G/L Entry")
         {
-            DataItemTableView = SORTING (G/L Account No., Global Dimension 1 Code, Global Dimension 2 Code, Posting Date)
-                                WHERE (Gen. Posting Type=CONST(Sale));
+            DataItemTableView = SORTING("G/L Account No.", "Global Dimension 1 Code", "Global Dimension 2 Code", "Posting Date")
+                                WHERE("Gen. Posting Type" = CONST(Sale));
             column(FORMAT_PostingDateFrom____To____FORMAT_PostingDateTo________BranchCode________CostRevenueCode; FORMAT(PostingDateFrom) + ' To ' + FORMAT(PostingDateTo) + ' / ' + GD1Code + ' / ' + GD2Code)
             {
             }
@@ -86,12 +86,12 @@ report 50022 "Sales Revenue"
                 field(GD1Code; GD1Code)
                 {
                     CaptionClass = '1,3,1';
-                    TableRelation = "Dimension Value".Code WHERE (Global Dimension No.=CONST(1));
+                    TableRelation = "Dimension Value".Code WHERE("Global Dimension No."=CONST(1));
                 }
                 field(GD2Code; GD2Code)
                 {
                     CaptionClass = '1,3,2';
-                    TableRelation = "Dimension Value".Code WHERE (Global Dimension No.=CONST(2));
+                    TableRelation = "Dimension Value".Code WHERE("Global Dimension No."=CONST(2));
                 }
             }
         }
@@ -111,7 +111,7 @@ report 50022 "Sales Revenue"
         GD1Code: Code[250];
         GD2Code: Code[250];
         TotalAmount: Decimal;
-        DimensionValue: Record "349";
+        DimensionValue: Record "Dimension Value";
         GD1Value: Text[50];
         GD2Value: Text[50];
 }

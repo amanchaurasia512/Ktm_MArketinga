@@ -6,7 +6,7 @@ report 50062 "Vendor Total Purchase"
 
     dataset
     {
-        dataitem(DataItem6836; Table23)
+        dataitem(Vendor;Vendor)
         {
             RequestFilterFields = "No.", "Date Filter", "Global Dimension 1 Code", "Global Dimension 2 Code";
             column(COMPANYNAME; CompanyInfo.Name)
@@ -128,11 +128,11 @@ report 50062 "Vendor Total Purchase"
             column(BeginBalance; BeginBalance)
             {
             }
-            dataitem(DataItem31; Table25)
+            dataitem("Vendor Ledger Entry";"Vendor Ledger Entry")
             {
-                DataItemLink = Vendor No.=FIELD(No.),
-                               Global Dimension 1 Code=FIELD(Global Dimension 1 Filter),
-                               Global Dimension 2 Code=FIELD(Global Dimension 2 Filter);
+                DataItemLink = "Vendor No."=FIELD("No."),
+                               "Global Dimension 1 Code"=FIELD("Global Dimension 1 Filter"),
+                               "Global Dimension 2 Code"=FIELD("Global Dimension 2 Filter");
                 column(EntryNo_CustLedgerEntry;"Vendor Ledger Entry"."Entry No.")
                 {
                 }
@@ -146,7 +146,7 @@ report 50062 "Vendor Total Purchase"
 
             trigger OnAfterGetRecord()
             var
-                FormatAddr: Codeunit "365";
+                FormatAddr: Codeunit "Format Address";
             begin
                 ExemptAmt := 0;
                 VatAmount :=0;
@@ -283,14 +283,14 @@ report 50062 "Vendor Total Purchase"
         Total_Reported_Amount_of_Sales__LCY_CaptionLbl: Label 'Total Reported Amount of Purchase (LCY)';
         TradeNameType: Code[10];
         "Purchase/Sale": Code[10];
-        VatEntries: Record "254";
+        VatEntries: Record "VAT Entry";
         ExemptAmt: Decimal;
-        CompanyInfo: Record "79";
+        CompanyInfo: Record "Company Information";
         OriginalAmtPurchaseLCY: Decimal;
         ShowTotalAmount: Boolean;
         StartDateNep: Code[10];
         EndDateNep: Code[10];
-        NepaliCal: Record "50000";
+        NepaliCal: Record "English-Nepali Date";
         StartEngDate: Date;
         EndEngDate: Date;
         VatAmount: Decimal;
@@ -299,16 +299,16 @@ report 50062 "Vendor Total Purchase"
         TotalTaxablePurchase: Decimal;
         TotalNonTaxablePurchase: Decimal;
         TotalVatAmount: Decimal;
-        VendorRec: Record "23";
+        VendorRec: Record Vendor;
         TotalBalance: Decimal;
-        DetailVendorLedger: Record "25";
-        VendorCopy: Record "23";
+        DetailVendorLedger: Record "Vendor Ledger Entry";
+        VendorCopy: Record vendor;
         BeginBalance: Decimal;
         VendorBalanceLCY: Decimal;
 
     local procedure CalculateAmtOfPurchaseLCY(): Decimal
     var
-        VendLedgEntry: Record "25";
+        VendLedgEntry: Record 25;
         Amt: Decimal;
         i: Integer;
     begin
@@ -329,7 +329,7 @@ report 50062 "Vendor Total Purchase"
 
     local procedure CalculateOriginalAmtOfPurchaseLCY(): Decimal
     var
-        CustLedgEntry1: Record "25";
+        CustLedgEntry1: Record "Vendor Ledger Entry";   //25
         OriginalAmt: Decimal;
         i: Integer;
     begin

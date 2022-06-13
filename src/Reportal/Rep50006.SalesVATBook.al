@@ -5,7 +5,7 @@ report 50006 "Sales VAT Book"
 
     dataset
     {
-        dataitem("VAT Entry"; 254)
+        dataitem("VAT Entry";"VAT Entry")
         {
             DataItemTableView = WHERE (Type = CONST (Sale));
             RequestFilterFields = "Posting Date";
@@ -291,9 +291,9 @@ report 50006 "Sales VAT Book"
     end;
 
     var
-        Customer: Record 18;
-        CompanyInfo: Record 79;
-        SystemManagement: Codeunit 50000;
+        Customer: Record Customer;
+        CompanyInfo: Record "Company Information";
+        SystemManagement: Codeunit "IRD Mgt.";
         CustomerName: Text[100];
         PostingDateFilter: Text[100];
         NepaliDate: Text;
@@ -305,7 +305,7 @@ report 50006 "Sales VAT Book"
         TotalAmount: Decimal;
         StartDateNep: Code[10];
         EndDateNep: Code[10];
-        NepaliCal: Record 50000;
+        NepaliCal: Record "English-Nepali Date";
         StartEngDate: Date;
         EndEngDate: Date;
 }

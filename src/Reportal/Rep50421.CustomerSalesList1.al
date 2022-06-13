@@ -110,7 +110,7 @@ report 50421 "Customer Sales List 1"
 
             trigger OnAfterGetRecord()
             var
-                FormatAddr: Codeunit "365";
+                FormatAddr: Codeunit "Format Address";
             begin
                 ExemptAmt := 0;
                 AmtSalesLCY := CalculateAmtOfSaleLCY;

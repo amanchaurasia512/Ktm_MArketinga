@@ -6,7 +6,7 @@ report 50083 "TDS Ledger"
 
     dataset
     {
-        dataitem(DataItem1; Table50009)
+        dataitem("TDS Entry";"TDS Entry")
         {
             RequestFilterFields = "Posting Date";
             column(TDS_Posting_Group; "TDS Entry"."TDS Posting Group")
@@ -84,11 +84,11 @@ report 50083 "TDS Ledger"
     end;
 
     var
-        Vendor: Record "23";
+        Vendor: Record Vendor;
         VendorName: Text[50];
-        TDSPostingGroup: Record "50008";
+        TDSPostingGroup: Record "TDS Posting Group";
         TDSPostingGroupName: Text[100];
-        CompanyInfo: Record "79";
+        CompanyInfo: Record "Company Information";
         Report_Title: Label 'TDS Ledger';
         "Filter": Text[100];
 }

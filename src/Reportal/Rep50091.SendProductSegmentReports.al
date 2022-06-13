@@ -4,9 +4,9 @@ report 50091 "Send Product Segment Reports"
 
     dataset
     {
-        dataitem(DataItem1; Table2000000026)
+        dataitem(Integer; Integer)
         {
-            DataItemTableView = WHERE (Number = CONST (1));
+            DataItemTableView = WHERE(Number = CONST(1));
 
             trigger OnAfterGetRecord()
             begin
@@ -32,6 +32,6 @@ report 50091 "Send Product Segment Reports"
     }
 
     var
-        IRDMgt: Codeunit "50000";
+        IRDMgt: Codeunit "IRD Mgt.";
 }
 

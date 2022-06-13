@@ -7,10 +7,10 @@ report 50065 "Sales Invoice Confirmation KMT"
 
     dataset
     {
-        dataitem(DataItem6640; Table36)
+        dataitem("Sales Header";"Sales Header")
         {
-            DataItemTableView = SORTING (Document Type, No.)
-                                WHERE (Document Type=CONST(Invoice));
+            DataItemTableView = SORTING ("Document Type", "No.")
+                                WHERE ("Document Type"=CONST(Invoice));
             RequestFilterFields = "No.", "Sell-to Customer No.", "No. Printed";
             RequestFilterHeading = 'Sales Invoice Confirmation';
             column(DocType_SalesHeader; "Document Type")
@@ -121,10 +121,10 @@ report 50065 "Sales Invoice Confirmation KMT"
             column(InvoiceDate; FORMAT("Order Date") + '  ( ' + SystemManagement.getNepaliDate("Posting Date") + ' )')
             {
             }
-            dataitem(CopyLoop; Table2000000026)
+            dataitem(CopyLoop; Integer)
             {
                 DataItemTableView = SORTING (Number);
-                dataitem(PageLoop; Table2000000026)
+                dataitem(PageLoop; Integer)
                 {
                     DataItemTableView = SORTING (Number)
                                         WHERE (Number = CONST (1));
@@ -254,7 +254,7 @@ report 50065 "Sales Invoice Confirmation KMT"
                     column(PricesInclVAT_SalesHeaderCaption; "Sales Header".FIELDCAPTION("Prices Including VAT"))
                     {
                     }
-                    dataitem(DimensionLoop1; Table2000000026)
+                    dataitem(DimensionLoop1; Integer)
                     {
                         DataItemLinkReference = "Sales Header";
                         DataItemTableView = SORTING (Number)
@@ -303,19 +303,19 @@ report 50065 "Sales Invoice Confirmation KMT"
                                 CurrReport.BREAK;
                         end;
                     }
-                    dataitem(DataItem2844; Table37)
+                    dataitem("Sales Line";"Sales Line")
                     {
-                        DataItemLink = Document Type=FIELD(Document Type),
-                                       Document No.=FIELD(No.);
+                        DataItemLink = "Document Type"=FIELD("Document Type"),
+                                       "Document No."=FIELD("No.");
                         DataItemLinkReference = "Sales Header";
-                        DataItemTableView = SORTING(Document Type,Document No.,Line No.);
+                        DataItemTableView = SORTING("Document Type","Document No.","Line No.");
 
                         trigger OnPreDataItem()
                         begin
                             CurrReport.BREAK;
                         end;
                     }
-                    dataitem(RoundLoop;Table2000000026)
+                    dataitem(RoundLoop;Integer)
                     {
                         DataItemTableView = SORTING(Number);
                         column(SalesLineAmt;SalesLine."Line Amount")
@@ -522,7 +522,7 @@ report 50065 "Sales Invoice Confirmation KMT"
                             AutoFormatExpression = "Sales Header"."Currency Code";
                             AutoFormatType = 1;
                         }
-                        dataitem(DimensionLoop2;Table2000000026)
+                        dataitem(DimensionLoop2;Integer)
                         {
                             DataItemTableView = SORTING(Number)
                                                 WHERE(Number=FILTER(1..));
@@ -569,7 +569,7 @@ report 50065 "Sales Invoice Confirmation KMT"
                                 DimSetEntry2.SETRANGE("Dimension Set ID","Sales Line"."Dimension Set ID");
                             end;
                         }
-                        dataitem(AsmLoop;Table2000000026)
+                        dataitem(AsmLoop;Integer)
                         {
                             DataItemTableView = SORTING(Number);
                             column(AsmLineType;AsmLine.Type)
@@ -684,7 +684,7 @@ report 50065 "Sales Invoice Confirmation KMT"
                             //GAT.15.07 <<
                         end;
                     }
-                    dataitem(VATCounter;Table2000000026)
+                    dataitem(VATCounter;Integer)
                     {
                         DataItemTableView = SORTING(Number);
                         column(VATAmountLineVATBase;VATAmountLine."VAT Base")
@@ -741,7 +741,7 @@ report 50065 "Sales Invoice Confirmation KMT"
                               VATAmountLine."Invoice Discount Amount",VATAmountLine."VAT Base",VATAmountLine."VAT Amount");
                         end;
                     }
-                    dataitem(VATCounterLCY;Table2000000026)
+                    dataitem(VATCounterLCY;Integer)
                     {
                         DataItemTableView = SORTING(Number);
                         column(VALExchRate;VALExchRate)
@@ -797,7 +797,7 @@ report 50065 "Sales Invoice Confirmation KMT"
                             VALExchRate := STRSUBSTNO(Text009,CurrExchRate."Relational Exch. Rate Amount",CurrExchRate."Exchange Rate Amount");
                         end;
                     }
-                    dataitem(Total2;Table2000000026)
+                    dataitem(Total2;Integer)
                     {
                         DataItemTableView = SORTING(Number)
                                             WHERE(Number=CONST(1));
@@ -841,7 +841,7 @@ report 50065 "Sales Invoice Confirmation KMT"
                               CurrReport.BREAK;
                         end;
                     }
-                    dataitem(PrepmtLoop;Table2000000026)
+                    dataitem(PrepmtLoop;Integer)
                     {
                         DataItemTableView = SORTING(Number)
                                             WHERE(Number=FILTER(1..));
@@ -905,7 +905,7 @@ report 50065 "Sales Invoice Confirmation KMT"
                         column(PrepaymentSpecCaption;PrepaymentSpecCaptionLbl)
                         {
                         }
-                        dataitem(PrepmtDimLoop;Table2000000026)
+                        dataitem(PrepmtDimLoop;Integer)
                         {
                             DataItemTableView = SORTING(Number)
                                                 WHERE(Number=FILTER(1..));
@@ -970,7 +970,7 @@ report 50065 "Sales Invoice Confirmation KMT"
                               PrepmtLineAmount);
                         end;
                     }
-                    dataitem(PrepmtVATCounter;Table2000000026)
+                    dataitem(PrepmtVATCounter;Integer)
                     {
                         DataItemTableView = SORTING(Number);
                         column(PrepmtVATAmtLineVATAmt;PrepmtVATAmountLine."VAT Amount")
@@ -1012,7 +1012,7 @@ report 50065 "Sales Invoice Confirmation KMT"
                             SETRANGE(Number,1,PrepmtVATAmountLine.COUNT);
                         end;
                     }
-                    dataitem(PrepmtTotal;Table2000000026)
+                    dataitem(PrepmtTotal;Integer)
                     {
                         DataItemTableView = SORTING(Number)
                                             WHERE(Number=CONST(1));
@@ -1033,9 +1033,9 @@ report 50065 "Sales Invoice Confirmation KMT"
 
                 trigger OnAfterGetRecord()
                 var
-                    PrepmtSalesLine: Record "37" temporary;
-                    SalesPost: Codeunit "80";
-                    TempSalesLine: Record "37" temporary;
+                    PrepmtSalesLine: Record "Sales Line" temporary;
+                    SalesPost: Codeunit "Sales-Post";
+                    TempSalesLine: Record "Sales Line" temporary;
                 begin
                     CLEAR(SalesLine);
                     CLEAR(SalesPost);
@@ -1061,7 +1061,7 @@ report 50065 "Sales Invoice Confirmation KMT"
                     SalesPostPrepmt.CalcVATAmountLines("Sales Header",PrepmtSalesLine,PrepmtVATAmountLine,0);
                     PrepmtVATAmountLine.DeductVATAmountLine(PrepmtVATAmountLineDeduct);
                     SalesPostPrepmt.UpdateVATOnLines("Sales Header",PrepmtSalesLine,PrepmtVATAmountLine,0);
-                    SalesPostPrepmt.BuildInvLineBuffer2("Sales Header",PrepmtSalesLine,0,PrepmtInvBuf);
+                    //SalesPostPrepmt.BuildInvLineBuffer2("Sales Header",PrepmtSalesLine,0,PrepmtInvBuf);
                     PrepmtVATAmount := PrepmtVATAmountLine.GetTotalVATAmount;
                     PrepmtVATBaseAmount := PrepmtVATAmountLine.GetTotalVATBase;
                     PrepmtTotalAmountInclVAT := PrepmtVATAmountLine.GetTotalAmountInclVAT;
@@ -1102,7 +1102,7 @@ report 50065 "Sales Invoice Confirmation KMT"
             trigger OnAfterGetRecord()
             begin
                 //CompanyInfo.GET;
-                CurrReport.LANGUAGE := Language.GetLanguageID("Language Code");
+                //CurrReport.LANGUAGE := Language.GetLanguageID("Language Code");
                 NepaliCalendar.RESET;
                 NepaliCalendar.SETRANGE("English Date","Sales Header"."Posting Date");
                 IF NepaliCalendar.FINDFIRST THEN
@@ -1179,7 +1179,7 @@ report 50065 "Sales Invoice Confirmation KMT"
                   ShipmentMethod.TranslateDescription(ShipmentMethod,"Language Code");
                 END;
                 
-                FormatAddr.SalesHeaderShipTo(ShipToAddr,"Sales Header");
+                //FormatAddr.SalesHeaderShipTo(ShipToAddr,"Sales Header");
                 ShowShippingAddr := "Sell-to Customer No." <> "Bill-to Customer No.";
                 FOR i := 1 TO ARRAYLEN(ShipToAddr) DO
                   IF ShipToAddr[i] <> CustAddr[i] THEN
@@ -1273,7 +1273,7 @@ report 50065 "Sales Invoice Confirmation KMT"
 
         trigger OnOpenPage()
         begin
-            ArchiveDocument := SalesSetup."Archive Quotes and Orders";
+            //ArchiveDocument := SalesSetup."Archive Quotes and Orders";
             LogInteraction := SegManagement.FindInteractTmplCode(3) <> '';
 
             LogInteractionEnable := LogInteraction;
@@ -1321,35 +1321,35 @@ report 50065 "Sales Invoice Confirmation KMT"
         Text004: Label 'Sales Invoice Confirmation %1';
         PageCaptionCap: Label 'Page %1 of %2';
         Text006: Label 'Total %1 Excl. VAT';
-        GLSetup: Record "98";
-        ShipmentMethod: Record "10";
-        PaymentTerms: Record "3";
-        PrepmtPaymentTerms: Record "3";
-        SalesPurchPerson: Record "13";
-        CompanyInfo: Record "79";
-        CompanyInfo1: Record "79";
-        CompanyInfo2: Record "79";
-        CompanyInfo3: Record "79";
-        SalesSetup: Record "311";
-        VATAmountLine: Record "290" temporary;
-        PrepmtVATAmountLine: Record "290" temporary;
-        PrepmtVATAmountLineDeduct: Record "290" temporary;
-        SalesLine: Record "37" temporary;
-        DimSetEntry1: Record "480";
-        DimSetEntry2: Record "480";
-        TempPrepmtDimSetEntry: Record "480" temporary;
-        PrepmtInvBuf: Record "461" temporary;
-        RespCenter: Record "5714";
-        Language: Record "8";
-        CurrExchRate: Record "330";
-        AsmHeader: Record "900";
-        AsmLine: Record "901";
-        SalesCountPrinted: Codeunit "313";
-        FormatAddr: Codeunit "365";
-        SegManagement: Codeunit "5051";
-        ArchiveManagement: Codeunit "5063";
-        SalesPostPrepmt: Codeunit "442";
-        DimMgt: Codeunit "408";
+        GLSetup: Record "General Ledger Setup";
+        ShipmentMethod: Record "Shipment Method";
+        PaymentTerms: Record "Payment Terms";
+        PrepmtPaymentTerms: Record "Payment Terms";
+        SalesPurchPerson: Record "Salesperson/Purchaser";
+        CompanyInfo: Record "Company Information";
+        CompanyInfo1: Record "Company Information";
+        CompanyInfo2: Record "Company Information";
+        CompanyInfo3: Record "Company Information";
+        SalesSetup: Record "Sales & Receivables Setup";
+        VATAmountLine: Record "VAT Amount Line" temporary;
+        PrepmtVATAmountLine: Record "VAT Amount Line" temporary;
+        PrepmtVATAmountLineDeduct: Record "VAT Amount Line" temporary;
+        SalesLine: Record "Sales Line" temporary;
+        DimSetEntry1: Record "Dimension Set Entry";
+        DimSetEntry2: Record "Dimension Set Entry";
+        TempPrepmtDimSetEntry: Record "Dimension Set Entry" temporary;
+        PrepmtInvBuf: Record "Prepayment Inv. Line Buffer" temporary;
+        RespCenter: Record "Responsibility Center";
+        Language: Record Language;
+        CurrExchRate: Record "Currency Exchange Rate";
+        AsmHeader: Record "Assembly Header";
+        AsmLine: Record "Assembly Line";
+        SalesCountPrinted: Codeunit "Sales-Printed";
+        FormatAddr: Codeunit "Format Address";
+        SegManagement: Codeunit SegManagement;
+        ArchiveManagement: Codeunit ArchiveManagement;
+        SalesPostPrepmt: Codeunit "Sales-Post Prepayments";
+        DimMgt: Codeunit DimensionManagement;
         CustAddr: array [8] of Text[50];
         ShipToAddr: array [8] of Text[50];
         CompanyAddr: array [8] of Text[50];
@@ -1440,14 +1440,14 @@ report 50065 "Sales Invoice Confirmation KMT"
         DocumentDateCaptionLbl: Label 'Document Date';
         AllowInvDiscCaptionLbl: Label 'Allow Invoice Discount';
         "--NP15.1001": Integer;
-        Cust: Record "18";
+        Cust: Record Customer;
         CompanyOneLineAddress: Text;
         CompanyCommunicationAddress: Text;
         CustomerOneLineAddress: Text;
         TextVar: array [2] of Text[80];
         SalesLineSN: Integer;
-        Currency: Record "4";
-        SystemManagement: Codeunit "50000";
+        Currency: Record Currency;
+        SystemManagement: Codeunit "IRD Mgt.";
         LineTotalAmount: Decimal;
         TotalSubTotal: Decimal;
         TotalAmount: Decimal;
@@ -1456,7 +1456,7 @@ report 50065 "Sales Invoice Confirmation KMT"
         TotalPaymentDiscOnVAT: Decimal;
         SalesLineDescription: Text;
         SalesLineDesc2: Text;
-        NepaliCalendar: Record "50000";
+        NepaliCalendar: Record "English-Nepali Date";
         NepaliDate: Code[20];
         NonTaxSales: Decimal;
 
@@ -1474,7 +1474,7 @@ report 50065 "Sales Invoice Confirmation KMT"
     [Scope('Internal')]
     procedure GetUnitOfMeasureDescr(UOMCode: Code[10]): Text[10]
     var
-        UnitOfMeasure: Record "204";
+        UnitOfMeasure: Record "Unit of Measure";
     begin
         IF NOT UnitOfMeasure.GET(UOMCode) THEN
           EXIT(UOMCode);
@@ -1523,7 +1523,7 @@ report 50065 "Sales Invoice Confirmation KMT"
         SalesLineSN := 0;
     end;
 
-    local procedure SalesOrderLineOnAfterGetRecord(SalesLine: Record "37")
+    local procedure SalesOrderLineOnAfterGetRecord(SalesLine: Record "Sales Line")
     begin
         WITH SalesLine DO BEGIN
           IF "No." <> '' THEN

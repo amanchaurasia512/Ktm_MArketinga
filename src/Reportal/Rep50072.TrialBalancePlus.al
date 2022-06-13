@@ -6,9 +6,9 @@ report 50072 "Trial Balance Plus"
 
     dataset
     {
-        dataitem(DataItem6710; Table15)
+        dataitem("G/L Account";"G/L Account")
         {
-            DataItemTableView = SORTING (No.);
+            DataItemTableView = SORTING ("No.");
             RequestFilterFields = "No.", "Account Type", "Date Filter", "Global Dimension 1 Filter", "Global Dimension 2 Filter";
             column(STRSUBSTNO_Text000_PeriodText_; STRSUBSTNO(Text000, PeriodText))
             {
@@ -73,7 +73,7 @@ report 50072 "Trial Balance Plus"
             column(PageGroupNo; PageGroupNo)
             {
             }
-            dataitem(DataItem5444; Table2000000026)
+            dataitem(DataItem5444; Integer)
             {
                 DataItemTableView = SORTING (Number)
                                     WHERE (Number = CONST (1));
@@ -127,7 +127,7 @@ report 50072 "Trial Balance Plus"
                 column(TotalCreditBalanceatdate; TotalCreditBalanceatdate)
                 {
                 }
-                dataitem(BlankLineRepeater; Table2000000026)
+                dataitem(BlankLineRepeater; Integer)
                 {
                     column(BlankLineNo; BlankLineNo)
                     {
@@ -261,7 +261,7 @@ report 50072 "Trial Balance Plus"
 
     var
         Text000: Label 'Period: %1';
-        ExcelBuf: Record "370" temporary;
+        ExcelBuf: Record "Excel Buffer" temporary;
         GLFilter: Text;
         PeriodText: Text[30];
         PrintToExcel: Boolean;
@@ -311,26 +311,26 @@ report 50072 "Trial Balance Plus"
     procedure MakeExcelInfo()
     begin
         ExcelBuf.SetUseInfoSheet;
-        ExcelBuf.AddInfoColumn(FORMAT(Text005), FALSE, '', TRUE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
-        ExcelBuf.AddInfoColumn(COMPANYNAME, FALSE, '', FALSE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
-        ExcelBuf.NewRow;
-        ExcelBuf.AddInfoColumn(FORMAT(Text007), FALSE, '', TRUE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
-        ExcelBuf.AddInfoColumn(FORMAT(Text001), FALSE, '', FALSE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
-        ExcelBuf.NewRow;
-        ExcelBuf.AddInfoColumn(FORMAT(Text006), FALSE, '', TRUE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
-        ExcelBuf.AddInfoColumn(REPORT::"Trial Balance", FALSE, '', FALSE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Number);
-        ExcelBuf.NewRow;
-        ExcelBuf.AddInfoColumn(FORMAT(Text008), FALSE, '', TRUE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
-        ExcelBuf.AddInfoColumn(USERID, FALSE, '', FALSE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
-        ExcelBuf.NewRow;
-        ExcelBuf.AddInfoColumn(FORMAT(Text009), FALSE, '', TRUE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
-        ExcelBuf.AddInfoColumn(TODAY, FALSE, '', FALSE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Date);
-        ExcelBuf.NewRow;
-        ExcelBuf.AddInfoColumn(FORMAT(Text010), FALSE, '', TRUE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
-        ExcelBuf.AddInfoColumn("G/L Account".GETFILTER("No."), FALSE, '', FALSE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
-        ExcelBuf.NewRow;
-        ExcelBuf.AddInfoColumn(FORMAT(Text011), FALSE, '', TRUE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
-        ExcelBuf.AddInfoColumn("G/L Account".GETFILTER("Date Filter"), FALSE, '', FALSE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
+        //ExcelBuf.AddInfoColumn(FORMAT(Text005), FALSE, '', TRUE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
+        // ExcelBuf.AddInfoColumn(COMPANYNAME, FALSE, '', FALSE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
+        // ExcelBuf.NewRow;
+        // ExcelBuf.AddInfoColumn(FORMAT(Text007), FALSE, '', TRUE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
+        // ExcelBuf.AddInfoColumn(FORMAT(Text001), FALSE, '', FALSE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
+        // ExcelBuf.NewRow;
+        // ExcelBuf.AddInfoColumn(FORMAT(Text006), FALSE, '', TRUE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
+        // ExcelBuf.AddInfoColumn(REPORT::"Trial Balance", FALSE, '', FALSE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Number);
+        // ExcelBuf.NewRow;
+        // ExcelBuf.AddInfoColumn(FORMAT(Text008), FALSE, '', TRUE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
+        // ExcelBuf.AddInfoColumn(USERID, FALSE, '', FALSE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
+        // ExcelBuf.NewRow;
+        // ExcelBuf.AddInfoColumn(FORMAT(Text009), FALSE, '', TRUE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
+        // ExcelBuf.AddInfoColumn(TODAY, FALSE, '', FALSE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Date);
+        // ExcelBuf.NewRow;
+        // ExcelBuf.AddInfoColumn(FORMAT(Text010), FALSE, '', TRUE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
+        // ExcelBuf.AddInfoColumn("G/L Account".GETFILTER("No."), FALSE, '', FALSE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
+        // ExcelBuf.NewRow;
+        // ExcelBuf.AddInfoColumn(FORMAT(Text011), FALSE, '', TRUE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
+        // ExcelBuf.AddInfoColumn("G/L Account".GETFILTER("Date Filter"), FALSE, '', FALSE, FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
         ExcelBuf.ClearNewRow;
         MakeExcelDataHeader;
     end;

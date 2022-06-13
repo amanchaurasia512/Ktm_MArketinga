@@ -5,69 +5,69 @@ report 50084 "TDS Report II"
 
     dataset
     {
-        dataitem(DataItem1; Table17)
+        dataitem("G/L Entry"; "G/L Entry")
         {
-            DataItemTableView = WHERE (TDS Group=FILTER(<>''),
-                                      G/L Account No.=FILTER(<>2262100&<>2262200));
-            RequestFilterFields = "Posting Date","G/L Account No.";
-            column(AllFilters;AllFilters)
+            DataItemTableView = WHERE("TDS Group" = FILTER(<> ''),
+                                      "G/L Account No." = FILTER(<> 2262100 & <> 2262200));
+            RequestFilterFields = "Posting Date", "G/L Account No.";
+            column(AllFilters; AllFilters)
             {
             }
-            column(HideDetail;HideDetail)
+            column(HideDetail; HideDetail)
             {
             }
-            column(BalAccountNo_GLEntry;"G/L Entry"."Bal. Account No.")
+            column(BalAccountNo_GLEntry; "G/L Entry"."Bal. Account No.")
             {
             }
-            column(GLAccountName_GLEntry;"G/L Entry"."G/L Account Name")
+            column(GLAccountName_GLEntry; "G/L Entry"."G/L Account Name")
             {
             }
-            column(GLAccountNo_GLEntry;"G/L Entry"."G/L Account No.")
+            column(GLAccountNo_GLEntry; "G/L Entry"."G/L Account No.")
             {
             }
-            column(TDSGroup_GLEntry;"G/L Entry"."TDS Group")
+            column(TDSGroup_GLEntry; "G/L Entry"."TDS Group")
             {
             }
-            column(TDS_GLEntry;"G/L Entry"."TDS%")
+            column(TDS_GLEntry; "G/L Entry"."TDS%")
             {
             }
-            column(TDSType_GLEntry;"G/L Entry"."TDS Type")
+            column(TDSType_GLEntry; "G/L Entry"."TDS Type")
             {
             }
-            column(TDSAmount_GLEntry;"G/L Entry"."TDS Amount")
+            column(TDSAmount_GLEntry; "G/L Entry"."TDS Amount")
             {
             }
-            column(TDSBaseAmount_GLEntry;"G/L Entry"."TDS Base Amount")
+            column(TDSBaseAmount_GLEntry; "G/L Entry"."TDS Base Amount")
             {
             }
-            column(DocumentNo_GLEntry;"G/L Entry"."Document No.")
+            column(DocumentNo_GLEntry; "G/L Entry"."Document No.")
             {
             }
-            column(VendorNo;VendorNo)
+            column(VendorNo; VendorNo)
             {
             }
-            column(VendorName;VendorName)
+            column(VendorName; VendorName)
             {
             }
-            column(PANNo;PANNo )
+            column(PANNo; PANNo)
             {
             }
-            column(IRDDate;FORMAT(IRDDate))
+            column(IRDDate; FORMAT(IRDDate))
             {
             }
-            column(IRDNo;IRDNo)
+            column(IRDNo; IRDNo)
             {
             }
-            column(GLEntry_PostingDate;FORMAT("G/L Entry"."Posting Date"))
+            column(GLEntry_PostingDate; FORMAT("G/L Entry"."Posting Date"))
             {
             }
-            column(DebitAmount;DebitAmount)
+            column(DebitAmount; DebitAmount)
             {
             }
-            column(CreditAmount;CreditAmount)
+            column(CreditAmount; CreditAmount)
             {
             }
-            column(OpeningAmount;OpeningAmount)
+            column(OpeningAmount; OpeningAmount)
             {
             }
 
@@ -77,46 +77,46 @@ report 50084 "TDS Report II"
                 VendorName := '';
                 PANNo := '';
                 TDSRec.RESET;
-                TDSRec.SETRANGE("Transaction No.","Transaction No.");
+                TDSRec.SETRANGE("Transaction No.", "Transaction No.");
                 IF TDSRec.FINDFIRST THEN BEGIN
-                  IF VendorRec.GET(TDSRec."Bill-to/Pay-to No.") THEN BEGIN
-                    VendorNo := TDSRec."Bill-to/Pay-to No.";
-                    IF VendorName = '' THEN
-                      VendorName := VendorRec.Name;
-                    PANNo := VendorRec."VAT Registration No.";
-                  END;
-                  IRDNo := TDSRec."IRD Voucher No.";
-                  IRDDate := TDSRec."IRD Voucher Date";
+                    IF VendorRec.GET(TDSRec."Bill-to/Pay-to No.") THEN BEGIN
+                        VendorNo := TDSRec."Bill-to/Pay-to No.";
+                        IF VendorName = '' THEN
+                            VendorName := VendorRec.Name;
+                        PANNo := VendorRec."VAT Registration No.";
+                    END;
+                    IRDNo := TDSRec."IRD Voucher No.";
+                    IRDDate := TDSRec."IRD Voucher Date";
                 END;
 
                 IF LastVendor <> "Party No." THEN BEGIN
-                  LastVendor := "Party No.";
-                  DebitAmount :=0;
-                  CreditAmount := 0;
+                    LastVendor := "Party No.";
+                    DebitAmount := 0;
+                    CreditAmount := 0;
 
-                  TDSRec.RESET;
-                  TDSRec.SETFILTER("Posting Date", '<%1', "G/L Entry".GETRANGEMIN("Posting Date"));
-                  TDSRec.SETRANGE(Closed, FALSE);
-                  TDSRec.SETRANGE("Bill-to/Pay-to No.","Party No.");
-                  TDSRec.CALCSUMS("TDS Amount");
-                  OpeningAmount := TDSRec."TDS Amount";
+                    TDSRec.RESET;
+                    TDSRec.SETFILTER("Posting Date", '<%1', "G/L Entry".GETRANGEMIN("Posting Date"));
+                    TDSRec.SETRANGE(Closed, FALSE);
+                    TDSRec.SETRANGE("Bill-to/Pay-to No.", "Party No.");
+                    TDSRec.CALCSUMS("TDS Amount");
+                    OpeningAmount := TDSRec."TDS Amount";
 
-                //  TDSRec.RESET;
-                //  TDSRec.SETFILTER("Posting Date", '<%1', "G/L Entry".GETRANGEMIN("Posting Date"));
-                //  TDSRec.SETRANGE(Closed, FALSE);
-                //  TDSRec.CALCSUMS("TDS Amount");
-                //  OpeningAmount -= TDSRec."TDS Amount";
+                    //  TDSRec.RESET;
+                    //  TDSRec.SETFILTER("Posting Date", '<%1', "G/L Entry".GETRANGEMIN("Posting Date"));
+                    //  TDSRec.SETRANGE(Closed, FALSE);
+                    //  TDSRec.CALCSUMS("TDS Amount");
+                    //  OpeningAmount -= TDSRec."TDS Amount";
                 END;
 
                 IF TDSRec.Closed THEN
-                  DebitAmount := Amount;
+                    DebitAmount := Amount;
 
                 CreditAmount := Amount;
             end;
 
             trigger OnPreDataItem()
             begin
-                SETCURRENTKEY("TDS Group","Party No.");
+                SETCURRENTKEY("TDS Group", "Party No.");
             end;
         }
     }
@@ -131,7 +131,7 @@ report 50084 "TDS Report II"
             {
                 group(Option)
                 {
-                    field("Hide Detail";HideDetail)
+                    field("Hide Detail"; HideDetail)
                     {
                     }
                 }
@@ -158,8 +158,8 @@ report 50084 "TDS Report II"
         VendorName: Text[50];
         IRDNo: Code[50];
         IRDDate: Date;
-        VendorRec: Record "23";
-        TDSRec: Record "50009";
+        VendorRec: Record Vendor;
+        TDSRec: Record "TDS Entry";
         PANNo: Text;
         [InDataSet]
         HideDetail: Boolean;

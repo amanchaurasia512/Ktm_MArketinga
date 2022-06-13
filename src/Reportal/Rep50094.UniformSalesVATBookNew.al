@@ -5,9 +5,9 @@ report 50094 "Uniform Sales VAT Book (New)"
 
     dataset
     {
-        dataitem(DataItem1000000003; Table50001)
+        dataitem("Invoice Materialize View";"Invoice Materialize View")
         {
-            DataItemTableView = SORTING (Table ID, Document Type, Bill No, Fiscal Year)
+            DataItemTableView = SORTING ("Table ID", "Document Type", "Bill No", "Fiscal Year")
                                 ORDER(Ascending);
             PrintOnlyIfDetail = true;
             RequestFilterFields = "Bill Date", "Bill No";
@@ -140,9 +140,9 @@ report 50094 "Uniform Sales VAT Book (New)"
             column(PostingDateNepali; PostingDateNepali)
             {
             }
-            dataitem(DataItem1000000053; Table113)
+            dataitem("Sales Invoice Line";"Sales Invoice Line")
             {
-                DataItemTableView = SORTING (Document No., Line No.);
+                DataItemTableView = SORTING ("Document No.","Line No.");
                 column(DocNo1; DocNo)
                 {
                 }
@@ -222,9 +222,9 @@ report 50094 "Uniform Sales VAT Book (New)"
                     LoopCounter := COUNT;
                 end;
             }
-            dataitem("<Sales Cr.Memo Line>"; Table115)
+            dataitem("<Sales Cr.Memo Line>"; "Sales Cr.Memo Line")
             {
-                DataItemTableView = SORTING (Document No., Line No.);
+                DataItemTableView = SORTING ("Document No.", "Line No.");
                 column(DocNo2; DocNo)
                 {
                 }
@@ -308,9 +308,9 @@ report 50094 "Uniform Sales VAT Book (New)"
                     LoopCounter := COUNT;
                 end;
             }
-            dataitem(DataItem1000000051; Table17)
+            dataitem("G/L Entry";"G/L Entry")
             {
-                DataItemTableView = SORTING (Entry No.);
+                DataItemTableView = SORTING ("Entry No.");
                 column(DocNo3; DocNo)
                 {
                 }
@@ -507,30 +507,30 @@ report 50094 "Uniform Sales VAT Book (New)"
     end;
 
     var
-        recVatEntry: Record "254";
-        Crmemohr: Record "114";
-        Crmemohrline: Record "115";
-        SalesInvHdr: Record "112";
+        recVatEntry: Record "VAT Entry";
+        Crmemohr: Record "Sales Cr.Memo Header";
+        Crmemohrline: Record "Sales Cr.Memo Line";
+        SalesInvHdr: Record "Sales Invoice Header";
         TotalSalesAmount: Decimal;
-        DimValue: Record "349";
-        comInfo: Record "79";
+        DimValue: Record "Dimension Value";
+        comInfo: Record "Company Information";
         VATEntryValue: Decimal;
         GLVATValue: Decimal;
-        GLEntry: Record "17";
+        GLEntry: Record "G/L Entry";
         ShowReconcileData: Boolean;
-        Customer: Record "18";
-        GeneralLedgSetup: Record "98";
+        Customer: Record Customer;
+        GeneralLedgSetup: Record "General Ledger Setup";
         branchname: Text;
         TotalSale: Decimal;
-        SalesInvoiceLine: Record "113";
-        SalesCrMemoLine: Record "115";
-        ServiceInvoiceLine: Record "5993";
-        ServiceCrMemoLine: Record "5995";
+        SalesInvoiceLine: Record "Sales Invoice Line";
+        SalesCrMemoLine: Record "Sales Cr.Memo Line";
+        ServiceInvoiceLine: Record "Service Invoice Line";
+        ServiceCrMemoLine: Record "Service Cr.Memo Line";
         VATAmt: Decimal;
-        EnglishNepaliDate: Record "50000";
+        EnglishNepaliDate: Record "English-Nepali Date";
         EnglishDateVar: Date;
-        SalesReceivablesSetup: Record "311";
-        TempSalesInvoiceLine: Record "113" temporary;
+        SalesReceivablesSetup: Record "Sales & Receivables Setup";
+        TempSalesInvoiceLine: Record "Sales Invoice Line" temporary;
         NonTaxSale: Decimal;
         PostingDateFilter: Text;
         PostingGrpwiseSum: Boolean;
@@ -550,7 +550,7 @@ report 50094 "Uniform Sales VAT Book (New)"
         HasDocument: Boolean;
         GroupBy: Text;
         NonTaxSales: Decimal;
-        STPLSysMgmt: Codeunit "50000";
+        STPLSysMgmt: Codeunit "IRD Mgt.";
         PostingDateNepali: Text;
         SkipGLAccounts: Text;
         NepaliDate: Code[10];
@@ -566,14 +566,14 @@ report 50094 "Uniform Sales VAT Book (New)"
 
     local procedure GetDescription(LineType: Option " ","G/L Account",Item,Resource,"Fixed Asset","Charge (Item)"; LineItemNo: Code[20]): Text
     var
-        Item: Record "27";
-        FixedAsset: Record "5600";
-        Resource: Record "156";
-        GLAccount: Record "15";
-        GenProductPostingGroup: Record "251";
-        FAPostingGroup: Record "5606";
-        InventoryPostingGroup: Record "94";
-        WorkType: Record "200";
+        Item: Record Item;
+        FixedAsset: Record "Fixed Asset";
+        Resource: Record Resource;
+        GLAccount: Record "G/L Account";
+        GenProductPostingGroup: Record "Gen. Product Posting Group";
+        FAPostingGroup: Record "FA Posting Group";
+        InventoryPostingGroup: Record "Inventory Posting Group";
+        WorkType: Record "Work Type";
     begin
         CASE SalesReceivablesSetup."Show Description From" OF
             SalesReceivablesSetup."Show Description From"::Default:
@@ -636,14 +636,14 @@ report 50094 "Uniform Sales VAT Book (New)"
     [Scope('Internal')]
     procedure GetPostingGroup(LineType: Option " ","G/L Account",Item,Resource,"Fixed Asset","Charge (Item)"; LineItemNo: Code[20]): Code[20]
     var
-        Item: Record "27";
-        FixedAsset: Record "5600";
-        Resource: Record "156";
-        GLAccount: Record "15";
-        GenProductPostingGroup: Record "251";
-        FAPostingGroup: Record "5606";
-        InventoryPostingGroup: Record "94";
-        WorkType: Record "200";
+        Item: Record Item;
+        FixedAsset: Record "Fixed Asset";
+        Resource: Record Resource;
+        GLAccount: Record "G/L Account";
+        GenProductPostingGroup: Record "Gen. Product Posting Group";
+        FAPostingGroup: Record "FA Posting Group";
+        InventoryPostingGroup: Record "Inventory Posting Group";
+        WorkType: Record "Work Type";
     begin
         CASE LineType OF
             LineType::Item:
@@ -671,7 +671,7 @@ report 50094 "Uniform Sales VAT Book (New)"
 
     local procedure SkipGL()
     var
-        VatPostingSetup: Record "325";
+        VatPostingSetup: Record "VAT Posting Setup";
     begin
         VatPostingSetup.SETFILTER("Sales VAT Account", '<>%1', '');
         IF VatPostingSetup.FINDFIRST THEN

@@ -7,9 +7,9 @@ report 50017 "Transfer Shipments"
 
     dataset
     {
-        dataitem(DataItem6030; Table5744)
+        dataitem("Transfer Shipment Header";"Transfer Shipment Header")
         {
-            DataItemTableView = SORTING (No.);
+            DataItemTableView = SORTING ("No.");
             RequestFilterFields = "No.", "Transfer-from Code", "Transfer-to Code";
             RequestFilterHeading = 'Posted Transfer Shipment';
             column(TransferOrderNo; "Transfer Shipment Header"."Transfer Order No.")
@@ -36,10 +36,10 @@ report 50017 "Transfer Shipments"
             column(CompanyAddr1; CompanyInfo.Name)
             {
             }
-            dataitem(CopyLoop; Table2000000026)
+            dataitem(CopyLoop; Integer)
             {
                 DataItemTableView = SORTING (Number);
-                dataitem(PageLoop; Table2000000026)
+                dataitem(PageLoop; Integer)
                 {
                     DataItemTableView = SORTING (Number)
                                         WHERE (Number = CONST (1));
@@ -122,7 +122,7 @@ report 50017 "Transfer Shipments"
                     column(TransShptShptDateCaption; TransShptShptDateCaptionLbl)
                     {
                     }
-                    dataitem(DimensionLoop1; Table2000000026)
+                    dataitem(DimensionLoop1; Integer)
                     {
                         DataItemLinkReference = "Transfer Shipment Header";
                         DataItemTableView = SORTING (Number)
@@ -171,11 +171,11 @@ report 50017 "Transfer Shipments"
                                 CurrReport.BREAK;
                         end;
                     }
-                    dataitem(DataItem3226; Table5745)
+                    dataitem("Transfer Shipment Line";"Transfer Shipment Line")
                     {
-                        DataItemLink = Document No.=FIELD(No.);
+                        DataItemLink = "Document No."=FIELD("No.");
                         DataItemLinkReference = "Transfer Shipment Header";
-                        DataItemTableView = SORTING (Document No., Line No.);
+                        DataItemTableView = SORTING ("Document No.", "Line No.");
                         column(ShowInternalInfo; ShowInternalInfo)
                         {
                         }
@@ -213,7 +213,7 @@ report 50017 "Transfer Shipments"
                         column(SN; SN)
                         {
                         }
-                        dataitem(DimensionLoop2; Table2000000026)
+                        dataitem(DimensionLoop2; Integer)
                         {
                             DataItemTableView = SORTING (Number)
                                                 WHERE (Number = FILTER (1 ..));
@@ -264,7 +264,7 @@ report 50017 "Transfer Shipments"
 
                         trigger OnAfterGetRecord()
                         var
-                            ItemLedgerEntry: Record "32";
+                            ItemLedgerEntry: Record "Item Ledger Entry";
                         begin
                             DimSetEntry2.SETRANGE("Dimension Set ID", "Dimension Set ID");
 
@@ -369,10 +369,10 @@ report 50017 "Transfer Shipments"
         Text000: Label 'COPY';
         Text001: Label 'Transfer Shipment %1';
         Text002: Label 'Page %1';
-        ShipmentMethod: Record "10";
-        DimSetEntry1: Record "480";
-        DimSetEntry2: Record "480";
-        FormatAddr: Codeunit "365";
+        ShipmentMethod: Record "Shipment Method";
+        DimSetEntry1: Record "Dimension Set Entry";
+        DimSetEntry2: Record "Dimension Set Entry";
+        FormatAddr: Codeunit "Format Address";
         TransferFromAddr: array[8] of Text[50];
         TransferToAddr: array[8] of Text[50];
         MoreLines: Boolean;
@@ -391,10 +391,10 @@ report 50017 "Transfer Shipments"
         "--NP15.1001": Integer;
         CompanyOneLineAddress: Text;
         CompanyCommunicationAddress: Text;
-        CompanyInfo: Record "79";
+        CompanyInfo: Record "Company Information";
         CompanyAddr: array[8] of Text[50];
-        Currency: Record "4";
-        SystemManagement: Codeunit "50000";
+        Currency: Record Currency;
+        SystemManagement: Codeunit "IRD Mgt.";
         SN: Integer;
         VIN: Code[20];
 

@@ -7,9 +7,9 @@ report 50043 "Total Item Sales"
 
     dataset
     {
-        dataitem(DataItem8129; Table27)
+        dataitem(Item;Item)
         {
-            DataItemTableView = SORTING (Inventory Posting Group)
+            DataItemTableView = SORTING ("Inventory Posting Group")
                                 WHERE (Type = CONST (Inventory));
             RequestFilterFields = "No.", "Inventory Posting Group", "Sub-Category";
             column(BoM_Text; BoM_TextLbl)
@@ -188,7 +188,7 @@ report 50043 "Total Item Sales"
                 CALCFIELDS("Assembly BOM");
 
                 IF EndDate = 0D THEN
-                    EndDate := 31129999D;
+                    EndDate := 99991231D;
 
                 StartingInvoicedValue := 0;
                 StartingExpectedValue := 0;
@@ -351,7 +351,7 @@ report 50043 "Total Item Sales"
         IF (StartDate = 0D) AND (EndDate = 0D) THEN
             EndDate := WORKDATE;
 
-        IF StartDate IN [0D, 01010000D] THEN
+        IF StartDate IN [0D, 00000101D] THEN
             StartDateText := ''
         ELSE
             StartDateText := FORMAT(StartDate - 1);
@@ -361,7 +361,7 @@ report 50043 "Total Item Sales"
 
     var
         Text005: Label 'As of %1';
-        ValueEntry: Record "5802";
+        ValueEntry: Record "Value Entry";
         StartDate: Date;
         EndDate: Date;
         ShowExpected: Boolean;
@@ -399,11 +399,11 @@ report 50043 "Total Item Sales"
         CostPostedToGL: Decimal;
         ExpCostPostedToGL: Decimal;
         IsEmptyLine: Boolean;
-        CompanyInfo: Record "79";
+        CompanyInfo: Record "Company Information";
         ItemSalesPrice: Decimal;
-        SalesPrice: Record "7002";
+        SalesPrice: Record "Sales Price";
 
-    local procedure AssignAmounts(ValueEntry: Record "5802"; var InvoicedValue: Decimal; var InvoicedQty: Decimal; var ExpectedValue: Decimal; var ExpectedQty: Decimal; Sign: Decimal)
+    local procedure AssignAmounts(ValueEntry: Record "Value Entry"; var InvoicedValue: Decimal; var InvoicedQty: Decimal; var ExpectedValue: Decimal; var ExpectedQty: Decimal; Sign: Decimal)
     begin
         InvoicedValue += ValueEntry."Cost Amount (Actual)" * Sign;
         InvoicedQty += ValueEntry."Invoiced Quantity" * Sign;
@@ -413,8 +413,8 @@ report 50043 "Total Item Sales"
 
     local procedure GetOutboundItemEntry(ItemLedgerEntryNo: Integer): Boolean
     var
-        ItemApplnEntry: Record "339";
-        ItemLedgEntry: Record "32";
+        ItemApplnEntry: Record "Item Application Entry";
+        ItemLedgEntry: Record "Item Ledger Entry";
     begin
         ItemApplnEntry.SETCURRENTKEY("Item Ledger Entry No.");
         ItemApplnEntry.SETRANGE("Item Ledger Entry No.", ItemLedgerEntryNo);

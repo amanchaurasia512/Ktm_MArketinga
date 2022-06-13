@@ -3,11 +3,11 @@ report 50007 "Sales Credit Memo"
     DefaultLayout = RDLC;
     RDLCLayout = './SalesCreditMemo.rdlc';
     Caption = 'Sales Credit Memo';
-    Permissions = TableData 7190 = rimd;
+    Permissions = TableData "Sales Shipment Buffer" = rimd;
 
     dataset
     {
-        dataitem("Sales Cr.Memo Header"; 114)
+        dataitem("Sales Cr.Memo Header"; "Sales Cr.Memo Header")
         {
             DataItemTableView = SORTING ("No.");
             RequestFilterFields = "No.", "Sell-to Customer No.", "No. Printed";
@@ -87,10 +87,10 @@ report 50007 "Sales Credit Memo"
             column(DocumentCaption; DocumentCaptionlbl)
             {
             }
-            dataitem(CopyLoop; 2000000026)
+            dataitem(CopyLoop; Integer)
             {
                 DataItemTableView = SORTING (Number);
-                dataitem(PageLoop; 2000000026)
+                dataitem(PageLoop; INTEGER)
                 {
                     DataItemTableView = SORTING (Number)
                                         WHERE (Number = CONST (1));
@@ -226,7 +226,7 @@ report 50007 "Sales Credit Memo"
                     column(PriceInclVAT_SalesCrMemoHeaderCaption; "Sales Cr.Memo Header".FIELDCAPTION("Prices Including VAT"))
                     {
                     }
-                    dataitem(DimensionLoop1; 2000000026)
+                    dataitem(DimensionLoop1; INTEGER)
                     {
                         DataItemLinkReference = "Sales Cr.Memo Header";
                         DataItemTableView = SORTING (Number)
@@ -275,7 +275,7 @@ report 50007 "Sales Credit Memo"
                                 CurrReport.BREAK;
                         end;
                     }
-                    dataitem("Sales Cr.Memo Line"; 115)
+                    dataitem("Sales Cr.Memo Line";"Sales Cr.Memo Line")
                     {
                         DataItemLink = "Document No."=FIELD("No.");
                         DataItemLinkReference = "Sales Cr.Memo Header";
@@ -418,7 +418,7 @@ report 50007 "Sales Credit Memo"
                         column(GLAccName; GLAccName)
                         {
                         }
-                        dataitem("Sales Shipment Buffer"; 2000000026)
+                        dataitem("Sales Shipment Buffer"; INTEGER)
                         {
                             DataItemTableView = SORTING (Number);
 
@@ -435,7 +435,7 @@ report 50007 "Sales Credit Memo"
                                 SETRANGE(Number, 1, SalesShipmentBuffer.COUNT);
                             end;
                         }
-                        dataitem(DimensionLoop2; 2000000026)
+                        dataitem(DimensionLoop2; INTEGER)
                         {
                             DataItemTableView = SORTING (Number)
                                                 WHERE (Number = FILTER (1 ..));
@@ -546,7 +546,7 @@ report 50007 "Sales Credit Memo"
                             //NP15.1001 <<
                         end;
                     }
-                    dataitem(VATCounter; 2000000026)
+                    dataitem(VATCounter; INTEGER)
                     {
                         DataItemTableView = SORTING (Number);
                         column(VATAmtLineVATBase; VATAmountLine."VAT Base")
@@ -607,7 +607,7 @@ report 50007 "Sales Credit Memo"
                               VATAmountLine."Invoice Discount Amount", VATAmountLine."VAT Base", VATAmountLine."VAT Amount");
                         end;
                     }
-                    dataitem(VATClauseEntryCounter; 2000000026)
+                    dataitem(VATClauseEntryCounter; INTEGER)
                     {
                         DataItemTableView = SORTING (Number);
                         column(VATClauseVATIdentifier; VATAmountLine."VAT Identifier")
@@ -652,7 +652,7 @@ report 50007 "Sales Credit Memo"
                             CurrReport.CREATETOTALS(VATAmountLine."VAT Amount");
                         end;
                     }
-                    dataitem(VATCounterLCY; 2000000026)
+                    dataitem(VATCounterLCY; INTEGER)
                     {
                         DataItemTableView = SORTING (Number);
                         column(VALSpecLCYHeader; VALSpecLCYHeader)
@@ -710,12 +710,12 @@ report 50007 "Sales Credit Memo"
                             VALExchRate := STRSUBSTNO(Text010, CalculatedExchRate, CurrExchRate."Exchange Rate Amount");
                         end;
                     }
-                    dataitem(Total; 2000000026)
+                    dataitem(Total; INTEGER)
                     {
                         DataItemTableView = SORTING (Number)
                                             WHERE (Number = CONST (1));
                     }
-                    dataitem(Total2; 2000000026)
+                    dataitem(Total2; INTEGER)
                     {
                         DataItemTableView = SORTING (Number)
                                             WHERE (Number = CONST (1));
@@ -958,26 +958,26 @@ report 50007 "Sales Credit Memo"
         Text005: Label 'Sales - Credit Memo %1';
         PageCaptionCap: Label 'Page %1 of %2';
         Text007: Label 'Total %1 Excl. VAT';
-        GLSetup: Record 98;
-        SalesSetup: Record 311;
-        SalesPurchPerson: Record 13;
-        CompanyInfo: Record 79;
-        CompanyInfo1: Record 79;
-        CompanyInfo2: Record 79;
-        CompanyInfo3: Record 79;
+        GLSetup: Record "General Ledger Setup";
+        SalesSetup: Record "Sales & Receivables Setup";
+        SalesPurchPerson: Record "Salesperson/Purchaser";
+        CompanyInfo: Record "Company Information";
+        CompanyInfo1: Record "COMPANY INFORMATION";
+        CompanyInfo2: Record "COMPANY INFORMATION";
+        CompanyInfo3: Record "COMPANY INFORMATION";
         
     
-        VATAmountLine: Record 290 temporary;
-        VATClause: Record 560;
-        DimSetEntry1: Record 480;
-        DimSetEntry2: Record 480;
-        Language: Record 8;
-        SalesShipmentBuffer: Record 7190 temporary;
-        CurrExchRate: Record 330;
-        SalesCrMemoCountPrinted: Codeunit 316;
-        FormatAddr: Codeunit 365;
-        SegManagement: Codeunit 5051;
-        RespCenter: Record 5714;
+        VATAmountLine: Record "VAT Amount Line" temporary;
+        VATClause: Record "VAT Clause";
+        DimSetEntry1: Record "Dimension Set Entry";
+        DimSetEntry2: Record "Dimension Set Entry";
+        Language: Record Language;
+        SalesShipmentBuffer: Record "SALES SHIPMENT BUFFER" temporary;
+        CurrExchRate: Record "Currency Exchange Rate";
+        SalesCrMemoCountPrinted: Codeunit "Sales Cr. Memo-Printed";
+        FormatAddr: Codeunit "Format Address";
+        SegManagement: Codeunit SegManagement;
+        RespCenter: Record "Responsibility Center";
         CustAddr: array[8] of Text[50];
         ShipToAddr: array[8] of Text[50];
         CompanyAddr: array[8] of Text[50];
@@ -1057,13 +1057,13 @@ report 50007 "Sales Credit Memo"
         SalesCreditMemoLineSN: Integer;
         LineTotalAmount: Decimal;
         TotalAmountVAT: Decimal;
-        Currency: Record 4;
-        Cust: Record 18;
-        SystemManagement: Codeunit 50000;
+        Currency: Record Currency;
+        Cust: Record Customer;
+        SystemManagement: Codeunit "IRD Mgt.";
         "-----NP15.1001": Integer;
         DocumentCaptionlbl: Label 'CREDIT MEMO';
         GLAccName: Text;
-        GLAcc: Record 15;
+        GLAcc: Record "G/L Account";
 
     [Scope('Internal')]
     procedure InitLogInteraction()
@@ -1074,8 +1074,8 @@ report 50007 "Sales Credit Memo"
     [Scope('Internal')]
     procedure FindPostedShipmentDate(): Date
     var
-        ReturnReceiptHeader: Record 6660;
-        SalesShipmentBuffer2: Record 7190 temporary;
+        ReturnReceiptHeader: Record "Return Receipt Header";
+        SalesShipmentBuffer2: Record "SALES SHIPMENT BUFFER" temporary;
     begin
         NextEntryNo := 1;
         IF "Sales Cr.Memo Line"."Return Receipt No." <> '' THEN
@@ -1116,10 +1116,10 @@ report 50007 "Sales Credit Memo"
     end;
 
     [Scope('Internal')]
-    procedure GenerateBufferFromValueEntry(SalesCrMemoLine2: Record 115)
+    procedure GenerateBufferFromValueEntry(SalesCrMemoLine2: Record "SALES CR.MEMO LINE")
     var
-        ValueEntry: Record 5802;
-        ItemLedgerEntry: Record 32;
+        ValueEntry: Record "Value Entry";
+        ItemLedgerEntry: Record "Item Ledger Entry";
         TotalQuantity: Decimal;
         Quantity: Decimal;
     begin
@@ -1147,12 +1147,12 @@ report 50007 "Sales Credit Memo"
     end;
 
     [Scope('Internal')]
-    procedure GenerateBufferFromShipment(SalesCrMemoLine: Record 115)
+    procedure GenerateBufferFromShipment(SalesCrMemoLine: Record "SALES CR.MEMO LINE")
     var
-        SalesCrMemoHeader: Record 114;
-        SalesCrMemoLine2: Record 115;
-        ReturnReceiptHeader: Record 6660;
-        ReturnReceiptLine: Record 6661;
+        SalesCrMemoHeader: Record "SALES CR.MEMO HEADER";
+        SalesCrMemoLine2: Record "SALES CR.MEMO LINE";
+        ReturnReceiptHeader: Record "Return Receipt Header";
+        ReturnReceiptLine: Record "RETURN RECEIPT LINE";
         TotalQuantity: Decimal;
         Quantity: Decimal;
     begin
@@ -1207,9 +1207,9 @@ report 50007 "Sales Credit Memo"
     end;
 
     [Scope('Internal')]
-    procedure CorrectShipment(var ReturnReceiptLine: Record 6661)
+    procedure CorrectShipment(var ReturnReceiptLine: Record "Return Receipt Line")
     var
-        SalesCrMemoLine: Record 115;
+        SalesCrMemoLine: Record "SALES CR.MEMO LINE";
     begin
         SalesCrMemoLine.SETCURRENTKEY("Return Receipt No.", "Return Receipt Line No.");
         SalesCrMemoLine.SETRANGE("Return Receipt No.", ReturnReceiptLine."Document No.");
@@ -1221,7 +1221,7 @@ report 50007 "Sales Credit Memo"
     end;
 
     [Scope('Internal')]
-    procedure AddBufferEntry(SalesCrMemoLine: Record 115; QtyOnShipment: Decimal; PostingDate: Date)
+    procedure AddBufferEntry(SalesCrMemoLine: Record "SALES CR.MEMO LINE"; QtyOnShipment: Decimal; PostingDate: Date)
     begin
         SalesShipmentBuffer.SETRANGE("Document No.", SalesCrMemoLine."Document No.");
         SalesShipmentBuffer.SETRANGE("Line No.", SalesCrMemoLine."Line No.");
@@ -1300,7 +1300,7 @@ report 50007 "Sales Credit Memo"
         SalesCreditMemoLineSN := 0;
     end;
 
-    local procedure SalesCreditMemoLineOnAfterGetRecord(SalesCrMemoLine: Record 115)
+    local procedure SalesCreditMemoLineOnAfterGetRecord(SalesCrMemoLine: Record "Sales Cr.Memo Line")
     begin
         WITH SalesCrMemoLine DO BEGIN
             //IF "No." <> '' THEN

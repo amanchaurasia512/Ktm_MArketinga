@@ -5,7 +5,7 @@ report 50030 "Sales Price List"
 
     dataset
     {
-        dataitem(DataItem14; Table27)
+        dataitem(Item;Item)
         {
             PrintOnlyIfDetail = true;
             RequestFilterFields = "No.", "Global Dimension 1 Filter", "Date Filter";
@@ -63,13 +63,13 @@ report 50030 "Sales Price List"
             column(EndingNepaliDate; EndDateNep)
             {
             }
-            dataitem(DataItem1; Table7002)
+            dataitem("Sales Price";"Sales Price")
             {
-                DataItemLink = Item No.=FIELD(No.),
-                               Product Segment Code=FIELD(Global Dimension 1 Filter),
-                               Starting Date=FIELD(Date Filter);
-                DataItemTableView = SORTING(Item No.,Sales Type,Sales Code,Starting Date,Currency Code,Variant Code,Unit of Measure Code,Minimum Quantity)
-                                    WHERE(Sales Type=CONST(Customer Price Group));
+                DataItemLink = "Item No."=FIELD("No."),
+                               "Product Segment Code"=FIELD("Global Dimension 1 Filter"),
+                               "Starting Date"=FIELD("Date Filter");
+                DataItemTableView = SORTING("Item No.","Sales Type","Sales Code","Starting Date","Currency Code","Variant Code","Unit of Measure Code","Minimum Quantity")
+                                    WHERE("Sales Type"=CONST("Customer Price Group"));
                 RequestFilterFields = "Sales Code";
                 column(SPFilter;SPFilter)
                 {
@@ -170,14 +170,14 @@ report 50030 "Sales Price List"
     end;
 
     var
-        CompanyInfo: Record "79";
+        CompanyInfo: Record "Company Information";
         NepaliDate: Code[20];
-        NepaliCalendar: Record "50000";
+        NepaliCalendar: Record "English-Nepali Date";
         ItemFilters: Text;
         SPFilter: Text;
         StartDateNep: Code[10];
         EndDateNep: Code[10];
-        NepaliCal: Record "50000";
+        NepaliCal: Record "English-Nepali Date";
         StartEngDate: Date;
         EndEngDate: Date;
         LastPriceB: Boolean;
