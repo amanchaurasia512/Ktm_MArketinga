@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="VendNoCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>VendNoCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>VendNoCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="VendNameCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>VendNameCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>VendNameCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="VendVATRegNoCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>VendVATRegNoCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>VendVATRegNoCaption</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="CompanyName">
+          <DataField>CompanyName</DataField>
+        </Field>
+        <Field Name="MinAmtLCY">
+          <DataField>MinAmtLCY</DataField>
+        </Field>
+        <Field Name="MinAmtLCYFormat">
+          <DataField>MinAmtLCYFormat</DataField>
+        </Field>
+        <Field Name="HideAddr">
+          <DataField>HideAddr</DataField>
+        </Field>
+        <Field Name="TableCaptVendFilter">
+          <DataField>TableCaptVendFilter</DataField>
+        </Field>
+        <Field Name="VendFilter">
+          <DataField>VendFilter</DataField>
+        </Field>
+        <Field Name="VendNo">
+          <DataField>VendNo</DataField>
+        </Field>
+        <Field Name="VendName">
+          <DataField>VendName</DataField>
+        </Field>
+        <Field Name="VendVATRegNo">
+          <DataField>VendVATRegNo</DataField>
+        </Field>
+        <Field Name="AmtPurchLCY">
+          <DataField>AmtPurchLCY</DataField>
+        </Field>
+        <Field Name="AmtPurchLCYFormat">
+          <DataField>AmtPurchLCYFormat</DataField>
+        </Field>
+        <Field Name="VendAddr2">
+          <DataField>VendAddr2</DataField>
+        </Field>
+        <Field Name="VendAddr3">
+          <DataField>VendAddr3</DataField>
+        </Field>
+        <Field Name="VendAddr4">
+          <DataField>VendAddr4</DataField>
+        </Field>
+        <Field Name="VendAddr5">
+          <DataField>VendAddr5</DataField>
+        </Field>
+        <Field Name="VendAddr6">
+          <DataField>VendAddr6</DataField>
+        </Field>
+        <Field Name="VendAddr7">
+          <DataField>VendAddr7</DataField>
+        </Field>
+        <Field Name="VendAddr8">
+          <DataField>VendAddr8</DataField>
+        </Field>
+        <Field Name="VendPurchListCapt">
+          <DataField>VendPurchListCapt</DataField>
+        </Field>
+        <Field Name="CurrRptPageNoCapt">
+          <DataField>CurrRptPageNoCapt</DataField>
+        </Field>
+        <Field Name="MinAmtLCYCapt">
+          <DataField>MinAmtLCYCapt</DataField>
+        </Field>
+        <Field Name="AmtPurchLCYCapt">
+          <DataField>AmtPurchLCYCapt</DataField>
+        </Field>
+        <Field Name="TotRptedAmtofPurchLCYCapt">
+          <DataField>TotRptedAmtofPurchLCYCapt</DataField>
+        </Field>
+        <Field Name="TradeNameType">
+          <DataField>TradeNameType</DataField>
+        </Field>
+        <Field Name="PurchaseOrSale">
+          <DataField>PurchaseOrSale</DataField>
+        </Field>
+        <Field Name="ExemptAmt">
+          <DataField>ExemptAmt</DataField>
+        </Field>
+        <Field Name="ExemptAmtFormat">
+          <DataField>ExemptAmtFormat</DataField>
+        </Field>
+        <Field Name="TaxableAmt">
+          <DataField>TaxableAmt</DataField>
+        </Field>
+        <Field Name="TaxableAmtFormat">
+          <DataField>TaxableAmtFormat</DataField>
+        </Field>
+        <Field Name="TotalPurchAmt">
+          <DataField>TotalPurchAmt</DataField>
+        </Field>
+        <Field Name="TotalPurchAmtFormat">
+          <DataField>TotalPurchAmtFormat</DataField>
+        </Field>
+        <Field Name="ShowTotalAmt">
+          <DataField>ShowTotalAmt</DataField>
+        </Field>
+        <Field Name="StartingNepaliDate">
+          <DataField>StartingNepaliDate</DataField>
+        </Field>
+        <Field Name="EndingNepaliDate">
+          <DataField>EndingNepaliDate</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

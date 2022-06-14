@@ -1,0 +1,449 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="VAT_No_______comInfo__VAT_Registration_No__">
+          <DataField>VAT_No_______comInfo__VAT_Registration_No__</DataField>
+        </Field>
+        <Field Name="comInfo_Name">
+          <DataField>comInfo_Name</DataField>
+        </Field>
+        <Field Name="NepaliYear">
+          <DataField>NepaliYear</DataField>
+        </Field>
+        <Field Name="NepaliMonth">
+          <DataField>NepaliMonth</DataField>
+        </Field>
+        <Field Name="PERIOD_OF_SALES_______Sales_Invoice_Header__GETFILTER__Posting_Date__">
+          <DataField>PERIOD_OF_SALES_______Sales_Invoice_Header__GETFILTER__Posting_Date__</DataField>
+        </Field>
+        <Field Name="TableID_InvoiceMaterializeView">
+          <DataField>TableID_InvoiceMaterializeView</DataField>
+        </Field>
+        <Field Name="DocumentType">
+          <DataField>DocumentType</DataField>
+        </Field>
+        <Field Name="DocumentNo">
+          <DataField>DocumentNo</DataField>
+        </Field>
+        <Field Name="FiscalYear">
+          <DataField>FiscalYear</DataField>
+        </Field>
+        <Field Name="PostingDate">
+          <DataField>PostingDate</DataField>
+        </Field>
+        <Field Name="PostingTime_InvoiceMaterializeView">
+          <DataField>PostingTime_InvoiceMaterializeView</DataField>
+        </Field>
+        <Field Name="SourceType_InvoiceMaterializeView">
+          <DataField>SourceType_InvoiceMaterializeView</DataField>
+        </Field>
+        <Field Name="CustomerCode_InvoiceMaterializeView">
+          <DataField>CustomerCode_InvoiceMaterializeView</DataField>
+        </Field>
+        <Field Name="SourceCode_InvoiceMaterializeView">
+          <DataField>SourceCode_InvoiceMaterializeView</DataField>
+        </Field>
+        <Field Name="CustomerName">
+          <DataField>CustomerName</DataField>
+        </Field>
+        <Field Name="VATPANNo">
+          <DataField>VATPANNo</DataField>
+        </Field>
+        <Field Name="Amount">
+          <DataField>Amount</DataField>
+        </Field>
+        <Field Name="AmountFormat">
+          <DataField>AmountFormat</DataField>
+        </Field>
+        <Field Name="DiscountAmount">
+          <DataField>DiscountAmount</DataField>
+        </Field>
+        <Field Name="DiscountAmountFormat">
+          <DataField>DiscountAmountFormat</DataField>
+        </Field>
+        <Field Name="TaxableAmount">
+          <DataField>TaxableAmount</DataField>
+        </Field>
+        <Field Name="TaxableAmountFormat">
+          <DataField>TaxableAmountFormat</DataField>
+        </Field>
+        <Field Name="VATAmount">
+          <DataField>VATAmount</DataField>
+        </Field>
+        <Field Name="VATAmountFormat">
+          <DataField>VATAmountFormat</DataField>
+        </Field>
+        <Field Name="TotalAmount">
+          <DataField>TotalAmount</DataField>
+        </Field>
+        <Field Name="TotalAmountFormat">
+          <DataField>TotalAmountFormat</DataField>
+        </Field>
+        <Field Name="BranchName">
+          <DataField>BranchName</DataField>
+        </Field>
+        <Field Name="NonTaxableAmount_InvoiceMaterializeView">
+          <DataField>NonTaxableAmount_InvoiceMaterializeView</DataField>
+        </Field>
+        <Field Name="NonTaxableAmount_InvoiceMaterializeViewFormat">
+          <DataField>NonTaxableAmount_InvoiceMaterializeViewFormat</DataField>
+        </Field>
+        <Field Name="VATEntryValue">
+          <DataField>VATEntryValue</DataField>
+        </Field>
+        <Field Name="VATEntryValueFormat">
+          <DataField>VATEntryValueFormat</DataField>
+        </Field>
+        <Field Name="ShowReconcileData">
+          <DataField>ShowReconcileData</DataField>
+        </Field>
+        <Field Name="GLVATValue">
+          <DataField>GLVATValue</DataField>
+        </Field>
+        <Field Name="GLVATValueFormat">
+          <DataField>GLVATValueFormat</DataField>
+        </Field>
+        <Field Name="RecSalesLine_Quantity">
+          <DataField>RecSalesLine_Quantity</DataField>
+        </Field>
+        <Field Name="RecSalesLine_QuantityFormat">
+          <DataField>RecSalesLine_QuantityFormat</DataField>
+        </Field>
+        <Field Name="TotalAmount_InvoiceMaterializeView">
+          <DataField>TotalAmount_InvoiceMaterializeView</DataField>
+        </Field>
+        <Field Name="TotalAmount_InvoiceMaterializeViewFormat">
+          <DataField>TotalAmount_InvoiceMaterializeViewFormat</DataField>
+        </Field>
+        <Field Name="DocNo">
+          <DataField>DocNo</DataField>
+        </Field>
+        <Field Name="ItemType">
+          <DataField>ItemType</DataField>
+        </Field>
+        <Field Name="ItemNo">
+          <DataField>ItemNo</DataField>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+        </Field>
+        <Field Name="Quantity">
+          <DataField>Quantity</DataField>
+        </Field>
+        <Field Name="QuantityFormat">
+          <DataField>QuantityFormat</DataField>
+        </Field>
+        <Field Name="Amt">
+          <DataField>Amt</DataField>
+        </Field>
+        <Field Name="AmtFormat">
+          <DataField>AmtFormat</DataField>
+        </Field>
+        <Field Name="AmtIncVAT">
+          <DataField>AmtIncVAT</DataField>
+        </Field>
+        <Field Name="AmtIncVATFormat">
+          <DataField>AmtIncVATFormat</DataField>
+        </Field>
+        <Field Name="VATBaseAmt">
+          <DataField>VATBaseAmt</DataField>
+        </Field>
+        <Field Name="VATBaseAmtFormat">
+          <DataField>VATBaseAmtFormat</DataField>
+        </Field>
+        <Field Name="VATAmt">
+          <DataField>VATAmt</DataField>
+        </Field>
+        <Field Name="VATAmtFormat">
+          <DataField>VATAmtFormat</DataField>
+        </Field>
+        <Field Name="PostingGroupCode">
+          <DataField>PostingGroupCode</DataField>
+        </Field>
+        <Field Name="LineNo">
+          <DataField>LineNo</DataField>
+        </Field>
+        <Field Name="GroupBy">
+          <DataField>GroupBy</DataField>
+        </Field>
+        <Field Name="UOM">
+          <DataField>UOM</DataField>
+        </Field>
+        <Field Name="NonTaxSale">
+          <DataField>NonTaxSale</DataField>
+        </Field>
+        <Field Name="NonTaxSaleFormat">
+          <DataField>NonTaxSaleFormat</DataField>
+        </Field>
+        <Field Name="PostingDateNepali">
+          <DataField>PostingDateNepali</DataField>
+        </Field>
+        <Field Name="DocNo1">
+          <DataField>DocNo1</DataField>
+        </Field>
+        <Field Name="ItemType1">
+          <DataField>ItemType1</DataField>
+        </Field>
+        <Field Name="UOM1">
+          <DataField>UOM1</DataField>
+        </Field>
+        <Field Name="ItemNo1">
+          <DataField>ItemNo1</DataField>
+        </Field>
+        <Field Name="Description1">
+          <DataField>Description1</DataField>
+        </Field>
+        <Field Name="Quantity1">
+          <DataField>Quantity1</DataField>
+        </Field>
+        <Field Name="Quantity1Format">
+          <DataField>Quantity1Format</DataField>
+        </Field>
+        <Field Name="Amt1">
+          <DataField>Amt1</DataField>
+        </Field>
+        <Field Name="Amt1Format">
+          <DataField>Amt1Format</DataField>
+        </Field>
+        <Field Name="AmtIncVAT1">
+          <DataField>AmtIncVAT1</DataField>
+        </Field>
+        <Field Name="AmtIncVAT1Format">
+          <DataField>AmtIncVAT1Format</DataField>
+        </Field>
+        <Field Name="VATBaseAmt1">
+          <DataField>VATBaseAmt1</DataField>
+        </Field>
+        <Field Name="VATBaseAmt1Format">
+          <DataField>VATBaseAmt1Format</DataField>
+        </Field>
+        <Field Name="VATAmt1">
+          <DataField>VATAmt1</DataField>
+        </Field>
+        <Field Name="VATAmt1Format">
+          <DataField>VATAmt1Format</DataField>
+        </Field>
+        <Field Name="PostingGroupCode1">
+          <DataField>PostingGroupCode1</DataField>
+        </Field>
+        <Field Name="LineNo1">
+          <DataField>LineNo1</DataField>
+        </Field>
+        <Field Name="GroupBy1">
+          <DataField>GroupBy1</DataField>
+        </Field>
+        <Field Name="NonTaxSale1">
+          <DataField>NonTaxSale1</DataField>
+        </Field>
+        <Field Name="NonTaxSale1Format">
+          <DataField>NonTaxSale1Format</DataField>
+        </Field>
+        <Field Name="NonTaxableAmount_InvoiceMaterializeView1">
+          <DataField>NonTaxableAmount_InvoiceMaterializeView1</DataField>
+        </Field>
+        <Field Name="NonTaxableAmount_InvoiceMaterializeView1Format">
+          <DataField>NonTaxableAmount_InvoiceMaterializeView1Format</DataField>
+        </Field>
+        <Field Name="DocNo2">
+          <DataField>DocNo2</DataField>
+        </Field>
+        <Field Name="ItemType2">
+          <DataField>ItemType2</DataField>
+        </Field>
+        <Field Name="UOM2">
+          <DataField>UOM2</DataField>
+        </Field>
+        <Field Name="ItemNo2">
+          <DataField>ItemNo2</DataField>
+        </Field>
+        <Field Name="Description2">
+          <DataField>Description2</DataField>
+        </Field>
+        <Field Name="Quantity2">
+          <DataField>Quantity2</DataField>
+        </Field>
+        <Field Name="Quantity2Format">
+          <DataField>Quantity2Format</DataField>
+        </Field>
+        <Field Name="Amt2">
+          <DataField>Amt2</DataField>
+        </Field>
+        <Field Name="Amt2Format">
+          <DataField>Amt2Format</DataField>
+        </Field>
+        <Field Name="AmtIncVAT2">
+          <DataField>AmtIncVAT2</DataField>
+        </Field>
+        <Field Name="AmtIncVAT2Format">
+          <DataField>AmtIncVAT2Format</DataField>
+        </Field>
+        <Field Name="VATBaseAmt2">
+          <DataField>VATBaseAmt2</DataField>
+        </Field>
+        <Field Name="VATBaseAmt2Format">
+          <DataField>VATBaseAmt2Format</DataField>
+        </Field>
+        <Field Name="VATAmt2">
+          <DataField>VATAmt2</DataField>
+        </Field>
+        <Field Name="VATAmt2Format">
+          <DataField>VATAmt2Format</DataField>
+        </Field>
+        <Field Name="PostingGroupCode2">
+          <DataField>PostingGroupCode2</DataField>
+        </Field>
+        <Field Name="LineNo2">
+          <DataField>LineNo2</DataField>
+        </Field>
+        <Field Name="NonTaxSale2">
+          <DataField>NonTaxSale2</DataField>
+        </Field>
+        <Field Name="NonTaxSale2Format">
+          <DataField>NonTaxSale2Format</DataField>
+        </Field>
+        <Field Name="GroupBy2">
+          <DataField>GroupBy2</DataField>
+        </Field>
+        <Field Name="NonTaxableAmount_InvoiceMaterializeView2">
+          <DataField>NonTaxableAmount_InvoiceMaterializeView2</DataField>
+        </Field>
+        <Field Name="NonTaxableAmount_InvoiceMaterializeView2Format">
+          <DataField>NonTaxableAmount_InvoiceMaterializeView2Format</DataField>
+        </Field>
+        <Field Name="DocNo3">
+          <DataField>DocNo3</DataField>
+        </Field>
+        <Field Name="ItemType3">
+          <DataField>ItemType3</DataField>
+        </Field>
+        <Field Name="ItemNo3">
+          <DataField>ItemNo3</DataField>
+        </Field>
+        <Field Name="Description3">
+          <DataField>Description3</DataField>
+        </Field>
+        <Field Name="Quantity3">
+          <DataField>Quantity3</DataField>
+        </Field>
+        <Field Name="Quantity3Format">
+          <DataField>Quantity3Format</DataField>
+        </Field>
+        <Field Name="Amt3">
+          <DataField>Amt3</DataField>
+        </Field>
+        <Field Name="Amt3Format">
+          <DataField>Amt3Format</DataField>
+        </Field>
+        <Field Name="AmtIncVAT3">
+          <DataField>AmtIncVAT3</DataField>
+        </Field>
+        <Field Name="AmtIncVAT3Format">
+          <DataField>AmtIncVAT3Format</DataField>
+        </Field>
+        <Field Name="VATBaseAmt3">
+          <DataField>VATBaseAmt3</DataField>
+        </Field>
+        <Field Name="VATBaseAmt3Format">
+          <DataField>VATBaseAmt3Format</DataField>
+        </Field>
+        <Field Name="VATAmt3">
+          <DataField>VATAmt3</DataField>
+        </Field>
+        <Field Name="VATAmt3Format">
+          <DataField>VATAmt3Format</DataField>
+        </Field>
+        <Field Name="PostingGroupCode3">
+          <DataField>PostingGroupCode3</DataField>
+        </Field>
+        <Field Name="UOM3">
+          <DataField>UOM3</DataField>
+        </Field>
+        <Field Name="LineNo3">
+          <DataField>LineNo3</DataField>
+        </Field>
+        <Field Name="GroupBy3">
+          <DataField>GroupBy3</DataField>
+        </Field>
+        <Field Name="NonTaxSale3">
+          <DataField>NonTaxSale3</DataField>
+        </Field>
+        <Field Name="NonTaxSale3Format">
+          <DataField>NonTaxSale3Format</DataField>
+        </Field>
+        <Field Name="NonTaxableAmount_InvoiceMaterializeView3">
+          <DataField>NonTaxableAmount_InvoiceMaterializeView3</DataField>
+        </Field>
+        <Field Name="NonTaxableAmount_InvoiceMaterializeView3Format">
+          <DataField>NonTaxableAmount_InvoiceMaterializeView3Format</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

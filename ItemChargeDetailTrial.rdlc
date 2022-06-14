@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="CompanyInfo_Name">
+          <DataField>CompanyInfo_Name</DataField>
+        </Field>
+        <Field Name="AllFilters">
+          <DataField>AllFilters</DataField>
+        </Field>
+        <Field Name="ReportTitle">
+          <DataField>ReportTitle</DataField>
+        </Field>
+        <Field Name="CompanyInfoPicture">
+          <DataField>CompanyInfoPicture</DataField>
+        </Field>
+        <Field Name="CompanyAddr1">
+          <DataField>CompanyAddr1</DataField>
+        </Field>
+        <Field Name="CompanyOneLineAddress">
+          <DataField>CompanyOneLineAddress</DataField>
+        </Field>
+        <Field Name="CompanyCommunicationAddress">
+          <DataField>CompanyCommunicationAddress</DataField>
+        </Field>
+        <Field Name="CompanyInfoVATRegNo">
+          <DataField>CompanyInfoVATRegNo</DataField>
+        </Field>
+        <Field Name="No_ItemCharge">
+          <DataField>No_ItemCharge</DataField>
+        </Field>
+        <Field Name="Description_ItemCharge">
+          <DataField>Description_ItemCharge</DataField>
+        </Field>
+        <Field Name="ShowSummary">
+          <DataField>ShowSummary</DataField>
+        </Field>
+        <Field Name="PostingDate_ValueEntry">
+          <DataField>PostingDate_ValueEntry</DataField>
+        </Field>
+        <Field Name="ItemLedgerEntryType_ValueEntry">
+          <DataField>ItemLedgerEntryType_ValueEntry</DataField>
+        </Field>
+        <Field Name="DocumentNo_ValueEntry">
+          <DataField>DocumentNo_ValueEntry</DataField>
+        </Field>
+        <Field Name="Description_ValueEntry">
+          <DataField>Description_ValueEntry</DataField>
+        </Field>
+        <Field Name="CostperUnit_ValueEntry">
+          <DataField>CostperUnit_ValueEntry</DataField>
+        </Field>
+        <Field Name="CostperUnit_ValueEntryFormat">
+          <DataField>CostperUnit_ValueEntryFormat</DataField>
+        </Field>
+        <Field Name="PragyapanPatra_ValueEntry">
+          <DataField>PragyapanPatra_ValueEntry</DataField>
+        </Field>
+        <Field Name="LetterofCreditTelexTrans_ValueEntry">
+          <DataField>LetterofCreditTelexTrans_ValueEntry</DataField>
+        </Field>
+        <Field Name="PurchaseAmountActual_ValueEntry">
+          <DataField>PurchaseAmountActual_ValueEntry</DataField>
+        </Field>
+        <Field Name="PurchaseAmountActual_ValueEntryFormat">
+          <DataField>PurchaseAmountActual_ValueEntryFormat</DataField>
+        </Field>
+        <Field Name="PurchaseAmountExpected_ValueEntry">
+          <DataField>PurchaseAmountExpected_ValueEntry</DataField>
+        </Field>
+        <Field Name="PurchaseAmountExpected_ValueEntryFormat">
+          <DataField>PurchaseAmountExpected_ValueEntryFormat</DataField>
+        </Field>
+        <Field Name="CostAmountActual_ValueEntry">
+          <DataField>CostAmountActual_ValueEntry</DataField>
+        </Field>
+        <Field Name="CostAmountActual_ValueEntryFormat">
+          <DataField>CostAmountActual_ValueEntryFormat</DataField>
+        </Field>
+        <Field Name="CostAmountExpected_ValueEntry">
+          <DataField>CostAmountExpected_ValueEntry</DataField>
+        </Field>
+        <Field Name="CostAmountExpected_ValueEntryFormat">
+          <DataField>CostAmountExpected_ValueEntryFormat</DataField>
+        </Field>
+        <Field Name="DrAmt">
+          <DataField>DrAmt</DataField>
+        </Field>
+        <Field Name="DrAmtFormat">
+          <DataField>DrAmtFormat</DataField>
+        </Field>
+        <Field Name="CrAmt">
+          <DataField>CrAmt</DataField>
+        </Field>
+        <Field Name="CrAmtFormat">
+          <DataField>CrAmtFormat</DataField>
+        </Field>
+        <Field Name="RunningBal">
+          <DataField>RunningBal</DataField>
+        </Field>
+        <Field Name="RunningBalFormat">
+          <DataField>RunningBalFormat</DataField>
+        </Field>
+        <Field Name="NepalliDate">
+          <DataField>NepalliDate</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="DocumentNo_TDSEntry">
+          <DataField>DocumentNo_TDSEntry</DataField>
+        </Field>
+        <Field Name="SourceType_TDSEntry">
+          <DataField>SourceType_TDSEntry</DataField>
+        </Field>
+        <Field Name="BilltoPaytoNo_TDSEntry">
+          <DataField>BilltoPaytoNo_TDSEntry</DataField>
+        </Field>
+        <Field Name="TDSPostingGroup_TDSEntry">
+          <DataField>TDSPostingGroup_TDSEntry</DataField>
+        </Field>
+        <Field Name="TDSPercen_TDSEntry">
+          <DataField>TDSPercen_TDSEntry</DataField>
+        </Field>
+        <Field Name="TDSPercen_TDSEntryFormat">
+          <DataField>TDSPercen_TDSEntryFormat</DataField>
+        </Field>
+        <Field Name="PaymentAmount">
+          <DataField>PaymentAmount</DataField>
+        </Field>
+        <Field Name="PaymentAmountFormat">
+          <DataField>PaymentAmountFormat</DataField>
+        </Field>
+        <Field Name="TDSAmount_TDSEntry">
+          <DataField>TDSAmount_TDSEntry</DataField>
+        </Field>
+        <Field Name="TDSAmount_TDSEntryFormat">
+          <DataField>TDSAmount_TDSEntryFormat</DataField>
+        </Field>
+        <Field Name="GLAccount_TDSEntry">
+          <DataField>GLAccount_TDSEntry</DataField>
+        </Field>
+        <Field Name="VendorName_TDSEntry">
+          <DataField>VendorName_TDSEntry</DataField>
+        </Field>
+        <Field Name="GLAccountName_TDSEntry">
+          <DataField>GLAccountName_TDSEntry</DataField>
+        </Field>
+        <Field Name="TaxRevenueCode">
+          <DataField>TaxRevenueCode</DataField>
+        </Field>
+        <Field Name="PANNo">
+          <DataField>PANNo</DataField>
+        </Field>
+        <Field Name="SourceName">
+          <DataField>SourceName</DataField>
+        </Field>
+        <Field Name="AllFilter">
+          <DataField>AllFilter</DataField>
+        </Field>
+        <Field Name="ShowSummary">
+          <DataField>ShowSummary</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

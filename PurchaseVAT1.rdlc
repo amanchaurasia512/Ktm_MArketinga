@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="EntryNo_VATEntry">
+          <DataField>EntryNo_VATEntry</DataField>
+        </Field>
+        <Field Name="GenBusPostingGroup_VATEntry">
+          <DataField>GenBusPostingGroup_VATEntry</DataField>
+        </Field>
+        <Field Name="GenProdPostingGroup_VATEntry">
+          <DataField>GenProdPostingGroup_VATEntry</DataField>
+        </Field>
+        <Field Name="PostingDate_VATEntry">
+          <DataField>PostingDate_VATEntry</DataField>
+        </Field>
+        <Field Name="DocumentNo_VATEntry">
+          <DataField>DocumentNo_VATEntry</DataField>
+        </Field>
+        <Field Name="DocumentType_VATEntry">
+          <DataField>DocumentType_VATEntry</DataField>
+        </Field>
+        <Field Name="Type_VATEntry">
+          <DataField>Type_VATEntry</DataField>
+        </Field>
+        <Field Name="Base_VATEntry">
+          <DataField>Base_VATEntry</DataField>
+        </Field>
+        <Field Name="Base_VATEntryFormat">
+          <DataField>Base_VATEntryFormat</DataField>
+        </Field>
+        <Field Name="Amount_VATEntry">
+          <DataField>Amount_VATEntry</DataField>
+        </Field>
+        <Field Name="Amount_VATEntryFormat">
+          <DataField>Amount_VATEntryFormat</DataField>
+        </Field>
+        <Field Name="ExternalDocumentNo_VATEntry">
+          <DataField>ExternalDocumentNo_VATEntry</DataField>
+        </Field>
+        <Field Name="DocumentDate_VATEntry">
+          <DataField>DocumentDate_VATEntry</DataField>
+        </Field>
+        <Field Name="VATRegistrationNo_VATEntry">
+          <DataField>VATRegistrationNo_VATEntry</DataField>
+        </Field>
+        <Field Name="PragyapanPatra_VATEntry">
+          <DataField>PragyapanPatra_VATEntry</DataField>
+        </Field>
+        <Field Name="NepaliDate_VATEntry">
+          <DataField>NepaliDate_VATEntry</DataField>
+        </Field>
+        <Field Name="LocalizedVATIdentifier_VATEntry">
+          <DataField>LocalizedVATIdentifier_VATEntry</DataField>
+        </Field>
+        <Field Name="ExemptAmount_VATEntry">
+          <DataField>ExemptAmount_VATEntry</DataField>
+        </Field>
+        <Field Name="ExemptAmount_VATEntryFormat">
+          <DataField>ExemptAmount_VATEntryFormat</DataField>
+        </Field>
+        <Field Name="VATBase1_VATEntry">
+          <DataField>VATBase1_VATEntry</DataField>
+        </Field>
+        <Field Name="VATBase1_VATEntryFormat">
+          <DataField>VATBase1_VATEntryFormat</DataField>
+        </Field>
+        <Field Name="DocNo">
+          <DataField>DocNo</DataField>
+        </Field>
+        <Field Name="SupplierName">
+          <DataField>SupplierName</DataField>
+        </Field>
+        <Field Name="ImportPurchAmount">
+          <DataField>ImportPurchAmount</DataField>
+        </Field>
+        <Field Name="ImportPurchAmountFormat">
+          <DataField>ImportPurchAmountFormat</DataField>
+        </Field>
+        <Field Name="ImportPurchVATAmount">
+          <DataField>ImportPurchVATAmount</DataField>
+        </Field>
+        <Field Name="ImportPurchVATAmountFormat">
+          <DataField>ImportPurchVATAmountFormat</DataField>
+        </Field>
+        <Field Name="CAPEXPurchAmount">
+          <DataField>CAPEXPurchAmount</DataField>
+        </Field>
+        <Field Name="CAPEXPurchAmountFormat">
+          <DataField>CAPEXPurchAmountFormat</DataField>
+        </Field>
+        <Field Name="CAPEXPurchVATAmount">
+          <DataField>CAPEXPurchVATAmount</DataField>
+        </Field>
+        <Field Name="CAPEXPurchVATAmountFormat">
+          <DataField>CAPEXPurchVATAmountFormat</DataField>
+        </Field>
+        <Field Name="LocalPurchAmount">
+          <DataField>LocalPurchAmount</DataField>
+        </Field>
+        <Field Name="LocalPurchAmountFormat">
+          <DataField>LocalPurchAmountFormat</DataField>
+        </Field>
+        <Field Name="LocalPurchVATAmount">
+          <DataField>LocalPurchVATAmount</DataField>
+        </Field>
+        <Field Name="LocalPurchVATAmountFormat">
+          <DataField>LocalPurchVATAmountFormat</DataField>
+        </Field>
+        <Field Name="ExemptPurchAmount">
+          <DataField>ExemptPurchAmount</DataField>
+        </Field>
+        <Field Name="ExemptPurchAmountFormat">
+          <DataField>ExemptPurchAmountFormat</DataField>
+        </Field>
+        <Field Name="ExemptPurchVATAmount">
+          <DataField>ExemptPurchVATAmount</DataField>
+        </Field>
+        <Field Name="ExemptPurchVATAmountFormat">
+          <DataField>ExemptPurchVATAmountFormat</DataField>
+        </Field>
+        <Field Name="CompanyInfo_VAT_Registration_No">
+          <DataField>CompanyInfo_VAT_Registration_No</DataField>
+        </Field>
+        <Field Name="CompanyInfo_Name">
+          <DataField>CompanyInfo_Name</DataField>
+        </Field>
+        <Field Name="PostingDate">
+          <DataField>PostingDate</DataField>
+        </Field>
+        <Field Name="TotalPurchaseAmount">
+          <DataField>TotalPurchaseAmount</DataField>
+        </Field>
+        <Field Name="TotalPurchaseAmountFormat">
+          <DataField>TotalPurchaseAmountFormat</DataField>
+        </Field>
+        <Field Name="TotalImportPurchAmount">
+          <DataField>TotalImportPurchAmount</DataField>
+        </Field>
+        <Field Name="TotalImportPurchAmountFormat">
+          <DataField>TotalImportPurchAmountFormat</DataField>
+        </Field>
+        <Field Name="ExemptPurchaseAmt">
+          <DataField>ExemptPurchaseAmt</DataField>
+        </Field>
+        <Field Name="ExemptPurchaseAmtFormat">
+          <DataField>ExemptPurchaseAmtFormat</DataField>
+        </Field>
+        <Field Name="CustomPostingDate">
+          <DataField>CustomPostingDate</DataField>
+        </Field>
+        <Field Name="GroupingText">
+          <DataField>GroupingText</DataField>
+        </Field>
+        <Field Name="StartingNepaliDate">
+          <DataField>StartingNepaliDate</DataField>
+        </Field>
+        <Field Name="EndingNepaliDate">
+          <DataField>EndingNepaliDate</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

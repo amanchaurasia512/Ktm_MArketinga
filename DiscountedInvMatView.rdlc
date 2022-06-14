@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="AllFilters">
+          <DataField>AllFilters</DataField>
+        </Field>
+        <Field Name="CompanyAddr_1">
+          <DataField>CompanyAddr_1</DataField>
+        </Field>
+        <Field Name="CompanyOneLineAddress">
+          <DataField>CompanyOneLineAddress</DataField>
+        </Field>
+        <Field Name="CompanyCommunicationAddress">
+          <DataField>CompanyCommunicationAddress</DataField>
+        </Field>
+        <Field Name="CompanyInfoPicture">
+          <DataField>CompanyInfoPicture</DataField>
+        </Field>
+        <Field Name="CompanyInfoVATRegNo">
+          <DataField>CompanyInfoVATRegNo</DataField>
+        </Field>
+        <Field Name="ReportType">
+          <DataField>ReportType</DataField>
+        </Field>
+        <Field Name="ReportCaption">
+          <DataField>ReportCaption</DataField>
+        </Field>
+        <Field Name="InvoiceMaterializedView_FiscalYear">
+          <DataField>InvoiceMaterializedView_FiscalYear</DataField>
+        </Field>
+        <Field Name="InvoiceMaterializedView_InvoiceNo">
+          <DataField>InvoiceMaterializedView_InvoiceNo</DataField>
+        </Field>
+        <Field Name="InvoiceMaterializedView_Date">
+          <DataField>InvoiceMaterializedView_Date</DataField>
+        </Field>
+        <Field Name="InvoiceMaterializedView_Time">
+          <DataField>InvoiceMaterializedView_Time</DataField>
+        </Field>
+        <Field Name="InvoiceMaterializedView_CustomerName">
+          <DataField>InvoiceMaterializedView_CustomerName</DataField>
+        </Field>
+        <Field Name="InvoiceMaterializedView_PAN">
+          <DataField>InvoiceMaterializedView_PAN</DataField>
+        </Field>
+        <Field Name="InvoiceMaterializedView_Amount">
+          <DataField>InvoiceMaterializedView_Amount</DataField>
+        </Field>
+        <Field Name="InvoiceMaterializedView_AmountFormat">
+          <DataField>InvoiceMaterializedView_AmountFormat</DataField>
+        </Field>
+        <Field Name="InvoiceMaterializedView_Discount">
+          <DataField>InvoiceMaterializedView_Discount</DataField>
+        </Field>
+        <Field Name="InvoiceMaterializedView_DiscountFormat">
+          <DataField>InvoiceMaterializedView_DiscountFormat</DataField>
+        </Field>
+        <Field Name="InvoiceMaterializedView_TaxableAmount">
+          <DataField>InvoiceMaterializedView_TaxableAmount</DataField>
+        </Field>
+        <Field Name="InvoiceMaterializedView_TaxableAmountFormat">
+          <DataField>InvoiceMaterializedView_TaxableAmountFormat</DataField>
+        </Field>
+        <Field Name="InvoiceMaterializedView_VATAmount">
+          <DataField>InvoiceMaterializedView_VATAmount</DataField>
+        </Field>
+        <Field Name="InvoiceMaterializedView_VATAmountFormat">
+          <DataField>InvoiceMaterializedView_VATAmountFormat</DataField>
+        </Field>
+        <Field Name="InvoiceMaterializedView_TotalAmount">
+          <DataField>InvoiceMaterializedView_TotalAmount</DataField>
+        </Field>
+        <Field Name="InvoiceMaterializedView_TotalAmountFormat">
+          <DataField>InvoiceMaterializedView_TotalAmountFormat</DataField>
+        </Field>
+        <Field Name="InvoiceMaterializedView_CreatedBy">
+          <DataField>InvoiceMaterializedView_CreatedBy</DataField>
+        </Field>
+        <Field Name="InvoiceMaterializedView_Printed">
+          <DataField>InvoiceMaterializedView_Printed</DataField>
+        </Field>
+        <Field Name="InvoiceMaterializedView_Active">
+          <DataField>InvoiceMaterializedView_Active</DataField>
+        </Field>
+        <Field Name="InvoiceMaterializedView_PrintedBy">
+          <DataField>InvoiceMaterializedView_PrintedBy</DataField>
+        </Field>
+        <Field Name="LineDisAmt">
+          <DataField>LineDisAmt</DataField>
+        </Field>
+        <Field Name="LineDisAmtFormat">
+          <DataField>LineDisAmtFormat</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

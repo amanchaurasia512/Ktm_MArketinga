@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="FORMAT_TODAY_0_4_">
+          <DataField>FORMAT_TODAY_0_4_</DataField>
+        </Field>
+        <Field Name="COMPANYNAME">
+          <DataField>COMPANYNAME</DataField>
+        </Field>
+        <Field Name="CurrReport_PAGENO">
+          <DataField>CurrReport_PAGENO</DataField>
+        </Field>
+        <Field Name="USERID">
+          <DataField>USERID</DataField>
+        </Field>
+        <Field Name="ContactNo">
+          <DataField>ContactNo</DataField>
+        </Field>
+        <Field Name="CustomerAddress1">
+          <DataField>CustomerAddress1</DataField>
+        </Field>
+        <Field Name="CustomerName">
+          <DataField>CustomerName</DataField>
+        </Field>
+        <Field Name="CustomerVAT">
+          <DataField>CustomerVAT</DataField>
+        </Field>
+        <Field Name="NepaliDate">
+          <DataField>NepaliDate</DataField>
+        </Field>
+        <Field Name="CompInfo_Picture_Control1000000018">
+          <DataField>CompInfo_Picture_Control1000000018</DataField>
+        </Field>
+        <Field Name="BranchName">
+          <DataField>BranchName</DataField>
+        </Field>
+        <Field Name="Address">
+          <DataField>Address</DataField>
+        </Field>
+        <Field Name="PhoneNo">
+          <DataField>PhoneNo</DataField>
+        </Field>
+        <Field Name="FaxNo">
+          <DataField>FaxNo</DataField>
+        </Field>
+        <Field Name="Email">
+          <DataField>Email</DataField>
+        </Field>
+        <Field Name="Info1">
+          <DataField>Info1</DataField>
+        </Field>
+        <Field Name="Info2">
+          <DataField>Info2</DataField>
+        </Field>
+        <Field Name="CompanyVAT">
+          <DataField>CompanyVAT</DataField>
+        </Field>
+        <Field Name="CustomerAmount">
+          <DataField>CustomerAmount</DataField>
+        </Field>
+        <Field Name="CustomerAmountFormat">
+          <DataField>CustomerAmountFormat</DataField>
+        </Field>
+        <Field Name="CustomerDescription">
+          <DataField>CustomerDescription</DataField>
+        </Field>
+        <Field Name="GLEntry_Narration">
+          <DataField>GLEntry_Narration</DataField>
+        </Field>
+        <Field Name="GLEntry_Account_Type">
+          <DataField>GLEntry_Account_Type</DataField>
+        </Field>
+        <Field Name="GLEntry_Account_No">
+          <DataField>GLEntry_Account_No</DataField>
+        </Field>
+        <Field Name="GLEntry_Description">
+          <DataField>GLEntry_Description</DataField>
+        </Field>
+        <Field Name="GLEntry_Debit_Amount">
+          <DataField>GLEntry_Debit_Amount</DataField>
+        </Field>
+        <Field Name="GLEntry_Debit_AmountFormat">
+          <DataField>GLEntry_Debit_AmountFormat</DataField>
+        </Field>
+        <Field Name="GLEntry_Credit_Amount">
+          <DataField>GLEntry_Credit_Amount</DataField>
+        </Field>
+        <Field Name="GLEntry_Credit_AmountFormat">
+          <DataField>GLEntry_Credit_AmountFormat</DataField>
+        </Field>
+        <Field Name="GLEntry_Document_No__">
+          <DataField>GLEntry_Document_No__</DataField>
+        </Field>
+        <Field Name="CompInfo_Picture">
+          <DataField>CompInfo_Picture</DataField>
+        </Field>
+        <Field Name="AccName">
+          <DataField>AccName</DataField>
+        </Field>
+        <Field Name="PostingDateText">
+          <DataField>PostingDateText</DataField>
+        </Field>
+        <Field Name="RemarksText">
+          <DataField>RemarksText</DataField>
+        </Field>
+        <Field Name="GLEntry_Cheque_No">
+          <DataField>GLEntry_Cheque_No</DataField>
+        </Field>
+        <Field Name="CustomerAddress">
+          <DataField>CustomerAddress</DataField>
+        </Field>
+        <Field Name="BankAccountNo">
+          <DataField>BankAccountNo</DataField>
+        </Field>
+        <Field Name="GLEntry_Debit_Amount__Control1000000041">
+          <DataField>GLEntry_Debit_Amount__Control1000000041</DataField>
+        </Field>
+        <Field Name="GLEntry_Debit_Amount__Control1000000041Format">
+          <DataField>GLEntry_Debit_Amount__Control1000000041Format</DataField>
+        </Field>
+        <Field Name="GLEntry_Credit_Amount__Control1000000042">
+          <DataField>GLEntry_Credit_Amount__Control1000000042</DataField>
+        </Field>
+        <Field Name="GLEntry_Credit_Amount__Control1000000042Format">
+          <DataField>GLEntry_Credit_Amount__Control1000000042Format</DataField>
+        </Field>
+        <Field Name="GLEntry_LineCaption">
+          <DataField>GLEntry_LineCaption</DataField>
+        </Field>
+        <Field Name="CurrReport_PAGENOCaption">
+          <DataField>CurrReport_PAGENOCaption</DataField>
+        </Field>
+        <Field Name="GLEntry_Account_Type_Caption">
+          <DataField>GLEntry_Account_Type_Caption</DataField>
+        </Field>
+        <Field Name="GLEntry_Account_No__Caption">
+          <DataField>GLEntry_Account_No__Caption</DataField>
+        </Field>
+        <Field Name="GLEntry_DescriptionCaption">
+          <DataField>GLEntry_DescriptionCaption</DataField>
+        </Field>
+        <Field Name="GLEntry_Debit_Amount_Caption">
+          <DataField>GLEntry_Debit_Amount_Caption</DataField>
+        </Field>
+        <Field Name="GLEntry_Credit_Amount_Caption">
+          <DataField>GLEntry_Credit_Amount_Caption</DataField>
+        </Field>
+        <Field Name="GLEntry_Document_No__Caption">
+          <DataField>GLEntry_Document_No__Caption</DataField>
+        </Field>
+        <Field Name="Acc__NameCaption">
+          <DataField>Acc__NameCaption</DataField>
+        </Field>
+        <Field Name="Posting_DateCaption">
+          <DataField>Posting_DateCaption</DataField>
+        </Field>
+        <Field Name="GLEntry_Posting_Date">
+          <DataField>GLEntry_Posting_Date</DataField>
+        </Field>
+        <Field Name="GLEntry_Document_No_">
+          <DataField>GLEntry_Document_No_</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

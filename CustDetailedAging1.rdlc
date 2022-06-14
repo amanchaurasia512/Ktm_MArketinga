@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="CustomerContactCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>CustomerContactCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CustomerContactCaption</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="STRSUBSTNO_Text000_FORMAT_EndDate_">
+          <DataField>STRSUBSTNO_Text000_FORMAT_EndDate_</DataField>
+        </Field>
+        <Field Name="COMPANYNAME">
+          <DataField>COMPANYNAME</DataField>
+        </Field>
+        <Field Name="Customer_TABLECAPTION_CustFilter">
+          <DataField>Customer_TABLECAPTION_CustFilter</DataField>
+        </Field>
+        <Field Name="CompanyInfo_Name">
+          <DataField>CompanyInfo_Name</DataField>
+        </Field>
+        <Field Name="CustFilter">
+          <DataField>CustFilter</DataField>
+        </Field>
+        <Field Name="Customer_No_">
+          <DataField>Customer_No_</DataField>
+        </Field>
+        <Field Name="Customer_Name">
+          <DataField>Customer_Name</DataField>
+        </Field>
+        <Field Name="Customer_Phone_No_">
+          <DataField>Customer_Phone_No_</DataField>
+        </Field>
+        <Field Name="CustomerContact">
+          <DataField>CustomerContact</DataField>
+        </Field>
+        <Field Name="EMail">
+          <DataField>EMail</DataField>
+        </Field>
+        <Field Name="Product_Filter">
+          <DataField>Product_Filter</DataField>
+        </Field>
+        <Field Name="AreaCode_Filter">
+          <DataField>AreaCode_Filter</DataField>
+        </Field>
+        <Field Name="Customer_Detailed_AgingCaption">
+          <DataField>Customer_Detailed_AgingCaption</DataField>
+        </Field>
+        <Field Name="CurrReport_PAGENOCaption">
+          <DataField>CurrReport_PAGENOCaption</DataField>
+        </Field>
+        <Field Name="StartingNepaliDate">
+          <DataField>StartingNepaliDate</DataField>
+        </Field>
+        <Field Name="EndingNepaliDate">
+          <DataField>EndingNepaliDate</DataField>
+        </Field>
+        <Field Name="Cust_Ledger_Entry_Posting_Date_">
+          <DataField>Cust_Ledger_Entry_Posting_Date_</DataField>
+        </Field>
+        <Field Name="NepaliDate">
+          <DataField>NepaliDate</DataField>
+        </Field>
+        <Field Name="Cust_Ledger_Entry_Document_No_">
+          <DataField>Cust_Ledger_Entry_Document_No_</DataField>
+        </Field>
+        <Field Name="Cust_Ledger_Entry_Description">
+          <DataField>Cust_Ledger_Entry_Description</DataField>
+        </Field>
+        <Field Name="Cust_Ledger_Entry_Due_Date_">
+          <DataField>Cust_Ledger_Entry_Due_Date_</DataField>
+        </Field>
+        <Field Name="OverDueMonths">
+          <DataField>OverDueMonths</DataField>
+        </Field>
+        <Field Name="Cust_Ledger_Entry_Remaining_Amount_">
+          <DataField>Cust_Ledger_Entry_Remaining_Amount_</DataField>
+        </Field>
+        <Field Name="Cust_Ledger_Entry_Remaining_Amount_Format">
+          <DataField>Cust_Ledger_Entry_Remaining_Amount_Format</DataField>
+        </Field>
+        <Field Name="Cust_Ledger_Entry_Currency_Code_">
+          <DataField>Cust_Ledger_Entry_Currency_Code_</DataField>
+        </Field>
+        <Field Name="Cust_Ledger_Entry_Remaining_Amt_LCY_">
+          <DataField>Cust_Ledger_Entry_Remaining_Amt_LCY_</DataField>
+        </Field>
+        <Field Name="Cust_Ledger_Entry_Remaining_Amt_LCY_Format">
+          <DataField>Cust_Ledger_Entry_Remaining_Amt_LCY_Format</DataField>
+        </Field>
+        <Field Name="OutstandingDays">
+          <DataField>OutstandingDays</DataField>
+        </Field>
+        <Field Name="OutstandingDaysFormat">
+          <DataField>OutstandingDaysFormat</DataField>
+        </Field>
+        <Field Name="DayGroupNo">
+          <DataField>DayGroupNo</DataField>
+        </Field>
+        <Field Name="AmountGroup1">
+          <DataField>AmountGroup1</DataField>
+        </Field>
+        <Field Name="AmountGroup1Format">
+          <DataField>AmountGroup1Format</DataField>
+        </Field>
+        <Field Name="AmountGroup2">
+          <DataField>AmountGroup2</DataField>
+        </Field>
+        <Field Name="AmountGroup2Format">
+          <DataField>AmountGroup2Format</DataField>
+        </Field>
+        <Field Name="AmountGroup3">
+          <DataField>AmountGroup3</DataField>
+        </Field>
+        <Field Name="AmountGroup3Format">
+          <DataField>AmountGroup3Format</DataField>
+        </Field>
+        <Field Name="AmountGroup4">
+          <DataField>AmountGroup4</DataField>
+        </Field>
+        <Field Name="AmountGroup4Format">
+          <DataField>AmountGroup4Format</DataField>
+        </Field>
+        <Field Name="AmountGroup5">
+          <DataField>AmountGroup5</DataField>
+        </Field>
+        <Field Name="AmountGroup5Format">
+          <DataField>AmountGroup5Format</DataField>
+        </Field>
+        <Field Name="GrandAmount1">
+          <DataField>GrandAmount1</DataField>
+        </Field>
+        <Field Name="GrandAmount1Format">
+          <DataField>GrandAmount1Format</DataField>
+        </Field>
+        <Field Name="GrandAmount2">
+          <DataField>GrandAmount2</DataField>
+        </Field>
+        <Field Name="GrandAmount2Format">
+          <DataField>GrandAmount2Format</DataField>
+        </Field>
+        <Field Name="GrandAmount3">
+          <DataField>GrandAmount3</DataField>
+        </Field>
+        <Field Name="GrandAmount3Format">
+          <DataField>GrandAmount3Format</DataField>
+        </Field>
+        <Field Name="GrandAmount4">
+          <DataField>GrandAmount4</DataField>
+        </Field>
+        <Field Name="GrandAmount4Format">
+          <DataField>GrandAmount4Format</DataField>
+        </Field>
+        <Field Name="GrandAmount5">
+          <DataField>GrandAmount5</DataField>
+        </Field>
+        <Field Name="GrandAmount5Format">
+          <DataField>GrandAmount5Format</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

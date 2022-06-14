@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="G_L_Entry__Global_Dimension_1_Code_Caption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>G_L_Entry__Global_Dimension_1_Code_Caption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>G_L_Entry__Global_Dimension_1_Code_Caption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="G_L_Entry__Global_Dimension_2_Code_Caption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>G_L_Entry__Global_Dimension_2_Code_Caption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>G_L_Entry__Global_Dimension_2_Code_Caption</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="FORMAT_PostingDateFrom____To____FORMAT_PostingDateTo________BranchCode________CostRevenueCode">
+          <DataField>FORMAT_PostingDateFrom____To____FORMAT_PostingDateTo________BranchCode________CostRevenueCode</DataField>
+        </Field>
+        <Field Name="V1_Amount">
+          <DataField>V1_Amount</DataField>
+        </Field>
+        <Field Name="V1_AmountFormat">
+          <DataField>V1_AmountFormat</DataField>
+        </Field>
+        <Field Name="V1__VAT_Amount_">
+          <DataField>V1__VAT_Amount_</DataField>
+        </Field>
+        <Field Name="V1__VAT_Amount_Format">
+          <DataField>V1__VAT_Amount_Format</DataField>
+        </Field>
+        <Field Name="G_L_Entry__Global_Dimension_1_Code_">
+          <DataField>G_L_Entry__Global_Dimension_1_Code_</DataField>
+        </Field>
+        <Field Name="G_L_Entry__Global_Dimension_2_Code_">
+          <DataField>G_L_Entry__Global_Dimension_2_Code_</DataField>
+        </Field>
+        <Field Name="G_L_Entry__Gen__Prod__Posting_Group_">
+          <DataField>G_L_Entry__Gen__Prod__Posting_Group_</DataField>
+        </Field>
+        <Field Name="GD1">
+          <DataField>GD1</DataField>
+        </Field>
+        <Field Name="GD2">
+          <DataField>GD2</DataField>
+        </Field>
+        <Field Name="G_L_Entry_Entry_No_">
+          <DataField>G_L_Entry_Entry_No_</DataField>
+        </Field>
+        <Field Name="G_L_Entry_Gen__Bus__Posting_Group">
+          <DataField>G_L_Entry_Gen__Bus__Posting_Group</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

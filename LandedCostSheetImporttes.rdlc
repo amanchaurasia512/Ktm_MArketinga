@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="CompanyName">
+          <DataField>CompanyName</DataField>
+        </Field>
+        <Field Name="HideDBMargin">
+          <DataField>HideDBMargin</DataField>
+        </Field>
+        <Field Name="ShowSummary">
+          <DataField>ShowSummary</DataField>
+        </Field>
+        <Field Name="StartingNepaliDate">
+          <DataField>StartingNepaliDate</DataField>
+        </Field>
+        <Field Name="EndingNepaliDate">
+          <DataField>EndingNepaliDate</DataField>
+        </Field>
+        <Field Name="ValueEntryFilters">
+          <DataField>ValueEntryFilters</DataField>
+        </Field>
+        <Field Name="LetterofCreditTelexTrans_ValueEntry">
+          <DataField>LetterofCreditTelexTrans_ValueEntry</DataField>
+        </Field>
+        <Field Name="ItemName_ValueEntry">
+          <DataField>ItemName_ValueEntry</DataField>
+        </Field>
+        <Field Name="PostingDate_ValueEntry">
+          <DataField>PostingDate_ValueEntry</DataField>
+        </Field>
+        <Field Name="Item_No_">
+          <DataField>Item_No_</DataField>
+        </Field>
+        <Field Name="Cost_Amount_Actual">
+          <DataField>Cost_Amount_Actual</DataField>
+        </Field>
+        <Field Name="Cost_Amount_ActualFormat">
+          <DataField>Cost_Amount_ActualFormat</DataField>
+        </Field>
+        <Field Name="Invoiced_Quantity">
+          <DataField>Invoiced_Quantity</DataField>
+        </Field>
+        <Field Name="Invoiced_QuantityFormat">
+          <DataField>Invoiced_QuantityFormat</DataField>
+        </Field>
+        <Field Name="ColumnName">
+          <DataField>ColumnName</DataField>
+        </Field>
+        <Field Name="itemname">
+          <DataField>itemname</DataField>
+        </Field>
+        <Field Name="SalesPriceDB">
+          <DataField>SalesPriceDB</DataField>
+        </Field>
+        <Field Name="SalesPriceDBFormat">
+          <DataField>SalesPriceDBFormat</DataField>
+        </Field>
+        <Field Name="MarginPercentage">
+          <DataField>MarginPercentage</DataField>
+        </Field>
+        <Field Name="MarginPercentageFormat">
+          <DataField>MarginPercentageFormat</DataField>
+        </Field>
+        <Field Name="PragyapanPatra_No">
+          <DataField>PragyapanPatra_No</DataField>
+        </Field>
+        <Field Name="CustomValue">
+          <DataField>CustomValue</DataField>
+        </Field>
+        <Field Name="CustomValueFormat">
+          <DataField>CustomValueFormat</DataField>
+        </Field>
+        <Field Name="GrandTotalCustomAmount">
+          <DataField>GrandTotalCustomAmount</DataField>
+        </Field>
+        <Field Name="GrandTotalCustomAmountFormat">
+          <DataField>GrandTotalCustomAmountFormat</DataField>
+        </Field>
+        <Field Name="GrandDifference">
+          <DataField>GrandDifference</DataField>
+        </Field>
+        <Field Name="GrandDifferenceFormat">
+          <DataField>GrandDifferenceFormat</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

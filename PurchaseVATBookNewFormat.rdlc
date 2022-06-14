@@ -1,0 +1,548 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="DoNotShowHeader">
+          <DataField>DoNotShowHeader</DataField>
+        </Field>
+        <Field Name="VATRegistrationNo_VATEntry">
+          <DataField>VATRegistrationNo_VATEntry</DataField>
+        </Field>
+        <Field Name="PurchType">
+          <DataField>PurchType</DataField>
+        </Field>
+        <Field Name="EntryNo_VATEntry">
+          <DataField>EntryNo_VATEntry</DataField>
+        </Field>
+        <Field Name="GenBusPostingGroup_VATEntry">
+          <DataField>GenBusPostingGroup_VATEntry</DataField>
+        </Field>
+        <Field Name="GenProdPostingGroup_VATEntry">
+          <DataField>GenProdPostingGroup_VATEntry</DataField>
+        </Field>
+        <Field Name="PostingDate_VATEntry">
+          <DataField>PostingDate_VATEntry</DataField>
+        </Field>
+        <Field Name="DocumentNo_VATEntry">
+          <DataField>DocumentNo_VATEntry</DataField>
+        </Field>
+        <Field Name="DocumentType_VATEntry">
+          <DataField>DocumentType_VATEntry</DataField>
+        </Field>
+        <Field Name="Type_VATEntry">
+          <DataField>Type_VATEntry</DataField>
+        </Field>
+        <Field Name="Base_VATEntry">
+          <DataField>Base_VATEntry</DataField>
+        </Field>
+        <Field Name="Base_VATEntryFormat">
+          <DataField>Base_VATEntryFormat</DataField>
+        </Field>
+        <Field Name="Amount_VATEntry">
+          <DataField>Amount_VATEntry</DataField>
+        </Field>
+        <Field Name="Amount_VATEntryFormat">
+          <DataField>Amount_VATEntryFormat</DataField>
+        </Field>
+        <Field Name="vAT">
+          <DataField>vAT</DataField>
+        </Field>
+        <Field Name="BilltoPaytoNo_VATEntry">
+          <DataField>BilltoPaytoNo_VATEntry</DataField>
+        </Field>
+        <Field Name="EU3PartyTrade_VATEntry">
+          <DataField>EU3PartyTrade_VATEntry</DataField>
+        </Field>
+        <Field Name="UserID_VATEntry">
+          <DataField>UserID_VATEntry</DataField>
+        </Field>
+        <Field Name="SourceCode_VATEntry">
+          <DataField>SourceCode_VATEntry</DataField>
+        </Field>
+        <Field Name="ReasonCode_VATEntry">
+          <DataField>ReasonCode_VATEntry</DataField>
+        </Field>
+        <Field Name="ClosedbyEntryNo_VATEntry">
+          <DataField>ClosedbyEntryNo_VATEntry</DataField>
+        </Field>
+        <Field Name="ExternalDocumentNo_VATEntry">
+          <DataField>ExternalDocumentNo_VATEntry</DataField>
+        </Field>
+        <Field Name="NoSeries_VATEntry">
+          <DataField>NoSeries_VATEntry</DataField>
+        </Field>
+        <Field Name="VATBusPostingGroup_VATEntry">
+          <DataField>VATBusPostingGroup_VATEntry</DataField>
+        </Field>
+        <Field Name="VATProdPostingGroup_VATEntry">
+          <DataField>VATProdPostingGroup_VATEntry</DataField>
+        </Field>
+        <Field Name="PragyapanPatra_VATEntry">
+          <DataField>PragyapanPatra_VATEntry</DataField>
+        </Field>
+        <Field Name="NepaliDate_VATEntry">
+          <DataField>NepaliDate_VATEntry</DataField>
+        </Field>
+        <Field Name="LocalizedVATIdentifier_VATEntry">
+          <DataField>LocalizedVATIdentifier_VATEntry</DataField>
+        </Field>
+        <Field Name="DocNo">
+          <DataField>DocNo</DataField>
+        </Field>
+        <Field Name="SupplierName">
+          <DataField>SupplierName</DataField>
+        </Field>
+        <Field Name="ImportPurchAmount">
+          <DataField>ImportPurchAmount</DataField>
+        </Field>
+        <Field Name="ImportPurchAmountFormat">
+          <DataField>ImportPurchAmountFormat</DataField>
+        </Field>
+        <Field Name="ImportPurchVATAmount">
+          <DataField>ImportPurchVATAmount</DataField>
+        </Field>
+        <Field Name="ImportPurchVATAmountFormat">
+          <DataField>ImportPurchVATAmountFormat</DataField>
+        </Field>
+        <Field Name="CAPEXPurchAmount">
+          <DataField>CAPEXPurchAmount</DataField>
+        </Field>
+        <Field Name="CAPEXPurchAmountFormat">
+          <DataField>CAPEXPurchAmountFormat</DataField>
+        </Field>
+        <Field Name="CAPEXPurchVATAmount">
+          <DataField>CAPEXPurchVATAmount</DataField>
+        </Field>
+        <Field Name="CAPEXPurchVATAmountFormat">
+          <DataField>CAPEXPurchVATAmountFormat</DataField>
+        </Field>
+        <Field Name="LocalPurchAmount">
+          <DataField>LocalPurchAmount</DataField>
+        </Field>
+        <Field Name="LocalPurchAmountFormat">
+          <DataField>LocalPurchAmountFormat</DataField>
+        </Field>
+        <Field Name="LocalPurchVATAmount">
+          <DataField>LocalPurchVATAmount</DataField>
+        </Field>
+        <Field Name="LocalPurchVATAmountFormat">
+          <DataField>LocalPurchVATAmountFormat</DataField>
+        </Field>
+        <Field Name="ExemptPurchAmount">
+          <DataField>ExemptPurchAmount</DataField>
+        </Field>
+        <Field Name="ExemptPurchAmountFormat">
+          <DataField>ExemptPurchAmountFormat</DataField>
+        </Field>
+        <Field Name="ExemptPurchVATAmount">
+          <DataField>ExemptPurchVATAmount</DataField>
+        </Field>
+        <Field Name="ExemptPurchVATAmountFormat">
+          <DataField>ExemptPurchVATAmountFormat</DataField>
+        </Field>
+        <Field Name="CompanyInfo_VAT_Registration_No">
+          <DataField>CompanyInfo_VAT_Registration_No</DataField>
+        </Field>
+        <Field Name="CompanyInfo_Name">
+          <DataField>CompanyInfo_Name</DataField>
+        </Field>
+        <Field Name="PostingDate">
+          <DataField>PostingDate</DataField>
+        </Field>
+        <Field Name="TotalPurchaseAmount">
+          <DataField>TotalPurchaseAmount</DataField>
+        </Field>
+        <Field Name="TotalPurchaseAmountFormat">
+          <DataField>TotalPurchaseAmountFormat</DataField>
+        </Field>
+        <Field Name="ResponsibilityCenterName">
+          <DataField>ResponsibilityCenterName</DataField>
+        </Field>
+        <Field Name="NepaliYear">
+          <DataField>NepaliYear</DataField>
+        </Field>
+        <Field Name="NepaliMonth">
+          <DataField>NepaliMonth</DataField>
+        </Field>
+        <Field Name="DescriptionVar">
+          <DataField>DescriptionVar</DataField>
+        </Field>
+        <Field Name="Qty">
+          <DataField>Qty</DataField>
+        </Field>
+        <Field Name="QtyFormat">
+          <DataField>QtyFormat</DataField>
+        </Field>
+        <Field Name="TaxableLocalPurchaseAmt">
+          <DataField>TaxableLocalPurchaseAmt</DataField>
+        </Field>
+        <Field Name="TaxableLocalPurchaseAmtFormat">
+          <DataField>TaxableLocalPurchaseAmtFormat</DataField>
+        </Field>
+        <Field Name="VatAmount">
+          <DataField>VatAmount</DataField>
+        </Field>
+        <Field Name="VatAmountFormat">
+          <DataField>VatAmountFormat</DataField>
+        </Field>
+        <Field Name="DocumentNo">
+          <DataField>DocumentNo</DataField>
+        </Field>
+        <Field Name="NoVar">
+          <DataField>NoVar</DataField>
+        </Field>
+        <Field Name="UOM">
+          <DataField>UOM</DataField>
+        </Field>
+        <Field Name="DocumentNo2">
+          <DataField>DocumentNo2</DataField>
+        </Field>
+        <Field Name="DocNo2">
+          <DataField>DocNo2</DataField>
+        </Field>
+        <Field Name="SupplierName2">
+          <DataField>SupplierName2</DataField>
+        </Field>
+        <Field Name="ImportPurchAmount2">
+          <DataField>ImportPurchAmount2</DataField>
+        </Field>
+        <Field Name="ImportPurchAmount2Format">
+          <DataField>ImportPurchAmount2Format</DataField>
+        </Field>
+        <Field Name="ImportPurchVATAmount2">
+          <DataField>ImportPurchVATAmount2</DataField>
+        </Field>
+        <Field Name="ImportPurchVATAmount2Format">
+          <DataField>ImportPurchVATAmount2Format</DataField>
+        </Field>
+        <Field Name="CAPEXPurchAmount2">
+          <DataField>CAPEXPurchAmount2</DataField>
+        </Field>
+        <Field Name="CAPEXPurchAmount2Format">
+          <DataField>CAPEXPurchAmount2Format</DataField>
+        </Field>
+        <Field Name="CAPEXPurchVATAmount2">
+          <DataField>CAPEXPurchVATAmount2</DataField>
+        </Field>
+        <Field Name="CAPEXPurchVATAmount2Format">
+          <DataField>CAPEXPurchVATAmount2Format</DataField>
+        </Field>
+        <Field Name="LocalPurchAmount2">
+          <DataField>LocalPurchAmount2</DataField>
+        </Field>
+        <Field Name="LocalPurchAmount2Format">
+          <DataField>LocalPurchAmount2Format</DataField>
+        </Field>
+        <Field Name="LocalPurchVATAmount2">
+          <DataField>LocalPurchVATAmount2</DataField>
+        </Field>
+        <Field Name="LocalPurchVATAmount2Format">
+          <DataField>LocalPurchVATAmount2Format</DataField>
+        </Field>
+        <Field Name="ExemptPurchAmount2">
+          <DataField>ExemptPurchAmount2</DataField>
+        </Field>
+        <Field Name="ExemptPurchAmount2Format">
+          <DataField>ExemptPurchAmount2Format</DataField>
+        </Field>
+        <Field Name="ExemptPurchVATAmount2">
+          <DataField>ExemptPurchVATAmount2</DataField>
+        </Field>
+        <Field Name="ExemptPurchVATAmount2Format">
+          <DataField>ExemptPurchVATAmount2Format</DataField>
+        </Field>
+        <Field Name="PostingDate2">
+          <DataField>PostingDate2</DataField>
+        </Field>
+        <Field Name="TotalPurchaseAmount2">
+          <DataField>TotalPurchaseAmount2</DataField>
+        </Field>
+        <Field Name="TotalPurchaseAmount2Format">
+          <DataField>TotalPurchaseAmount2Format</DataField>
+        </Field>
+        <Field Name="NoVar2">
+          <DataField>NoVar2</DataField>
+        </Field>
+        <Field Name="DescriptionVar2">
+          <DataField>DescriptionVar2</DataField>
+        </Field>
+        <Field Name="Qty2">
+          <DataField>Qty2</DataField>
+        </Field>
+        <Field Name="Qty2Format">
+          <DataField>Qty2Format</DataField>
+        </Field>
+        <Field Name="TaxableLocalPurchaseAmt2">
+          <DataField>TaxableLocalPurchaseAmt2</DataField>
+        </Field>
+        <Field Name="TaxableLocalPurchaseAmt2Format">
+          <DataField>TaxableLocalPurchaseAmt2Format</DataField>
+        </Field>
+        <Field Name="VatAmount2">
+          <DataField>VatAmount2</DataField>
+        </Field>
+        <Field Name="VatAmount2Format">
+          <DataField>VatAmount2Format</DataField>
+        </Field>
+        <Field Name="UOM1">
+          <DataField>UOM1</DataField>
+        </Field>
+        <Field Name="DocumentNo3">
+          <DataField>DocumentNo3</DataField>
+        </Field>
+        <Field Name="DocNo3">
+          <DataField>DocNo3</DataField>
+        </Field>
+        <Field Name="SupplierName3">
+          <DataField>SupplierName3</DataField>
+        </Field>
+        <Field Name="ImportPurchAmount3">
+          <DataField>ImportPurchAmount3</DataField>
+        </Field>
+        <Field Name="ImportPurchAmount3Format">
+          <DataField>ImportPurchAmount3Format</DataField>
+        </Field>
+        <Field Name="ImportPurchVATAmount3">
+          <DataField>ImportPurchVATAmount3</DataField>
+        </Field>
+        <Field Name="ImportPurchVATAmount3Format">
+          <DataField>ImportPurchVATAmount3Format</DataField>
+        </Field>
+        <Field Name="CAPEXPurchAmount3">
+          <DataField>CAPEXPurchAmount3</DataField>
+        </Field>
+        <Field Name="CAPEXPurchAmount3Format">
+          <DataField>CAPEXPurchAmount3Format</DataField>
+        </Field>
+        <Field Name="CAPEXPurchVATAmount3">
+          <DataField>CAPEXPurchVATAmount3</DataField>
+        </Field>
+        <Field Name="CAPEXPurchVATAmount3Format">
+          <DataField>CAPEXPurchVATAmount3Format</DataField>
+        </Field>
+        <Field Name="LocalPurchAmount3">
+          <DataField>LocalPurchAmount3</DataField>
+        </Field>
+        <Field Name="LocalPurchAmount3Format">
+          <DataField>LocalPurchAmount3Format</DataField>
+        </Field>
+        <Field Name="LocalPurchVATAmount3">
+          <DataField>LocalPurchVATAmount3</DataField>
+        </Field>
+        <Field Name="LocalPurchVATAmount3Format">
+          <DataField>LocalPurchVATAmount3Format</DataField>
+        </Field>
+        <Field Name="ExemptPurchAmount3">
+          <DataField>ExemptPurchAmount3</DataField>
+        </Field>
+        <Field Name="ExemptPurchAmount3Format">
+          <DataField>ExemptPurchAmount3Format</DataField>
+        </Field>
+        <Field Name="ExemptPurchVATAmount3">
+          <DataField>ExemptPurchVATAmount3</DataField>
+        </Field>
+        <Field Name="ExemptPurchVATAmount3Format">
+          <DataField>ExemptPurchVATAmount3Format</DataField>
+        </Field>
+        <Field Name="PostingDate3">
+          <DataField>PostingDate3</DataField>
+        </Field>
+        <Field Name="TotalPurchaseAmount3">
+          <DataField>TotalPurchaseAmount3</DataField>
+        </Field>
+        <Field Name="TotalPurchaseAmount3Format">
+          <DataField>TotalPurchaseAmount3Format</DataField>
+        </Field>
+        <Field Name="NoVar3">
+          <DataField>NoVar3</DataField>
+        </Field>
+        <Field Name="DescriptionVar3">
+          <DataField>DescriptionVar3</DataField>
+        </Field>
+        <Field Name="Qty3">
+          <DataField>Qty3</DataField>
+        </Field>
+        <Field Name="Qty3Format">
+          <DataField>Qty3Format</DataField>
+        </Field>
+        <Field Name="TaxableLocalPurchaseAmt3">
+          <DataField>TaxableLocalPurchaseAmt3</DataField>
+        </Field>
+        <Field Name="TaxableLocalPurchaseAmt3Format">
+          <DataField>TaxableLocalPurchaseAmt3Format</DataField>
+        </Field>
+        <Field Name="VatAmount3">
+          <DataField>VatAmount3</DataField>
+        </Field>
+        <Field Name="VatAmount3Format">
+          <DataField>VatAmount3Format</DataField>
+        </Field>
+        <Field Name="UOM3">
+          <DataField>UOM3</DataField>
+        </Field>
+        <Field Name="DocumentNo4">
+          <DataField>DocumentNo4</DataField>
+        </Field>
+        <Field Name="DocNo4">
+          <DataField>DocNo4</DataField>
+        </Field>
+        <Field Name="SupplierName4">
+          <DataField>SupplierName4</DataField>
+        </Field>
+        <Field Name="ImportPurchAmount4">
+          <DataField>ImportPurchAmount4</DataField>
+        </Field>
+        <Field Name="ImportPurchAmount4Format">
+          <DataField>ImportPurchAmount4Format</DataField>
+        </Field>
+        <Field Name="ImportPurchVATAmount4">
+          <DataField>ImportPurchVATAmount4</DataField>
+        </Field>
+        <Field Name="ImportPurchVATAmount4Format">
+          <DataField>ImportPurchVATAmount4Format</DataField>
+        </Field>
+        <Field Name="CAPEXPurchAmount4">
+          <DataField>CAPEXPurchAmount4</DataField>
+        </Field>
+        <Field Name="CAPEXPurchAmount4Format">
+          <DataField>CAPEXPurchAmount4Format</DataField>
+        </Field>
+        <Field Name="CAPEXPurchVATAmount4">
+          <DataField>CAPEXPurchVATAmount4</DataField>
+        </Field>
+        <Field Name="CAPEXPurchVATAmount4Format">
+          <DataField>CAPEXPurchVATAmount4Format</DataField>
+        </Field>
+        <Field Name="LocalPurchAmount4">
+          <DataField>LocalPurchAmount4</DataField>
+        </Field>
+        <Field Name="LocalPurchAmount4Format">
+          <DataField>LocalPurchAmount4Format</DataField>
+        </Field>
+        <Field Name="LocalPurchVATAmount4">
+          <DataField>LocalPurchVATAmount4</DataField>
+        </Field>
+        <Field Name="LocalPurchVATAmount4Format">
+          <DataField>LocalPurchVATAmount4Format</DataField>
+        </Field>
+        <Field Name="ExemptPurchAmount4">
+          <DataField>ExemptPurchAmount4</DataField>
+        </Field>
+        <Field Name="ExemptPurchAmount4Format">
+          <DataField>ExemptPurchAmount4Format</DataField>
+        </Field>
+        <Field Name="ExemptPurchVATAmount4">
+          <DataField>ExemptPurchVATAmount4</DataField>
+        </Field>
+        <Field Name="ExemptPurchVATAmount4Format">
+          <DataField>ExemptPurchVATAmount4Format</DataField>
+        </Field>
+        <Field Name="PostingDate4">
+          <DataField>PostingDate4</DataField>
+        </Field>
+        <Field Name="TotalPurchaseAmount4">
+          <DataField>TotalPurchaseAmount4</DataField>
+        </Field>
+        <Field Name="TotalPurchaseAmount4Format">
+          <DataField>TotalPurchaseAmount4Format</DataField>
+        </Field>
+        <Field Name="ResponsibilityCenterName4">
+          <DataField>ResponsibilityCenterName4</DataField>
+        </Field>
+        <Field Name="DescriptionVar4">
+          <DataField>DescriptionVar4</DataField>
+        </Field>
+        <Field Name="Qty4">
+          <DataField>Qty4</DataField>
+        </Field>
+        <Field Name="Qty4Format">
+          <DataField>Qty4Format</DataField>
+        </Field>
+        <Field Name="TaxableLocalPurchaseAmt4">
+          <DataField>TaxableLocalPurchaseAmt4</DataField>
+        </Field>
+        <Field Name="TaxableLocalPurchaseAmt4Format">
+          <DataField>TaxableLocalPurchaseAmt4Format</DataField>
+        </Field>
+        <Field Name="VatAmount4">
+          <DataField>VatAmount4</DataField>
+        </Field>
+        <Field Name="VatAmount4Format">
+          <DataField>VatAmount4Format</DataField>
+        </Field>
+        <Field Name="NoVar4">
+          <DataField>NoVar4</DataField>
+        </Field>
+        <Field Name="UOM4">
+          <DataField>UOM4</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

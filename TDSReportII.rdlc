@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="AllFilters">
+          <DataField>AllFilters</DataField>
+        </Field>
+        <Field Name="HideDetail">
+          <DataField>HideDetail</DataField>
+        </Field>
+        <Field Name="BalAccountNo_GLEntry">
+          <DataField>BalAccountNo_GLEntry</DataField>
+        </Field>
+        <Field Name="GLAccountName_GLEntry">
+          <DataField>GLAccountName_GLEntry</DataField>
+        </Field>
+        <Field Name="GLAccountNo_GLEntry">
+          <DataField>GLAccountNo_GLEntry</DataField>
+        </Field>
+        <Field Name="TDSGroup_GLEntry">
+          <DataField>TDSGroup_GLEntry</DataField>
+        </Field>
+        <Field Name="TDS_GLEntry">
+          <DataField>TDS_GLEntry</DataField>
+        </Field>
+        <Field Name="TDS_GLEntryFormat">
+          <DataField>TDS_GLEntryFormat</DataField>
+        </Field>
+        <Field Name="TDSType_GLEntry">
+          <DataField>TDSType_GLEntry</DataField>
+        </Field>
+        <Field Name="TDSAmount_GLEntry">
+          <DataField>TDSAmount_GLEntry</DataField>
+        </Field>
+        <Field Name="TDSAmount_GLEntryFormat">
+          <DataField>TDSAmount_GLEntryFormat</DataField>
+        </Field>
+        <Field Name="TDSBaseAmount_GLEntry">
+          <DataField>TDSBaseAmount_GLEntry</DataField>
+        </Field>
+        <Field Name="TDSBaseAmount_GLEntryFormat">
+          <DataField>TDSBaseAmount_GLEntryFormat</DataField>
+        </Field>
+        <Field Name="DocumentNo_GLEntry">
+          <DataField>DocumentNo_GLEntry</DataField>
+        </Field>
+        <Field Name="VendorNo">
+          <DataField>VendorNo</DataField>
+        </Field>
+        <Field Name="VendorName">
+          <DataField>VendorName</DataField>
+        </Field>
+        <Field Name="PANNo">
+          <DataField>PANNo</DataField>
+        </Field>
+        <Field Name="IRDDate">
+          <DataField>IRDDate</DataField>
+        </Field>
+        <Field Name="IRDNo">
+          <DataField>IRDNo</DataField>
+        </Field>
+        <Field Name="GLEntry_PostingDate">
+          <DataField>GLEntry_PostingDate</DataField>
+        </Field>
+        <Field Name="DebitAmount">
+          <DataField>DebitAmount</DataField>
+        </Field>
+        <Field Name="DebitAmountFormat">
+          <DataField>DebitAmountFormat</DataField>
+        </Field>
+        <Field Name="CreditAmount">
+          <DataField>CreditAmount</DataField>
+        </Field>
+        <Field Name="CreditAmountFormat">
+          <DataField>CreditAmountFormat</DataField>
+        </Field>
+        <Field Name="OpeningAmount">
+          <DataField>OpeningAmount</DataField>
+        </Field>
+        <Field Name="OpeningAmountFormat">
+          <DataField>OpeningAmountFormat</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

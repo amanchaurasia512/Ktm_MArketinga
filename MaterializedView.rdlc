@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="CompanyAddr_1">
+          <DataField>CompanyAddr_1</DataField>
+        </Field>
+        <Field Name="CompanyOneLineAddress">
+          <DataField>CompanyOneLineAddress</DataField>
+        </Field>
+        <Field Name="CompanyCommunicationAddress">
+          <DataField>CompanyCommunicationAddress</DataField>
+        </Field>
+        <Field Name="CompanyInfo1Picture">
+          <DataField>CompanyInfo1Picture</DataField>
+        </Field>
+        <Field Name="CompanyInfoPicture2">
+          <DataField>CompanyInfoPicture2</DataField>
+        </Field>
+        <Field Name="CompanyInfoPicture3">
+          <DataField>CompanyInfoPicture3</DataField>
+        </Field>
+        <Field Name="CompanyInfoVATRegNo">
+          <DataField>CompanyInfoVATRegNo</DataField>
+        </Field>
+        <Field Name="ReportType">
+          <DataField>ReportType</DataField>
+        </Field>
+        <Field Name="ReportCaption">
+          <DataField>ReportCaption</DataField>
+        </Field>
+        <Field Name="SalesInvHeader_FiscalYear">
+          <DataField>SalesInvHeader_FiscalYear</DataField>
+        </Field>
+        <Field Name="SalesInvHeader_InvoiceNo">
+          <DataField>SalesInvHeader_InvoiceNo</DataField>
+        </Field>
+        <Field Name="SalesInvHeader_Date">
+          <DataField>SalesInvHeader_Date</DataField>
+        </Field>
+        <Field Name="SalesInvHeader_Time">
+          <DataField>SalesInvHeader_Time</DataField>
+        </Field>
+        <Field Name="SalesInvHeader_CustomerName">
+          <DataField>SalesInvHeader_CustomerName</DataField>
+        </Field>
+        <Field Name="SalesInvHeader_PAN">
+          <DataField>SalesInvHeader_PAN</DataField>
+        </Field>
+        <Field Name="SalesInvHeader_Amount">
+          <DataField>SalesInvHeader_Amount</DataField>
+        </Field>
+        <Field Name="SalesInvHeader_AmountFormat">
+          <DataField>SalesInvHeader_AmountFormat</DataField>
+        </Field>
+        <Field Name="SalesInvHeader_Discount">
+          <DataField>SalesInvHeader_Discount</DataField>
+        </Field>
+        <Field Name="SalesInvHeader_DiscountFormat">
+          <DataField>SalesInvHeader_DiscountFormat</DataField>
+        </Field>
+        <Field Name="SalesInvHeader_TaxableAmount">
+          <DataField>SalesInvHeader_TaxableAmount</DataField>
+        </Field>
+        <Field Name="SalesInvHeader_TaxableAmountFormat">
+          <DataField>SalesInvHeader_TaxableAmountFormat</DataField>
+        </Field>
+        <Field Name="SalesInvHeader_VATAmount">
+          <DataField>SalesInvHeader_VATAmount</DataField>
+        </Field>
+        <Field Name="SalesInvHeader_VATAmountFormat">
+          <DataField>SalesInvHeader_VATAmountFormat</DataField>
+        </Field>
+        <Field Name="SalesInvHeader_TotalAmount">
+          <DataField>SalesInvHeader_TotalAmount</DataField>
+        </Field>
+        <Field Name="SalesInvHeader_TotalAmountFormat">
+          <DataField>SalesInvHeader_TotalAmountFormat</DataField>
+        </Field>
+        <Field Name="SalesInvHeader_CreatedBy">
+          <DataField>SalesInvHeader_CreatedBy</DataField>
+        </Field>
+        <Field Name="SalesInvHeader_Printed">
+          <DataField>SalesInvHeader_Printed</DataField>
+        </Field>
+        <Field Name="SalesInvHeader_Active">
+          <DataField>SalesInvHeader_Active</DataField>
+        </Field>
+        <Field Name="SalesInvHeader_PrintedBy">
+          <DataField>SalesInvHeader_PrintedBy</DataField>
+        </Field>
+        <Field Name="SyncwithIRD_SalesInvoice">
+          <DataField>SyncwithIRD_SalesInvoice</DataField>
+        </Field>
+        <Field Name="IsBillActive_SalesInvoice">
+          <DataField>IsBillActive_SalesInvoice</DataField>
+        </Field>
+        <Field Name="IsRealtime_SalesInvoice">
+          <DataField>IsRealtime_SalesInvoice</DataField>
+        </Field>
+        <Field Name="IsBillPrinted_SalesInvoice">
+          <DataField>IsBillPrinted_SalesInvoice</DataField>
+        </Field>
+        <Field Name="PrintedTime_SalesInvoice">
+          <DataField>PrintedTime_SalesInvoice</DataField>
+        </Field>
+        <Field Name="SalesCrMemoHeader_FiscalYear">
+          <DataField>SalesCrMemoHeader_FiscalYear</DataField>
+        </Field>
+        <Field Name="SalesCrMemoHeader_InvoiceNo">
+          <DataField>SalesCrMemoHeader_InvoiceNo</DataField>
+        </Field>
+        <Field Name="SalesCrMemoHeader_Date">
+          <DataField>SalesCrMemoHeader_Date</DataField>
+        </Field>
+        <Field Name="SalesCrMemoHeader_Time">
+          <DataField>SalesCrMemoHeader_Time</DataField>
+        </Field>
+        <Field Name="SalesCrMemoHeader_CustomerName">
+          <DataField>SalesCrMemoHeader_CustomerName</DataField>
+        </Field>
+        <Field Name="SalesCrMemoHeader_PAN">
+          <DataField>SalesCrMemoHeader_PAN</DataField>
+        </Field>
+        <Field Name="SalesCrMemoHeader_Amount">
+          <DataField>SalesCrMemoHeader_Amount</DataField>
+        </Field>
+        <Field Name="SalesCrMemoHeader_AmountFormat">
+          <DataField>SalesCrMemoHeader_AmountFormat</DataField>
+        </Field>
+        <Field Name="SalesCrMemoHeader_Discount">
+          <DataField>SalesCrMemoHeader_Discount</DataField>
+        </Field>
+        <Field Name="SalesCrMemoHeader_DiscountFormat">
+          <DataField>SalesCrMemoHeader_DiscountFormat</DataField>
+        </Field>
+        <Field Name="SalesCrMemoHeader_TaxableAmount">
+          <DataField>SalesCrMemoHeader_TaxableAmount</DataField>
+        </Field>
+        <Field Name="SalesCrMemoHeader_TaxableAmountFormat">
+          <DataField>SalesCrMemoHeader_TaxableAmountFormat</DataField>
+        </Field>
+        <Field Name="SalesCrMemoHeader_VATAmount">
+          <DataField>SalesCrMemoHeader_VATAmount</DataField>
+        </Field>
+        <Field Name="SalesCrMemoHeader_VATAmountFormat">
+          <DataField>SalesCrMemoHeader_VATAmountFormat</DataField>
+        </Field>
+        <Field Name="SalesCrMemoHeader_TotalAmount">
+          <DataField>SalesCrMemoHeader_TotalAmount</DataField>
+        </Field>
+        <Field Name="SalesCrMemoHeader_TotalAmountFormat">
+          <DataField>SalesCrMemoHeader_TotalAmountFormat</DataField>
+        </Field>
+        <Field Name="SalesCrMemoHeader_CreatedBy">
+          <DataField>SalesCrMemoHeader_CreatedBy</DataField>
+        </Field>
+        <Field Name="SalesCrMemoHeader_Printed">
+          <DataField>SalesCrMemoHeader_Printed</DataField>
+        </Field>
+        <Field Name="SalesCrMemoHeader_Active">
+          <DataField>SalesCrMemoHeader_Active</DataField>
+        </Field>
+        <Field Name="SalesCrMemoHeader_PrintedBy">
+          <DataField>SalesCrMemoHeader_PrintedBy</DataField>
+        </Field>
+        <Field Name="SyncwithIRD_SalesCrMemo">
+          <DataField>SyncwithIRD_SalesCrMemo</DataField>
+        </Field>
+        <Field Name="IsBillPrinted_SalesCrMemo">
+          <DataField>IsBillPrinted_SalesCrMemo</DataField>
+        </Field>
+        <Field Name="IsBillActive_SalesCrMemo">
+          <DataField>IsBillActive_SalesCrMemo</DataField>
+        </Field>
+        <Field Name="IsRealtime_SalesCrMemo">
+          <DataField>IsRealtime_SalesCrMemo</DataField>
+        </Field>
+        <Field Name="PrintedTime_SalesCrMemo">
+          <DataField>PrintedTime_SalesCrMemo</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>
