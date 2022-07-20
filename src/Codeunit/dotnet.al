@@ -76,16 +76,16 @@ dotnet
         }
     }
 
-    assembly("Newtonsoft.Json")
-    {
-        Version = '6.0.0.0';
-        Culture = 'neutral';
-        PublicKeyToken = '30ad4fe6b2a6aeed';
+    // assembly("Newtonsoft.Json")
+    // {
+    //     Version = '6.0.0.0';
+    //     Culture = 'neutral';
+    //     PublicKeyToken = '30ad4fe6b2a6aeed';
 
-        type("Newtonsoft.Json.JsonConvert"; "JsonConvert")
-        {
-        }
-    }
+    //     type("Newtonsoft.Json.JsonConvert"; "JsonConvert")
+    //     {
+    //     }
+    // }
 
     assembly("")
     {

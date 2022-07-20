@@ -168,88 +168,6 @@ tableextension 50426 "Reversal Entry_ktm" extends "Reversal Entry"
             AlreadyReversedEntry(TDSEntry.TABLECAPTION, TDSEntry."Entry No.");
     end;
 
-    procedure CopyFromVATEntry(VATEntry: Record "VAT Entry")
-    begin
-        "Entry No." := VATEntry."Entry No.";
-        "Posting Date" := VATEntry."Posting Date";
-        "Source Code" := VATEntry."Source Code";
-        "Transaction No." := VATEntry."Transaction No.";
-        Amount := VATEntry.Amount;
-        "Amount (LCY)" := VATEntry.Amount;
-        "Document Type" := VATEntry."Document Type";
-        "Document No." := VATEntry."Document No.";
-        PAGE.RUN(0, TDSEntry);
-        OnAfterCopyFromVATEntry(Rec, VATEntry);
-    end;
-
-    procedure CopyFromVendLedgEntry(VendLedgEntry: Record "Vendor Ledger Entry")
-    begin
-        "Entry No." := VendLedgEntry."Entry No.";
-        "Posting Date" := VendLedgEntry."Posting Date";
-        "Source Code" := VendLedgEntry."Source Code";
-        "Journal Batch Name" := VendLedgEntry."Journal Batch Name";
-        "Transaction No." := VendLedgEntry."Transaction No.";
-        "Currency Code" := VendLedgEntry."Currency Code";
-        Description := VendLedgEntry.Description;
-        VendLedgEntry.CALCFIELDS(Amount, "Debit Amount", "Credit Amount",
-          "Amount (LCY)", "Debit Amount (LCY)", "Credit Amount (LCY)");
-        Amount := VendLedgEntry.Amount;
-        "Debit Amount" := VendLedgEntry."Debit Amount";
-        "Credit Amount" := VendLedgEntry."Credit Amount";
-        "Amount (LCY)" := VendLedgEntry."Amount (LCY)";
-        "Debit Amount (LCY)" := VendLedgEntry."Debit Amount (LCY)";
-        "Credit Amount (LCY)" := VendLedgEntry."Credit Amount (LCY)";
-        "Document Type" := VendLedgEntry."Document Type";
-        "Document No." := VendLedgEntry."Document No.";
-        "Bal. Account Type" := VendLedgEntry."Bal. Account Type";
-        "Bal. Account No." := VendLedgEntry."Bal. Account No.";
-
-        OnAfterCopyFromVendLedgEntry(Rec, VendLedgEntry);
-    end;
-
-    procedure CopyFromEmployeeLedgerEntry(EmployeeLedgerEntry: Record "Employee Ledger Entry")
-    begin
-        "Entry No." := EmployeeLedgerEntry."Entry No.";
-        "Posting Date" := EmployeeLedgerEntry."Posting Date";
-        "Source Code" := EmployeeLedgerEntry."Source Code";
-        "Journal Batch Name" := EmployeeLedgerEntry."Journal Batch Name";
-        "Transaction No." := EmployeeLedgerEntry."Transaction No.";
-        "Currency Code" := EmployeeLedgerEntry."Currency Code";
-        Description := EmployeeLedgerEntry.Description;
-        EmployeeLedgerEntry.CALCFIELDS(
-          Amount, "Debit Amount", "Credit Amount", "Amount (LCY)", "Debit Amount (LCY)", "Credit Amount (LCY)");
-        Amount := EmployeeLedgerEntry.Amount;
-        "Debit Amount" := EmployeeLedgerEntry."Debit Amount";
-        "Credit Amount" := EmployeeLedgerEntry."Credit Amount";
-        "Amount (LCY)" := EmployeeLedgerEntry."Amount (LCY)";
-        "Debit Amount (LCY)" := EmployeeLedgerEntry."Debit Amount (LCY)";
-        "Credit Amount (LCY)" := EmployeeLedgerEntry."Credit Amount (LCY)";
-        "Document Type" := EmployeeLedgerEntry."Document Type";
-        "Document No." := EmployeeLedgerEntry."Document No.";
-        "Bal. Account Type" := EmployeeLedgerEntry."Bal. Account Type";
-        "Bal. Account No." := EmployeeLedgerEntry."Bal. Account No.";
-
-        OnAfterCopyFromEmplLedgEntry(Rec, EmployeeLedgerEntry);
-    end;
-
-    local procedure InsertCustTempRevertTransNo(var TempRevertTransactionNo: Record Integer temporary; CustLedgEntryNo: Integer)
-    var
-        DtldCustLedgEntry: Record "Detailed Cust. Ledg. Entry";
-    begin
-        //DtldCustLedgEntry.GET(CustLedgEntryNo);
-        //IF DtldCustLedgEntry."Transaction No." <> 0 THEN BEGIN
-        //  TempRevertTransactionNo.Number := DtldCustLedgEntry."Transaction No.";
-        //IF TempRevertTransactionNo.INSERT THEN;
-        DtldCustLedgEntry.SETCURRENTKEY("Cust. Ledger Entry No.");
-        DtldCustLedgEntry.SETRANGE("Cust. Ledger Entry No.", CustLedgEntryNo);
-        DtldCustLedgEntry.SETRANGE(Unapplied, FALSE);    //changed by oman (changed true to false)
-        IF DtldCustLedgEntry.FINDSET THEN BEGIN
-            REPEAT
-                TempRevertTransactionNo.Number := DtldCustLedgEntry."Transaction No.";
-                IF TempRevertTransactionNo.INSERT THEN;
-            UNTIL DtldCustLedgEntry.NEXT = 0;
-        END;
-    end;
 
     procedure CheckTDS(var TDSEntry: Record "TDS Entry")
     //TDS1.00
@@ -279,10 +197,10 @@ tableextension 50426 "Reversal Entry_ktm" extends "Reversal Entry"
         DtldVendLedgEntry.SETRANGE("Vendor Ledger Entry No.", VendLedgEntryNo);
         DtldVendLedgEntry.SETRANGE(Unapplied, FALSE);  //changed by oman (changed true to false)
         IF DtldVendLedgEntry.FINDSET THEN BEGIN
-            REPEAT
-                TempRevertTransactionNo.Number := DtldVendLedgEntry."Transaction No.";
-                IF TempRevertTransactionNo.INSERT THEN;
-            UNTIL DtldVendLedgEntry.NEXT = 0;
+                                              REPEAT
+                                                  TempRevertTransactionNo.Number := DtldVendLedgEntry."Transaction No.";
+                                                  IF TempRevertTransactionNo.INSERT THEN;
+                                              UNTIL DtldVendLedgEntry.NEXT = 0;
         END;
     end;
 
@@ -301,105 +219,10 @@ tableextension 50426 "Reversal Entry_ktm" extends "Reversal Entry"
     begin
         DetailedEmployeeLedgerEntry.SETRANGE(Unapplied, TRUE);
         IF DetailedEmployeeLedgerEntry.FINDSET THEN
-            REPEAT
-                InsertEmplTempRevertTransNo(TempRevertTransactionNo, DetailedEmployeeLedgerEntry."Unapplied by Entry No.");
-            UNTIL DetailedEmployeeLedgerEntry.NEXT = 0;
+                REPEAT
+                    InsertEmplTempRevertTransNo(TempRevertTransactionNo, DetailedEmployeeLedgerEntry."Unapplied by Entry No.");
+                UNTIL DetailedEmployeeLedgerEntry.NEXT = 0;
         DetailedEmployeeLedgerEntry.SETRANGE(Unapplied);
-    end;
-
-    [IntegrationEvent(false, false)]
-    local procedure OnAfterCaption(ReversalEntry: Record "Reversal Entry"; var NewCaption: Text[250])
-    begin
-    end;
-
-    [IntegrationEvent(false, false)]
-    local procedure OnAfterCheckEntries()
-    begin
-    end;
-
-    [IntegrationEvent(false, false)]
-    local procedure OnAfterCheckBankAcc(BankAccount: Record "Bank Account"; BankAccountLedgerEntry: Record "Bank Account Ledger Entry")
-    begin
-    end;
-
-    [IntegrationEvent(false, false)]
-    local procedure OnAfterCheckGLAcc(var GLAccount: Record "G/L Account"; GLEntry: Record "G/L Entry")
-    begin
-    end;
-
-    [IntegrationEvent(false, false)]
-    local procedure OnAfterCheckCust(Customer: Record Customer; CustLedgerEntry: Record "Cust. Ledger Entry")
-    begin
-    end;
-
-    [IntegrationEvent(false, false)]
-    local procedure OnAfterCheckVend(Vendor: Record "Vendor"; VendorLedgerEntry: Record "Vendor Ledger Entry")
-    begin
-    end;
-
-    [IntegrationEvent(false, false)]
-    local procedure OnAfterCheckEmpl(Employee: Record Employee; EmployeeLedgerEntry: Record "Employee Ledger Entry")
-    begin
-    end;
-
-    [IntegrationEvent(false, false)]
-    local procedure OnAfterCheckFA(FixedAsset: Record "Fixed Asset"; FALedgerEntry: Record "FA Ledger Entry")
-    begin
-    end;
-
-    [IntegrationEvent(false, false)]
-    local procedure OnAfterCheckMaintenance(FixedAsset: Record "Fixed Asset"; MaintenanceLedgerEntry: Record "Maintenance Ledger Entry")
-    begin
-    end;
-
-    [IntegrationEvent(false, false)]
-    local procedure OnAfterCheckVAT(var VATEntry: Record "VAT Entry")
-    begin
-    end;
-
-    [IntegrationEvent(false, false)]
-    local procedure OnAfterCopyFromVATEntry(var ReversalEntry: Record "Reversal Entry"; VATEntry: Record "VAT Entry")
-    begin
-    end;
-
-    [IntegrationEvent(false, false)]
-    local procedure OnAfterCopyFromVendLedgEntry(var ReversalEntry: Record "Reversal Entry"; VendorLedgerEntry: Record "Vendor Ledger Entry")
-    begin
-    end;
-
-    [IntegrationEvent(false, false)]
-    local procedure OnAfterCopyFromEmplLedgEntry(var ReversalEntry: Record "Reversal Entry"; EmployeeLedgerEntry: Record "Employee Ledger Entry")
-    begin
-    end;
-
-    [IntegrationEvent(TRUE, TRUE)]
-    local procedure OnAfterInsertReversalEntry(var TempRevertTransactionNo: Record Integer; Number: Integer; RevType: Option Transaction,Register; var NextLineNo: Integer; var TempReversalEntry: Record "Reversal Entry" temporary)
-    begin
-    end;
-
-    [IntegrationEvent(false, false)]
-    local procedure OnAfterSetReverseFilter(Number: Integer; RevType: Option Transaction,Register; GLRegister: Record "G/L Register")
-    begin
-    end;
-
-    [IntegrationEvent(false, false)]
-    local procedure OnBeforeCheckEntries(ReversalEntry: Record "Reversal Entry"; TableID: Integer; var SkipCheck: Boolean)
-    begin
-    end;
-
-    [IntegrationEvent(false, false)]
-    local procedure OnBeforeCheckGLAcc(var GLEntry: Record "G/L Entry")
-    begin
-    end;
-
-    [IntegrationEvent(false, false)]
-    local procedure OnBeforeCheckRegister(RegisterNo: Integer; var IsHandled: Boolean)
-    begin
-    end;
-
-    [IntegrationEvent(false, false)]
-    local procedure OnBeforeReverseEntries(Number: Integer; RevType: Integer; var IsHandled: Boolean)
-    begin
     end;
 
     procedure InsertFromTDSEntry(var TempRevertTransactionNo: Record Integer temporary; Number: Integer; RevType: Option Transaction,Register; var NextLineNo: Integer)
@@ -414,7 +237,7 @@ tableextension 50426 "Reversal Entry_ktm" extends "Reversal Entry"
                 TDSEntry.SETRANGE("Transaction No.", TempRevertTransactionNo.Number);
             IF TDSEntry.FINDSET THEN
                 REPEAT
-                    CLEAR(ReversalEntry);
+                        CLEAR(ReversalEntry);
                     IF RevType = RevType::Register THEN
                         ReversalEntry."G/L Register No." := Number;
                     ReversalEntry."Reversal Type" := RevType;
